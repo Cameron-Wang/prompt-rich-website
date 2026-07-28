@@ -32,6 +32,10 @@ test("server-renders the Prompt Rich experience and direct-client wall", async (
   assert.match(html, /<title>Prompt Rich — Thailand Brand, Commerce &amp; Growth<\/title>/i);
   assert.match(html, /From attention/);
   assert.match(html, /A clear path from diagnosis to scale/);
+  assert.match(html, /External client proof/);
+  assert.match(html, /36 million views/);
+  assert.match(html, /39/);
+  assert.match(html, /Direct client brands/);
   assert.match(html, /Direct client experience/);
   assert.match(html, /Estée Lauder/);
   assert.match(html, /BASICS BY SITA/);
@@ -40,6 +44,14 @@ test("server-renders the Prompt Rich experience and direct-client wall", async (
   assert.doesNotMatch(html, /\bMCN\b|\bTAP\b|Affiliate/);
   assert.doesNotMatch(html, /Kannika Chutrakul|Cameron Wang|Rachapol Kamhomgul|Nuttamol Traiupok/);
   assert.doesNotMatch(html, /Your site is taking shape|Building your site/);
+
+  const methodPosition = html.indexOf("A clear path from diagnosis to scale");
+  const operatorCasePosition = html.indexOf("Operator proof");
+  const externalCasePosition = html.indexOf("External client proof");
+  const evidencePosition = html.indexOf("More than one success story");
+  assert.ok(methodPosition < operatorCasePosition);
+  assert.ok(operatorCasePosition < externalCasePosition);
+  assert.ok(externalCasePosition < evidencePosition);
 });
 
 test("ships all approved client assets and responsive logo-wall styling", async () => {

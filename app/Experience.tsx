@@ -54,7 +54,7 @@ const content = {
     proofTitle: "Experience across brands, creators and commerce.",
     proofCards: [
       ["THB 10M+", "Verified monthly GMV", "MissyClassy · single TikTok Shop"],
-      ["36M", "Views for a sales-conversion video", "Y.O.U · Thailand"],
+      ["39", "Direct client brands", "Beauty · fashion · technology · consumer"],
       ["1,000+", "Creator resources", "Beauty · fashion · lifestyle · more"],
     ],
     workEyebrow: "Direct client experience",
@@ -70,6 +70,19 @@ const content = {
       ["03", "Operate", "Store, content, LIVE and paid media run together on one commercial cadence."],
       ["04", "Optimise & scale", "Performance data becomes the next decision—not just another report."],
     ],
+    externalEyebrow: "External client proof · Y.O.U",
+    externalTitleA: "One conversion asset.",
+    externalTitleB: "36 million views.",
+    externalBody:
+      "A sales-conversion video executed for the Thailand market reached 36M views—evidence that local creative execution can turn product communication into scale.",
+    externalSteps: [
+      ["01", "Challenge", "Build product communication that could scale in the Thailand market."],
+      ["02", "Intervention", "A sales-conversion video created and executed for the local audience."],
+      ["03", "Result", "36M views on one sales-conversion video."],
+    ],
+    externalResult: "VIEWS",
+    midCtaText: "Facing a similar growth challenge?",
+    midCtaAction: "Book a growth consultation",
     platformEyebrow: "Omnichannel operating experience",
     platformTitle: "We work where commerce happens.",
     platformBody:
@@ -138,7 +151,7 @@ const content = {
     proofTitle: "ประสบการณ์ครอบคลุมแบรนด์ ครีเอเตอร์ และคอมเมิร์ซ",
     proofCards: [
       ["10M+ บาท", "GMV รายเดือนที่มีหลักฐานยืนยัน", "MissyClassy · TikTok Shop ร้านเดียว"],
-      ["36M", "ยอดชมวิดีโอเพื่อยอดขาย", "Y.O.U · ประเทศไทย"],
+      ["39", "แบรนด์ลูกค้าโดยตรง", "ความงาม · แฟชั่น · เทคโนโลยี · สินค้าอุปโภคบริโภค"],
       ["1,000+", "เครือข่ายครีเอเตอร์", "ความงาม · แฟชั่น · ไลฟ์สไตล์ · อื่น ๆ"],
     ],
     workEyebrow: "ประสบการณ์ลูกค้าโดยตรง",
@@ -154,6 +167,19 @@ const content = {
       ["03", "ลงมือทำ", "ร้านค้า คอนเทนต์ LIVE และสื่อโฆษณาทำงานบนจังหวะการขายเดียวกัน"],
       ["04", "ปรับและขยาย", "เปลี่ยนข้อมูลผลลัพธ์ให้เป็นการตัดสินใจครั้งถัดไป ไม่ใช่แค่รายงาน"],
     ],
+    externalEyebrow: "ผลงานลูกค้าภายนอก · Y.O.U",
+    externalTitleA: "วิดีโอเพื่อการขายหนึ่งชิ้น",
+    externalTitleB: "ยอดชม 36 ล้านครั้ง",
+    externalBody:
+      "วิดีโอเพื่อการขายสำหรับตลาดไทยทำยอดชมได้ 36M ครั้ง สะท้อนความสามารถในการเปลี่ยนการสื่อสารสินค้าให้เป็นการเข้าถึงในวงกว้าง",
+    externalSteps: [
+      ["01", "โจทย์", "สร้างการสื่อสารสินค้าที่สามารถขยายการเข้าถึงในตลาดไทย"],
+      ["02", "การดำเนินงาน", "สร้างและดำเนินงานวิดีโอเพื่อการขายสำหรับผู้ชมในประเทศไทย"],
+      ["03", "ผลลัพธ์", "วิดีโอเพื่อการขายหนึ่งชิ้นทำยอดชม 36M ครั้ง"],
+    ],
+    externalResult: "ยอดชม",
+    midCtaText: "กำลังเจอความท้าทายด้านการเติบโตแบบเดียวกันหรือไม่?",
+    midCtaAction: "นัดหมายวิเคราะห์การเติบโต",
     platformEyebrow: "ประสบการณ์ดำเนินงานแบบ Omnichannel",
     platformTitle: "เราทำงานในทุกพื้นที่ที่การค้าเกิดขึ้น",
     platformBody:
@@ -217,7 +243,7 @@ const content = {
     proofTitle: "覆盖品牌、达人与电商的真实经验。",
     proofCards: [
       ["THB 10M+", "有后台证据的单月GMV", "MissyClassy · 单个TikTok Shop店铺"],
-      ["36M", "销售转化视频播放量", "Y.O.U · 泰国"],
+      ["39", "直接客户品牌", "美妆 · 时尚 · 科技 · 消费品"],
       ["1,000+", "达人资源", "美妆 · 时尚 · 生活方式 · 更多"],
     ],
     workEyebrow: "直接客户经验",
@@ -231,6 +257,19 @@ const content = {
       ["03", "协同执行", "让店铺、内容、直播和付费投放按照统一商业节奏运转。"],
       ["04", "优化与放大", "让每一轮绩效数据成为下一次决策，而不只是另一份报告。"],
     ],
+    externalEyebrow: "外部客户案例 · Y.O.U",
+    externalTitleA: "一条销售转化视频，",
+    externalTitleB: "获得3600万播放。",
+    externalBody:
+      "面向泰国市场执行的销售转化视频获得36M播放，证明本地化内容执行能够把产品沟通转化为规模化触达。",
+    externalSteps: [
+      ["01", "业务问题", "为产品建立能够在泰国市场规模传播的内容。"],
+      ["02", "Prompt Rich介入", "面向泰国受众制作并执行销售转化视频。"],
+      ["03", "结果", "单条销售转化视频获得36M播放。"],
+    ],
+    externalResult: "播放量",
+    midCtaText: "正在面对类似的增长问题？",
+    midCtaAction: "预约增长诊断",
     platformEyebrow: "全渠道运营经验",
     platformTitle: "在电商发生的地方工作。",
     platformBody:
@@ -544,6 +583,30 @@ export function Experience() {
         </div>
       </section>
 
+      <section id="method" className="method light-section">
+        <div className="section-shell">
+          <div className="method-heading">
+            <div>
+              <p className="eyebrow dark-eyebrow" data-reveal>{t.methodEyebrow}</p>
+              <h2 data-reveal>{t.methodTitle}</h2>
+            </div>
+            <p data-reveal>{t.methodBody}</p>
+          </div>
+          <div className="method-grid">
+            {t.methodSteps.map(([step, name, detail]) => (
+              <article data-reveal key={step}>
+                <span>{step}</span>
+                <div>
+                  <h3>{name}</h3>
+                  <p>{detail}</p>
+                </div>
+                <i aria-hidden="true">↗</i>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section id="proof" ref={caseRef} className="case-story">
         <div className="case-sticky">
           <div className="case-copy">
@@ -612,6 +675,50 @@ export function Experience() {
         </div>
       </section>
 
+      {/* This client-case module is intentionally reusable when a new approved case is ready. */}
+      <section className="external-case light-section">
+        <div className="section-shell external-case-layout">
+          <div className="external-case-copy">
+            <p className="eyebrow dark-eyebrow" data-reveal>{t.externalEyebrow}</p>
+            <h2 data-reveal>
+              <span>{t.externalTitleA}</span>
+              <span>{t.externalTitleB}</span>
+            </h2>
+            <p data-reveal>{t.externalBody}</p>
+          </div>
+          <div className="external-case-board" data-reveal>
+            {t.externalSteps.map(([step, name, detail]) => (
+              <article key={step}>
+                <span>{step}</span>
+                <div>
+                  <h3>{name}</h3>
+                  <p>{detail}</p>
+                </div>
+              </article>
+            ))}
+            <div className="external-result">
+              <small>Y.O.U · THAILAND</small>
+              <strong>36M</strong>
+              <span>{t.externalResult}</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="mid-cta dark-section">
+        <div className="section-shell mid-cta-inner">
+          <p data-reveal>{t.midCtaText}</p>
+          <button
+            type="button"
+            className="primary-button"
+            data-reveal
+            onClick={() => setContactOpen(true)}
+          >
+            {t.midCtaAction} <Arrow />
+          </button>
+        </div>
+      </section>
+
       <section className="proof-grid light-section">
         <div className="section-shell">
           <div className="proof-heading">
@@ -659,30 +766,6 @@ export function Experience() {
               </div>
             </div>
           ))}
-        </div>
-      </section>
-
-      <section id="method" className="method light-section">
-        <div className="section-shell">
-          <div className="method-heading">
-            <div>
-              <p className="eyebrow dark-eyebrow" data-reveal>{t.methodEyebrow}</p>
-              <h2 data-reveal>{t.methodTitle}</h2>
-            </div>
-            <p data-reveal>{t.methodBody}</p>
-          </div>
-          <div className="method-grid">
-            {t.methodSteps.map(([step, name, detail]) => (
-              <article data-reveal key={step}>
-                <span>{step}</span>
-                <div>
-                  <h3>{name}</h3>
-                  <p>{detail}</p>
-                </div>
-                <i aria-hidden="true">↗</i>
-              </article>
-            ))}
-          </div>
         </div>
       </section>
 

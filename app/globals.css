@@ -1032,6 +1032,150 @@ a {
   transform-origin: top;
 }
 
+.external-case {
+  padding: clamp(140px, 15vw, 210px) 0;
+  background:
+    radial-gradient(circle at 87% 12%, rgba(124, 108, 255, 0.1), transparent 30%),
+    var(--paper-bright);
+}
+
+.external-case-layout {
+  display: grid;
+  grid-template-columns: 0.82fr 1.18fr;
+  gap: clamp(60px, 8vw, 120px);
+  align-items: start;
+}
+
+.external-case-copy h2 {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  font-size: clamp(52px, 6.2vw, 88px);
+  font-weight: 580;
+  line-height: 0.96;
+  letter-spacing: -0.068em;
+}
+
+.external-case-copy h2 span:last-child {
+  color: var(--purple-dark);
+}
+
+.external-case-copy > p:last-child {
+  max-width: 580px;
+  margin: 35px 0 0;
+  color: #65656b;
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+.external-case-board {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(190px, 0.43fr);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  background: var(--line);
+  box-shadow: 0 34px 90px rgba(15, 12, 38, 0.1);
+}
+
+.external-case-board article {
+  min-height: 158px;
+  padding: 25px 27px;
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.82);
+}
+
+.external-case-board article + article {
+  border-top: 1px solid var(--line);
+}
+
+.external-case-board article > span {
+  padding-top: 4px;
+  color: var(--purple-dark);
+  font-family: monospace;
+  font-size: 9px;
+}
+
+.external-case-board h3 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 590;
+  letter-spacing: -0.035em;
+}
+
+.external-case-board p {
+  max-width: 440px;
+  margin: 14px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.58;
+}
+
+.external-result {
+  grid-column: 2;
+  grid-row: 1 / 4;
+  padding: 28px 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background:
+    radial-gradient(circle at 55% 18%, rgba(84, 242, 204, 0.22), transparent 36%),
+    var(--ink);
+  color: #fff;
+}
+
+.external-result small {
+  margin-bottom: auto;
+  color: rgba(255, 255, 255, 0.42);
+  font-family: monospace;
+  font-size: 8px;
+  letter-spacing: 0.08em;
+}
+
+.external-result strong {
+  font-size: clamp(66px, 7vw, 104px);
+  font-weight: 580;
+  line-height: 0.8;
+  letter-spacing: -0.09em;
+}
+
+.external-result span {
+  margin-top: 17px;
+  color: var(--mint);
+  font-family: monospace;
+  font-size: 9px;
+  letter-spacing: 0.12em;
+}
+
+.mid-cta {
+  padding: 34px 0;
+  border-block: 1px solid rgba(255, 255, 255, 0.12);
+  background:
+    linear-gradient(100deg, rgba(84, 242, 204, 0.08), transparent 38%),
+    var(--ink);
+}
+
+.mid-cta-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.mid-cta p {
+  margin: 0;
+  font-size: clamp(24px, 3.4vw, 44px);
+  font-weight: 560;
+  line-height: 1.05;
+  letter-spacing: -0.05em;
+}
+
+.mid-cta .primary-button {
+  flex: 0 0 auto;
+}
+
 .proof-grid {
   padding: clamp(140px, 16vw, 220px) 0;
 }
@@ -1698,10 +1842,15 @@ footer > span:last-child {
   }
 
   .audience-layout,
+  .external-case-layout,
   .method-heading,
   .platform-layout {
     grid-template-columns: 1fr;
     gap: 50px;
+  }
+
+  .external-case-copy {
+    max-width: 820px;
   }
 
   .method-grid {
@@ -1817,6 +1966,7 @@ footer > span:last-child {
 
   .audience,
   .services,
+  .external-case,
   .proof-grid,
   .method,
   .platforms {
@@ -1934,6 +2084,39 @@ footer > span:last-child {
 
   .case-progress {
     display: none;
+  }
+
+  .external-case-copy h2 {
+    font-size: clamp(45px, 13vw, 62px);
+  }
+
+  .external-case-board {
+    grid-template-columns: 1fr;
+  }
+
+  .external-case-board article {
+    min-height: 145px;
+    padding: 22px 20px;
+  }
+
+  .external-result {
+    grid-column: 1;
+    grid-row: auto;
+    min-height: 250px;
+  }
+
+  .external-result strong {
+    font-size: 82px;
+  }
+
+  .mid-cta {
+    padding: 48px 0;
+  }
+
+  .mid-cta-inner {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 26px;
   }
 
   .proof-cards {
