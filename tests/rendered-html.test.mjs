@@ -52,6 +52,9 @@ test("ships all approved client assets and responsive logo-wall styling", async 
   assert.ok(clientFiles.includes("orzenic.png"));
   assert.match(experience, /const clientRows = \[clients\.slice\(0, 20\), clients\.slice\(20\)\]/);
   assert.match(experience, /className="client-logo-card"/);
+  assert.match(experience, /key=\{`service-\$\{index\}`\}/);
+  assert.match(experience, /key=\{`proof-\$\{index\}`\}/);
+  assert.match(experience, /\}, \[language\]\);/);
   assert.match(css, /\.client-logo-frame img/);
   assert.match(css, /animation-direction:\s*reverse/);
   assert.match(css, /@media \(prefers-reduced-motion: reduce\)/);

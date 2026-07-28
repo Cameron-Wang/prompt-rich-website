@@ -336,8 +336,18 @@ export function Experience() {
       },
       { threshold: 0.12 },
     );
-    reveals.forEach((element) => observer.observe(element));
+    reveals.forEach((element) => {
+      const bounds = element.getBoundingClientRect();
+      if (bounds.top < window.innerHeight * 0.96 && bounds.bottom > 0) {
+        element.classList.add("is-visible");
+      }
+      observer.observe(element);
+    });
 
+    return () => observer.disconnect();
+  }, [language]);
+
+  useEffect(() => {
     let ticking = false;
     const updateScroll = () => {
       const maximum =
@@ -391,7 +401,6 @@ export function Experience() {
     heroRef.current?.addEventListener("pointermove", onPointer);
 
     return () => {
-      observer.disconnect();
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("keydown", onKey);
       heroRef.current?.removeEventListener("pointermove", onPointer);
@@ -524,7 +533,7 @@ export function Experience() {
           </div>
           <div className="service-list">
             {t.services.map(([name, description], index) => (
-              <article className="service-row" data-reveal key={name}>
+              <article className="service-row" data-reveal key={`service-${index}`}>
                 <span className="service-index">0{index + 1}</span>
                 <h3>{name}</h3>
                 <p>{description}</p>
@@ -611,7 +620,7 @@ export function Experience() {
           </div>
           <div className="proof-cards">
             {t.proofCards.map(([metric, label, detail], index) => (
-              <article data-reveal key={metric}>
+              <article data-reveal key={`proof-${index}`}>
                 <span>0{index + 1}</span>
                 <strong>{metric}</strong>
                 <h3>{label}</h3>
