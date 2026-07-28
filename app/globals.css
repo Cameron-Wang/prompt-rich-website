@@ -1093,12 +1093,31 @@ a {
 }
 
 .client-work {
-  padding: 100px 0 90px;
+  position: relative;
+  padding: 120px 0 110px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 12% 12%, rgba(84, 242, 204, 0.08), transparent 28%),
+    radial-gradient(circle at 88% 82%, rgba(124, 108, 255, 0.11), transparent 31%),
+    var(--ink);
+}
+
+.client-work::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.018) 1px, transparent 1px);
+  background-size: 100% 72px;
+  mask-image: linear-gradient(to bottom, transparent, #000 18%, #000 82%, transparent);
 }
 
 .client-heading {
+  position: relative;
+  z-index: 1;
   display: flex;
   justify-content: space-between;
+  align-items: end;
   gap: 50px;
 }
 
@@ -1111,34 +1130,102 @@ a {
 }
 
 .client-marquee {
-  margin-top: 72px;
+  position: relative;
+  z-index: 1;
+  margin-top: 68px;
+}
+
+.client-row {
   overflow: hidden;
-  border-block: 1px solid rgba(255, 255, 255, 0.12);
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    #000 5%,
+    #000 95%,
+    transparent
+  );
 }
 
-.client-marquee div {
+.client-row + .client-row {
+  margin-top: 14px;
+}
+
+.client-track {
   width: max-content;
-  height: 98px;
   display: flex;
-  align-items: center;
-  animation: marquee 30s linear infinite;
+  animation: marquee 72s linear infinite;
 }
 
-.client-marquee span {
-  padding-inline: 44px;
-  color: rgba(255, 255, 255, 0.72);
-  font-size: clamp(22px, 2.5vw, 36px);
-  font-weight: 620;
-  letter-spacing: -0.035em;
+.client-row:nth-child(2) .client-track {
+  animation-duration: 78s;
+  animation-direction: reverse;
+}
+
+.client-row:hover .client-track {
+  animation-play-state: paused;
+}
+
+.client-sequence {
+  display: flex;
+  gap: 14px;
+  padding-right: 14px;
+}
+
+.client-logo-card {
+  position: relative;
+  width: 188px;
+  height: 132px;
+  padding: 12px;
+  display: grid;
+  grid-template-rows: 82px auto;
+  gap: 9px;
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.045);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(14px);
+  transition:
+    transform 320ms cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 320ms ease,
+    background 320ms ease;
+}
+
+.client-logo-card:hover {
+  z-index: 2;
+  transform: translateY(-5px) scale(1.018);
+  border-color: rgba(84, 242, 204, 0.5);
+  background: rgba(255, 255, 255, 0.085);
+}
+
+.client-logo-frame {
+  width: 100%;
+  height: 82px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 13px;
+  background: #fbfaf7;
+}
+
+.client-logo-frame img {
+  width: auto;
+  height: auto;
+  max-width: 142px;
+  max-height: 58px;
+  object-fit: contain;
+}
+
+.client-logo-card span {
+  align-self: center;
+  overflow: hidden;
+  color: rgba(255, 255, 255, 0.66);
+  font-size: 9px;
+  font-weight: 560;
+  line-height: 1.15;
+  letter-spacing: 0.015em;
+  text-align: center;
+  text-overflow: ellipsis;
   white-space: nowrap;
-}
-
-.client-marquee span::after {
-  content: "✦";
-  margin-left: 88px;
-  color: var(--mint);
-  font-size: 8px;
-  vertical-align: middle;
 }
 
 .team {
@@ -1861,6 +1948,37 @@ footer > span:last-child {
 
   .client-marquee {
     margin-top: 50px;
+  }
+
+  .client-work {
+    padding: 100px 0 88px;
+  }
+
+  .client-row {
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      #000 3%,
+      #000 97%,
+      transparent
+    );
+  }
+
+  .client-logo-card {
+    width: 154px;
+    height: 112px;
+    grid-template-rows: 66px auto;
+    border-radius: 17px;
+  }
+
+  .client-logo-frame {
+    height: 66px;
+    border-radius: 11px;
+  }
+
+  .client-logo-frame img {
+    max-width: 118px;
+    max-height: 45px;
   }
 
   .team-grid {

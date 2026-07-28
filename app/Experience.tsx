@@ -57,8 +57,9 @@ const content = {
       ["36M", "Views for a sales-conversion video", "Y.O.U · Thailand"],
       ["1,000+", "Creator resources", "Beauty · fashion · lifestyle · more"],
     ],
-    workEyebrow: "Selected client work",
-    workNote: "Direct client experience across beauty, fashion, technology and consumer brands.",
+    workEyebrow: "Direct client experience",
+    workNote:
+      "A growing portfolio of direct client engagements across beauty, fashion, technology, food and consumer commerce.",
     teamEyebrow: "Leadership",
     teamTitle: "Operators around one table.",
     teamBody:
@@ -140,8 +141,9 @@ const content = {
       ["36M", "ยอดชมวิดีโอเพื่อยอดขาย", "Y.O.U · ประเทศไทย"],
       ["1,000+", "เครือข่ายครีเอเตอร์", "ความงาม · แฟชั่น · ไลฟ์สไตล์ · อื่น ๆ"],
     ],
-    workEyebrow: "ผลงานลูกค้าที่คัดสรร",
-    workNote: "ประสบการณ์ตรงกับลูกค้าในกลุ่มความงาม แฟชั่น เทคโนโลยี และสินค้าอุปโภคบริโภค",
+    workEyebrow: "ประสบการณ์ลูกค้าโดยตรง",
+    workNote:
+      "ผลงานจากการทำงานโดยตรงกับลูกค้าในกลุ่มความงาม แฟชั่น เทคโนโลยี อาหาร และสินค้าอุปโภคบริโภค",
     teamEyebrow: "ทีมผู้บริหาร",
     teamTitle: "ผู้ลงมือทำจริงในทีมเดียวกัน",
     teamBody:
@@ -218,8 +220,8 @@ const content = {
       ["36M", "销售转化视频播放量", "Y.O.U · 泰国"],
       ["1,000+", "达人资源", "美妆 · 时尚 · 生活方式 · 更多"],
     ],
-    workEyebrow: "部分客户项目",
-    workNote: "在美妆、时尚、科技及消费品行业拥有直接客户服务经验。",
+    workEyebrow: "直接客户经验",
+    workNote: "覆盖美妆、时尚、科技、餐饮与消费电商的直接客户合作经验。",
     teamEyebrow: "管理团队",
     teamTitle: "四位实战者，同坐一张桌。",
     teamBody: "四位联合创始人覆盖公司经营、战略、合作关系、技术与效果增长。",
@@ -249,15 +251,48 @@ const content = {
 } as const;
 
 const clients = [
-  "ESTÉE LAUDER",
-  "vivo",
-  "KIEHL'S",
-  "Y.O.U",
-  "SKINTIFIC",
-  "MAKUKU",
-  "BARENBLISS",
-  "LANCÔME",
-];
+  { name: "Estée Lauder", logo: "/clients/estee-lauder.jpeg" },
+  { name: "Kiehl’s", logo: "/clients/kiehls.jpeg" },
+  { name: "Eve Lom", logo: "/clients/eve-lom.jpeg" },
+  { name: "Y.O.U", logo: "/clients/you.png" },
+  { name: "by.t", logo: "/clients/byt.png" },
+  { name: "O.TWO.O", logo: "/clients/otwoo.png" },
+  { name: "Dazzle Me", logo: "/clients/dazzle-me.png" },
+  { name: "SKINTIFIC", logo: "/clients/skintific.png" },
+  { name: "SOMETHINC", logo: "/clients/somethinc.png" },
+  { name: "GrabMart", logo: "/clients/grabmart.png" },
+  { name: "Lavojoy", logo: "/clients/lavojoy.png" },
+  { name: "SK-II", logo: "/clients/skii.png" },
+  { name: "SEYVEN", logo: "/clients/seyven.png" },
+  { name: "La Mer", logo: "/clients/la-mer.png" },
+  { name: "Lancôme", logo: "/clients/lancome.jpeg" },
+  { name: "Studio Tropik", logo: "/clients/studio-tropik.png" },
+  { name: "Salsa", logo: "/clients/salsa.png" },
+  { name: "L’Oréal Paris", logo: "/clients/loreal-paris.png" },
+  { name: "Clé de Peau Beauté", logo: "/clients/cle-de-peau.jpeg" },
+  { name: "NPURE", logo: "/clients/npure.png" },
+  { name: "Scarlett", logo: "/clients/scarlett.png" },
+  { name: "BROS Fried Chicken", logo: "/clients/bros-fried-chicken.png" },
+  { name: "MAKUKU", logo: "/clients/makuku.png" },
+  { name: "Barenbliss", logo: "/clients/barenbliss.png" },
+  { name: "vivo", logo: "/clients/vivo.png" },
+  { name: "TeraBox", logo: "/clients/terabox.png" },
+  { name: "Made To Clothes", logo: "/clients/made-to-clothes.jpg" },
+  { name: "ลูกสาวคุณนาย", logo: "/clients/luksao-khunnai.png" },
+  { name: "PRIMAYA", logo: "/clients/primaya.jpg" },
+  { name: "YG", logo: "/clients/yg.jpg" },
+  { name: "OMOM", logo: "/clients/omom.jpg" },
+  { name: "BASICS BY SITA", logo: "/clients/basics-by-sita.jpg" },
+  { name: "mauv", logo: "/clients/mauv.jpg" },
+  { name: "The Karaked", logo: "/clients/the-karaked.jpg" },
+  { name: "Kloset Dress Secret", logo: "/clients/kloset.jpg" },
+  { name: "Bloom Boom", logo: "/clients/bloom-boom.jpg" },
+  { name: "Mogwany Closet", logo: "/clients/mogwany-closet.jpg" },
+  { name: "Wanna Accessories by Wheang", logo: "/clients/wanna-accessories.jpg" },
+  { name: "ORZENIC", logo: "/clients/orzenic.png" },
+] as const;
+
+const clientRows = [clients.slice(0, 20), clients.slice(20)];
 
 const platforms = [
   "TikTok Shop",
@@ -592,12 +627,29 @@ export function Experience() {
           <p className="eyebrow" data-reveal>{t.workEyebrow}</p>
           <p data-reveal>{t.workNote}</p>
         </div>
-        <div className="client-marquee" aria-label="Selected clients">
-          <div>
-            {[...clients, ...clients].map((client, index) => (
-              <span key={`${client}-${index}`}>{client}</span>
-            ))}
-          </div>
+        <div className="client-marquee" aria-label={t.workEyebrow}>
+          {clientRows.map((row, rowIndex) => (
+            <div className="client-row" key={`client-row-${rowIndex}`}>
+              <div className="client-track">
+                {[0, 1].map((copy) => (
+                  <div
+                    className="client-sequence"
+                    aria-hidden={copy === 1}
+                    key={`client-copy-${copy}`}
+                  >
+                    {row.map((client) => (
+                      <article className="client-logo-card" key={`${client.name}-${copy}`}>
+                        <div className="client-logo-frame">
+                          <img src={client.logo} alt="" loading="lazy" />
+                        </div>
+                        <span>{client.name}</span>
+                      </article>
+                    ))}
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
