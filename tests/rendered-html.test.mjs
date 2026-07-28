@@ -31,11 +31,14 @@ test("server-renders the Prompt Rich experience and direct-client wall", async (
   const html = await response.text();
   assert.match(html, /<title>Prompt Rich — Thailand Brand, Commerce &amp; Growth<\/title>/i);
   assert.match(html, /From attention/);
+  assert.match(html, /A clear path from diagnosis to scale/);
   assert.match(html, /Direct client experience/);
   assert.match(html, /Estée Lauder/);
   assert.match(html, /BASICS BY SITA/);
   assert.match(html, /ลูกสาวคุณนาย/);
   assert.match(html, /\/clients\/orzenic\.png/);
+  assert.doesNotMatch(html, /\bMCN\b|\bTAP\b|Affiliate/);
+  assert.doesNotMatch(html, /Kannika Chutrakul|Cameron Wang|Rachapol Kamhomgul|Nuttamol Traiupok/);
   assert.doesNotMatch(html, /Your site is taking shape|Building your site/);
 });
 

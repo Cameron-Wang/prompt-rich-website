@@ -6,7 +6,7 @@ type Language = "en" | "th" | "zh";
 
 const content = {
   en: {
-    nav: ["Services", "Proof", "Team"],
+    nav: ["Services", "Method", "Proof"],
     contact: "Book a consultation",
     heroEyebrow: "Thailand · Brand · Commerce · Growth",
     heroTitleA: "From attention",
@@ -16,15 +16,15 @@ const content = {
     explore: "Explore our work",
     proof: "See the numbers",
     heroNotes: ["Built in Thailand", "Thai · 中文 · English", "Operator-led"],
-    audienceEyebrow: "For the next version of your business",
-    audienceTitle: "Local judgment. Commercial discipline.",
+    audienceEyebrow: "Where growth gets stuck",
+    audienceTitle: "Good products still lose momentum.",
     audienceBody:
-      "For Thai brands ready to scale, offline businesses moving online, and international teams entering Thailand.",
+      "We step in when strategy, content, commerce and execution stop working as one connected system.",
     audiences: [
-      "Thai brands & sellers",
-      "Offline-to-online transformation",
-      "Brands building digital demand",
-      "China-to-Thailand market entry",
+      "Sales plateau despite more activity",
+      "Ad spend grows faster than profitable revenue",
+      "Content, LIVE and store teams work in silos",
+      "Local execution is missing or inconsistent",
     ],
     serviceEyebrow: "What we do",
     serviceTitle: "Five capabilities. One commercial system.",
@@ -32,7 +32,7 @@ const content = {
       ["Brand & marketing agency", "Positioning, identity, campaigns and integrated market execution."],
       ["TikTok Shop operations", "Store, content, LIVE, service and commercial rhythm—managed end to end."],
       ["Performance media", "Paid growth designed around attributable revenue, not surface-level reach."],
-      ["MCN · KOL · Affiliate", "Creator strategy, selection, content and scalable affiliate activation."],
+      ["KOL & creator marketing", "Creator strategy, selection, content collaborations and campaign coordination."],
       ["Thailand market entry", "Research, localisation, route-to-market and operating support."],
     ],
     caseEyebrow: "Operator proof · GMG",
@@ -53,27 +53,27 @@ const content = {
     proofEyebrow: "More than one success story",
     proofTitle: "Experience across brands, creators and commerce.",
     proofCards: [
-      ["THB 10.05M", "MissyClassy monthly GMV", "TikTok Shop · Nov 2023"],
+      ["THB 10M+", "Verified monthly GMV", "MissyClassy · single TikTok Shop"],
       ["36M", "Views for a sales-conversion video", "Y.O.U · Thailand"],
       ["1,000+", "Creator resources", "Beauty · fashion · lifestyle · more"],
     ],
     workEyebrow: "Direct client experience",
     workNote:
       "A growing portfolio of direct client engagements across beauty, fashion, technology, food and consumer commerce.",
-    teamEyebrow: "Leadership",
-    teamTitle: "Operators around one table.",
-    teamBody:
-      "Four founders connect company leadership, strategy, partnerships, technology and performance.",
-    team: [
-      ["Kannika Chutrakul", "Nika", "CEO & Co-Founder", "Overall strategy, operations and client delivery."],
-      ["Cameron Wang", "Cameron", "Strategy & Business Development", "Market opportunity, growth direction and new business."],
-      ["Rachapol Kamhomgul", "Pae", "Technology & Performance", "IT, software systems and performance advertising."],
-      ["Nuttamol Traiupok", "Naris", "Partnerships & People Operations", "External relations, partner development and team operations."],
+    methodEyebrow: "How we work",
+    methodTitle: "A clear path from diagnosis to scale.",
+    methodBody:
+      "Every engagement moves through measurable decisions, coordinated execution and a repeatable learning loop.",
+    methodSteps: [
+      ["01", "Discover", "Business goals, constraints, economics and current operating data."],
+      ["02", "Design", "Strategy, channel priorities, KPI architecture and an execution roadmap."],
+      ["03", "Operate", "Store, content, LIVE and paid media run together on one commercial cadence."],
+      ["04", "Optimise & scale", "Performance data becomes the next decision—not just another report."],
     ],
     platformEyebrow: "Omnichannel operating experience",
     platformTitle: "We work where commerce happens.",
     platformBody:
-      "These are channels our team has operated—not claims of platform endorsement. TikTok roles are held through the SHIZEN ACADEMY account under SHIZEN ELITE.",
+      "These are channels our team has operated. They demonstrate hands-on experience, not platform endorsement.",
     media: "Client projects and selected team members have received media coverage.",
     closeEyebrow: "Built in Thailand. Fluent in growth.",
     closeTitleA: "Ready for your",
@@ -90,7 +90,7 @@ const content = {
     legal: "PROMRIT INTERTRADING CO., LTD.",
   },
   th: {
-    nav: ["บริการ", "ผลงาน", "ทีมงาน"],
+    nav: ["บริการ", "วิธีการทำงาน", "ผลงาน"],
     contact: "นัดหมายปรึกษา",
     heroEyebrow: "ประเทศไทย · แบรนด์ · คอมเมิร์ซ · การเติบโต",
     heroTitleA: "เปลี่ยนความสนใจ",
@@ -100,15 +100,15 @@ const content = {
     explore: "ดูผลงานของเรา",
     proof: "ดูผลลัพธ์",
     heroNotes: ["สร้างและดำเนินงานในประเทศไทย", "ไทย · 中文 · English", "บริหารโดยผู้ลงมือทำจริง"],
-    audienceEyebrow: "สำหรับธุรกิจในบทต่อไป",
-    audienceTitle: "เข้าใจตลาดจริง เติบโตอย่างมีวินัย",
+    audienceEyebrow: "จุดที่การเติบโตมักติดขัด",
+    audienceTitle: "สินค้าที่ดีก็ยังเสียโมเมนตัมได้",
     audienceBody:
-      "สำหรับแบรนด์ไทยที่ต้องการขยาย ธุรกิจออฟไลน์ที่กำลังเข้าสู่ออนไลน์ และทีมต่างประเทศที่ต้องการเข้าตลาดไทย",
+      "เราเข้ามาเมื่อกลยุทธ์ คอนเทนต์ คอมเมิร์ซ และการลงมือทำยังไม่เชื่อมเป็นระบบเดียวกัน",
     audiences: [
-      "แบรนด์และผู้ขายในไทย",
-      "เปลี่ยนจากออฟไลน์สู่ออนไลน์",
-      "สร้างความต้องการบนดิจิทัล",
-      "เข้าสู่ตลาดไทยจากประเทศจีน",
+      "ยอดขายหยุดโต แม้กิจกรรมจะเพิ่มขึ้น",
+      "ค่าโฆษณาโตเร็วกว่ารายได้ที่ทำกำไร",
+      "คอนเทนต์ LIVE และร้านค้าทำงานแยกกัน",
+      "การดำเนินงานในตลาดไทยยังไม่ต่อเนื่อง",
     ],
     serviceEyebrow: "บริการของเรา",
     serviceTitle: "5 ความสามารถ เชื่อมเป็นระบบการเติบโตเดียว",
@@ -116,7 +116,7 @@ const content = {
       ["Brand & Marketing Agency", "วางตำแหน่งแบรนด์ อัตลักษณ์ แคมเปญ และการตลาดแบบบูรณาการ"],
       ["TikTok Shop Operations", "ดูแลร้านค้า คอนเทนต์ LIVE บริการ และจังหวะการขายแบบครบวงจร"],
       ["Performance Media", "วางระบบโฆษณาที่มุ่งรายได้ซึ่งตรวจสอบและวัดผลได้"],
-      ["MCN · KOL · Affiliate", "กลยุทธ์ครีเอเตอร์ การคัดเลือก คอนเทนต์ และการขยาย Affiliate"],
+      ["KOL & Creator Marketing", "วางกลยุทธ์ครีเอเตอร์ คัดเลือก ประสานงานคอนเทนต์ และบริหารแคมเปญ"],
       ["Thailand Market Entry", "วิจัยตลาด โลคัลไลซ์ ช่องทางเข้าสู่ตลาด และการสนับสนุนการดำเนินงาน"],
     ],
     caseEyebrow: "ผลงานจากการลงมือทำ · GMG",
@@ -137,27 +137,27 @@ const content = {
     proofEyebrow: "มากกว่าหนึ่งเรื่องราวความสำเร็จ",
     proofTitle: "ประสบการณ์ครอบคลุมแบรนด์ ครีเอเตอร์ และคอมเมิร์ซ",
     proofCards: [
-      ["10.05M บาท", "GMV รายเดือนของ MissyClassy", "TikTok Shop · พ.ย. 2023"],
+      ["10M+ บาท", "GMV รายเดือนที่มีหลักฐานยืนยัน", "MissyClassy · TikTok Shop ร้านเดียว"],
       ["36M", "ยอดชมวิดีโอเพื่อยอดขาย", "Y.O.U · ประเทศไทย"],
       ["1,000+", "เครือข่ายครีเอเตอร์", "ความงาม · แฟชั่น · ไลฟ์สไตล์ · อื่น ๆ"],
     ],
     workEyebrow: "ประสบการณ์ลูกค้าโดยตรง",
     workNote:
       "ผลงานจากการทำงานโดยตรงกับลูกค้าในกลุ่มความงาม แฟชั่น เทคโนโลยี อาหาร และสินค้าอุปโภคบริโภค",
-    teamEyebrow: "ทีมผู้บริหาร",
-    teamTitle: "ผู้ลงมือทำจริงในทีมเดียวกัน",
-    teamBody:
-      "ผู้ร่วมก่อตั้ง 4 คน เชื่อมการบริหาร กลยุทธ์ ความสัมพันธ์ เทคโนโลยี และ Performance Marketing",
-    team: [
-      ["Kannika Chutrakul", "Nika", "CEO & Co-Founder", "ดูแลกลยุทธ์ การดำเนินงาน และการส่งมอบงานให้ลูกค้า"],
-      ["Cameron Wang", "Cameron", "Strategy & Business Development", "โอกาสทางตลาด ทิศทางการเติบโต และธุรกิจใหม่"],
-      ["Rachapol Kamhomgul", "Pae", "Technology & Performance", "ไอที ระบบซอฟต์แวร์ และโฆษณาแบบมุ่งผลลัพธ์"],
-      ["Nuttamol Traiupok", "Naris", "Partnerships & People Operations", "ความสัมพันธ์ภายนอก การพัฒนาพันธมิตร และการบริหารทีม"],
+    methodEyebrow: "วิธีการทำงาน",
+    methodTitle: "เส้นทางที่ชัดเจน จากการวิเคราะห์สู่การขยายผล",
+    methodBody:
+      "ทุกโปรเจกต์ขับเคลื่อนด้วยการตัดสินใจที่วัดผลได้ การทำงานร่วมกัน และวงจรเรียนรู้ที่ทำซ้ำได้",
+    methodSteps: [
+      ["01", "ค้นหาโจทย์", "เป้าหมาย ข้อจำกัด เศรษฐศาสตร์ธุรกิจ และข้อมูลการดำเนินงานปัจจุบัน"],
+      ["02", "ออกแบบ", "กลยุทธ์ ลำดับความสำคัญของช่องทาง โครงสร้าง KPI และแผนปฏิบัติการ"],
+      ["03", "ลงมือทำ", "ร้านค้า คอนเทนต์ LIVE และสื่อโฆษณาทำงานบนจังหวะการขายเดียวกัน"],
+      ["04", "ปรับและขยาย", "เปลี่ยนข้อมูลผลลัพธ์ให้เป็นการตัดสินใจครั้งถัดไป ไม่ใช่แค่รายงาน"],
     ],
     platformEyebrow: "ประสบการณ์ดำเนินงานแบบ Omnichannel",
     platformTitle: "เราทำงานในทุกพื้นที่ที่การค้าเกิดขึ้น",
     platformBody:
-      "แพลตฟอร์มเหล่านี้คือช่องทางที่ทีมเคยดำเนินงาน ไม่ใช่การอ้างการรับรองจากแพลตฟอร์ม ส่วนบทบาทบน TikTok ดำเนินงานผ่านบัญชี SHIZEN ACADEMY ภายใต้ SHIZEN ELITE",
+      "แพลตฟอร์มเหล่านี้คือช่องทางที่ทีมเคยดำเนินงานจริง แสดงถึงประสบการณ์ในการปฏิบัติงาน ไม่ใช่การอ้างการรับรองจากแพลตฟอร์ม",
     media: "โครงการของลูกค้าและสมาชิกทีมบางส่วนเคยได้รับการนำเสนอผ่านสื่อ",
     closeEyebrow: "สร้างในประเทศไทย เข้าใจการเติบโต",
     closeTitleA: "พร้อมสำหรับ",
@@ -174,7 +174,7 @@ const content = {
     legal: "พร้อมริช อินเตอร์เทรดดิ้ง",
   },
   zh: {
-    nav: ["服务", "案例", "团队"],
+    nav: ["服务", "方法", "案例"],
     contact: "预约咨询",
     heroEyebrow: "泰国 · 品牌 · 电商 · 增长",
     heroTitleA: "从获得关注",
@@ -184,18 +184,18 @@ const content = {
     explore: "了解我们的能力",
     proof: "查看真实数据",
     heroNotes: ["扎根泰国", "泰语 · 中文 · English", "实战团队主导"],
-    audienceEyebrow: "为业务的下一个阶段",
-    audienceTitle: "本地判断，商业纪律。",
+    audienceEyebrow: "增长通常卡在哪里",
+    audienceTitle: "好产品也会失去增长动能。",
     audienceBody:
-      "服务希望扩大规模的泰国品牌、准备线上转型的线下商家，以及进入泰国市场的国际团队。",
-    audiences: ["泰国本地品牌与卖家", "线下业务线上转型", "提升数字声量与需求", "中国品牌进入泰国"],
+      "当战略、内容、电商和执行无法作为一个系统协同工作时，我们介入解决问题。",
+    audiences: ["工作越来越多，销售却停止增长", "广告投入增长快于盈利收入", "内容、直播和店铺团队各自为战", "本地执行能力缺失或不稳定"],
     serviceEyebrow: "我们的服务",
     serviceTitle: "五项能力，一套商业增长系统。",
     services: [
       ["品牌与营销代理", "从定位、视觉识别到整合营销活动与市场执行。"],
       ["TikTok Shop运营", "店铺、内容、直播、客服及销售节奏的一体化管理。"],
       ["效果广告投放", "围绕可归因收入设计投放，而不是只追求表面曝光。"],
-      ["MCN · KOL · Affiliate", "达人策略、筛选、内容执行与可规模化的联盟增长。"],
+      ["KOL与达人营销", "达人策略、筛选、内容合作及营销活动管理。"],
       ["泰国市场进入咨询", "市场研究、本地化、渠道策略及实际运营支持。"],
     ],
     caseEyebrow: "实战案例 · GMG",
@@ -216,25 +216,25 @@ const content = {
     proofEyebrow: "不止一个成功案例",
     proofTitle: "覆盖品牌、达人与电商的真实经验。",
     proofCards: [
-      ["THB 10.05M", "MissyClassy单月GMV", "TikTok Shop · 2023年11月"],
+      ["THB 10M+", "有后台证据的单月GMV", "MissyClassy · 单个TikTok Shop店铺"],
       ["36M", "销售转化视频播放量", "Y.O.U · 泰国"],
       ["1,000+", "达人资源", "美妆 · 时尚 · 生活方式 · 更多"],
     ],
     workEyebrow: "直接客户经验",
     workNote: "覆盖美妆、时尚、科技、餐饮与消费电商的直接客户合作经验。",
-    teamEyebrow: "管理团队",
-    teamTitle: "四位实战者，同坐一张桌。",
-    teamBody: "四位联合创始人覆盖公司经营、战略、合作关系、技术与效果增长。",
-    team: [
-      ["Kannika Chutrakul", "Nika", "CEO兼联合创始人", "全面负责公司战略、经营与客户交付。"],
-      ["Cameron Wang", "Cameron", "战略与业务发展", "负责市场机会、增长方向与新业务发展。"],
-      ["Rachapol Kamhomgul", "Pae", "技术与增长", "负责IT、软件系统及效果广告投放。"],
-      ["Nuttamol Traiupok", "Naris", "合作关系与团队运营", "负责对外关系、合作建联与内部团队运营。"],
+    methodEyebrow: "我们的工作方法",
+    methodTitle: "从诊断问题到规模增长的清晰路径。",
+    methodBody: "每个项目都围绕可衡量的决策、协同执行和可重复的学习循环推进。",
+    methodSteps: [
+      ["01", "发现问题", "明确业务目标、限制条件、商业模型及当前运营数据。"],
+      ["02", "设计方案", "制定战略、渠道优先级、KPI体系和执行路线图。"],
+      ["03", "协同执行", "让店铺、内容、直播和付费投放按照统一商业节奏运转。"],
+      ["04", "优化与放大", "让每一轮绩效数据成为下一次决策，而不只是另一份报告。"],
     ],
     platformEyebrow: "全渠道运营经验",
     platformTitle: "在电商发生的地方工作。",
     platformBody:
-      "这些是团队实际运营过的渠道，并非平台背书。TikTok相关角色通过SHIZEN ELITE主体下的SHIZEN ACADEMY账户持有。",
+      "这些是团队实际运营过的渠道，代表真实执行经验，并不表示相关平台对Prompt Rich提供官方背书。",
     media: "团队执行的客户项目及部分团队成员曾获得媒体报道。",
     closeEyebrow: "扎根泰国，精通增长。",
     closeTitleA: "准备开启下一段",
@@ -418,8 +418,8 @@ export function Experience() {
         </a>
         <div className="nav-links">
           <a href="#services">{t.nav[0]}</a>
-          <a href="#proof">{t.nav[1]}</a>
-          <a href="#team">{t.nav[2]}</a>
+          <a href="#method">{t.nav[1]}</a>
+          <a href="#proof">{t.nav[2]}</a>
         </div>
         <div className="nav-actions">
           <div className="language-switcher" aria-label="Language">
@@ -662,28 +662,24 @@ export function Experience() {
         </div>
       </section>
 
-      <section id="team" className="team light-section">
+      <section id="method" className="method light-section">
         <div className="section-shell">
-          <div className="team-heading">
+          <div className="method-heading">
             <div>
-              <p className="eyebrow dark-eyebrow" data-reveal>{t.teamEyebrow}</p>
-              <h2 data-reveal>{t.teamTitle}</h2>
+              <p className="eyebrow dark-eyebrow" data-reveal>{t.methodEyebrow}</p>
+              <h2 data-reveal>{t.methodTitle}</h2>
             </div>
-            <p data-reveal>{t.teamBody}</p>
+            <p data-reveal>{t.methodBody}</p>
           </div>
-          <div className="team-grid">
-            {t.team.map(([name, shortName, role, bio], index) => (
-              <article data-reveal key={name}>
-                <div className={`team-portrait portrait-${index + 1}`}>
-                  <span>{shortName.slice(0, 1)}</span>
-                  <i>PORTRAIT / 0{index + 1}</i>
-                </div>
-                <div className="team-card-copy">
-                  <span>0{index + 1}</span>
+          <div className="method-grid">
+            {t.methodSteps.map(([step, name, detail]) => (
+              <article data-reveal key={step}>
+                <span>{step}</span>
+                <div>
                   <h3>{name}</h3>
-                  <strong>{role}</strong>
-                  <p>{bio}</p>
+                  <p>{detail}</p>
                 </div>
+                <i aria-hidden="true">↗</i>
               </article>
             ))}
           </div>

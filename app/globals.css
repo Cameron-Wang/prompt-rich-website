@@ -557,7 +557,7 @@ a {
 .audience h2,
 .services h2,
 .proof-heading h2,
-.team-heading h2,
+.method-heading h2,
 .platform-layout h2 {
   margin: 0;
   font-size: clamp(52px, 6.3vw, 88px);
@@ -1228,18 +1228,35 @@ a {
   white-space: nowrap;
 }
 
-.team {
+.method {
+  position: relative;
   padding: clamp(140px, 16vw, 220px) 0;
+  overflow: hidden;
 }
 
-.team-heading {
+.method::before {
+  content: "METHOD";
+  position: absolute;
+  right: -0.04em;
+  top: 0.2em;
+  color: rgba(5, 5, 7, 0.028);
+  font-size: clamp(150px, 23vw, 360px);
+  font-weight: 680;
+  line-height: 1;
+  letter-spacing: -0.08em;
+  pointer-events: none;
+}
+
+.method-heading {
+  position: relative;
+  z-index: 1;
   display: grid;
   grid-template-columns: 1.15fr 0.85fr;
   gap: 90px;
   align-items: end;
 }
 
-.team-heading > p {
+.method-heading > p {
   max-width: 520px;
   margin: 0 0 7px;
   color: #66666b;
@@ -1248,108 +1265,86 @@ a {
   letter-spacing: -0.02em;
 }
 
-.team-grid {
+.method-grid {
+  position: relative;
+  z-index: 1;
   margin-top: 100px;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid var(--line);
+  border-left: 1px solid var(--line);
 }
 
-.team-grid article {
-  min-height: 580px;
-  overflow: hidden;
-  border: 1px solid var(--line);
-  border-radius: 28px;
-  background: rgba(255, 255, 255, 0.3);
-}
-
-.team-portrait {
+.method-grid article {
   position: relative;
-  height: 330px;
-  display: grid;
-  place-items: center;
-  overflow: hidden;
-  isolation: isolate;
+  min-height: 360px;
+  padding: 28px 24px 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.22);
+  transition:
+    background 360ms ease,
+    transform 360ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.team-portrait::before,
-.team-portrait::after {
+.method-grid article::before {
   content: "";
   position: absolute;
-  border-radius: 50%;
+  inset: 0 0 auto;
+  height: 2px;
+  background: linear-gradient(90deg, var(--purple), var(--mint));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 360ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.team-portrait::before {
-  width: 260px;
-  aspect-ratio: 1;
-  background: rgba(255, 255, 255, 0.28);
-  filter: blur(2px);
-}
-
-.team-portrait::after {
-  width: 360px;
-  aspect-ratio: 1;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  animation: spin 22s linear infinite;
-}
-
-.team-portrait > span {
-  position: relative;
+.method-grid article:hover {
   z-index: 2;
-  color: rgba(7, 7, 9, 0.8);
-  font-size: 120px;
-  font-weight: 620;
-  line-height: 1;
-  letter-spacing: -0.1em;
+  background: rgba(255, 255, 255, 0.68);
+  transform: translateY(-8px);
 }
 
-.team-portrait > i {
-  position: absolute;
-  z-index: 2;
-  left: 20px;
-  bottom: 17px;
-  color: rgba(5, 5, 7, 0.55);
-  font-family: monospace;
-  font-size: 7px;
-  font-style: normal;
-  letter-spacing: 0.1em;
+.method-grid article:hover::before {
+  transform: scaleX(1);
 }
 
-.portrait-1 { background: linear-gradient(140deg, #ffd6ca, #ff876f); }
-.portrait-2 { background: linear-gradient(140deg, #c8ffed, #56d7b8); }
-.portrait-3 { background: linear-gradient(140deg, #d8d2ff, #8879ff); }
-.portrait-4 { background: linear-gradient(140deg, #cde8ff, #64b7ff); }
-
-.team-card-copy {
-  min-height: 250px;
-  padding: 24px;
-}
-
-.team-card-copy > span {
+.method-grid article > span {
   color: var(--purple-dark);
   font-family: monospace;
-  font-size: 8px;
+  font-size: 9px;
+  letter-spacing: 0.08em;
 }
 
-.team-card-copy h3 {
-  margin: 22px 0 7px;
-  font-size: 28px;
+.method-grid h3 {
+  margin: 0;
+  font-size: 27px;
   font-weight: 590;
   letter-spacing: -0.04em;
 }
 
-.team-card-copy strong {
-  color: var(--purple-dark);
-  font-size: 11px;
-  font-weight: 620;
+.method-grid p {
+  margin: 19px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.62;
 }
 
-.team-card-copy p {
-  max-width: 440px;
-  margin: 25px 0 0;
-  color: var(--muted);
-  font-size: 13px;
-  line-height: 1.55;
+.method-grid article > i {
+  position: absolute;
+  right: 22px;
+  top: 24px;
+  color: rgba(5, 5, 7, 0.25);
+  font-size: 15px;
+  font-style: normal;
+  transition: color 240ms ease, transform 240ms ease;
+}
+
+.method-grid article:hover > i {
+  color: var(--purple-dark);
+  transform: translate(3px, -3px);
 }
 
 .platforms {
@@ -1703,10 +1698,14 @@ footer > span:last-child {
   }
 
   .audience-layout,
-  .team-heading,
+  .method-heading,
   .platform-layout {
     grid-template-columns: 1fr;
     gap: 50px;
+  }
+
+  .method-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .audience-side > p {
@@ -1819,7 +1818,7 @@ footer > span:last-child {
   .audience,
   .services,
   .proof-grid,
-  .team,
+  .method,
   .platforms {
     padding: 110px 0;
   }
@@ -1827,7 +1826,7 @@ footer > span:last-child {
   .audience h2,
   .services h2,
   .proof-heading h2,
-  .team-heading h2,
+  .method-heading h2,
   .platform-layout h2 {
     font-size: clamp(45px, 13vw, 62px);
   }
@@ -1981,17 +1980,13 @@ footer > span:last-child {
     max-height: 45px;
   }
 
-  .team-grid {
+  .method-grid {
     margin-top: 65px;
     grid-template-columns: 1fr;
   }
 
-  .team-grid article {
-    min-height: 0;
-  }
-
-  .team-portrait {
-    height: 300px;
+  .method-grid article {
+    min-height: 280px;
   }
 
   .media-strip {
