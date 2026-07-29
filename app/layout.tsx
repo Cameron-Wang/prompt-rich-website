@@ -1,10 +1,14 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import "./polish.css";
 
 export const metadata: Metadata = {
   title: "Prompt Rich",
   description:
     "Thailand-based brand, commerce and growth partner for ambitious businesses.",
+  icons: {
+    icon: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({

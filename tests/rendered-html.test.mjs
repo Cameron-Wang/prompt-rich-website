@@ -32,6 +32,8 @@ test("server-renders the Prompt Rich experience and direct-client wall", async (
   assert.match(html, /<title>Prompt Rich — Thailand Brand, Commerce &amp; Growth<\/title>/i);
   assert.match(html, /From attention/);
   assert.match(html, /The market is moving/);
+  assert.match(html, /THAILAND GROWTH TERRAIN/);
+  assert.match(html, /Local demand moves through connected markets/);
   assert.match(html, /฿1\.8T/);
   assert.match(html, /Offline → online/);
   assert.match(html, /Five growth levers/);
@@ -66,11 +68,14 @@ test("server-renders the Prompt Rich experience and direct-client wall", async (
   assert.ok(externalCasePosition < evidencePosition);
 });
 
-test("ships all approved client assets and responsive logo-wall styling", async () => {
-  const [experience, css, clientFiles] = await Promise.all([
+test("ships approved assets, spatial motion systems and responsive styling", async () => {
+  const [experience, visualSystems, css, clientFiles, backgroundFiles, thailandGeoJson] = await Promise.all([
     readFile(new URL("../app/Experience.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../app/VisualSystems.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/globals.css", import.meta.url), "utf8"),
     readdir(new URL("../public/clients/", import.meta.url)),
+    readdir(new URL("../public/backgrounds/", import.meta.url)),
+    readFile(new URL("../public/data/thailand-adm1.geojson", import.meta.url), "utf8"),
   ]);
 
   assert.equal(clientFiles.length, 39);
@@ -82,11 +87,26 @@ test("ships all approved client assets and responsive logo-wall styling", async 
   assert.match(experience, /className="service-system"/);
   assert.match(experience, /className="section-shell client-case-grid"/);
   assert.match(experience, /setScalePreview/);
+  assert.match(experience, /<GrowthField variant="hero"/);
+  assert.match(experience, /<ThailandGrowthMap language=\{language\}/);
+  assert.match(experience, /<GrowthField variant="closing"/);
   assert.match(experience, /key=\{`proof-\$\{index\}`\}/);
   assert.match(experience, /\}, \[language\]\);/);
+  assert.match(visualSystems, /fetch\("\/data\/thailand-adm1\.geojson"\)/);
+  assert.match(visualSystems, /requestAnimationFrame/);
+  assert.deepEqual(backgroundFiles.sort(), [
+    "bangkok-commerce-v1.jpg",
+    "commerce-studio-v1.jpg",
+    "thai-materials-v1.jpg",
+  ]);
   assert.match(css, /\.client-logo-frame img/);
+  assert.match(css, /bangkok-commerce-v1\.jpg/);
+  assert.match(css, /commerce-studio-v1\.jpg/);
+  assert.match(css, /thai-materials-v1\.jpg/);
   assert.match(css, /animation-direction:\s*reverse/);
   assert.match(css, /@media \(prefers-reduced-motion: reduce\)/);
+  assert.equal(JSON.parse(thailandGeoJson).features.length, 77);
 
   await assert.rejects(access(new URL("../app/_sites-preview/", import.meta.url)));
+  await access(new URL("../public/og-v3.png", import.meta.url));
 });

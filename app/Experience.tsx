@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { GrowthField, ThailandGrowthMap } from "./VisualSystems";
 
 type Language = "en" | "th" | "zh";
 
@@ -706,11 +707,12 @@ export function Experience() {
           </div>
         </div>
 
-        <div className="growth-stage" aria-hidden="true">
-          <div className="growth-ring ring-one"><i /></div>
-          <div className="growth-ring ring-two"><i /></div>
-          <div className="growth-ring ring-three"><i /></div>
+        <div className="growth-stage growth-stage-advanced" aria-hidden="true">
+          <GrowthField variant="hero" />
+          <div className="field-depth depth-one" />
+          <div className="field-depth depth-two" />
           <div className="growth-core">
+            <i className="core-surface" />
             <span>Prompt</span>
             <span>Rich</span>
             <small>CONNECTED GROWTH</small>
@@ -742,35 +744,41 @@ export function Experience() {
       </section>
 
       <section id="audience" className="market-shift light-section">
-        <div className="section-shell market-heading">
-          <p className="eyebrow dark-eyebrow" data-reveal>{t.marketEyebrow}</p>
-          <h2 data-reveal>
-            <span>{t.marketTitleA}</span>
-            <span>{t.marketTitleB}</span>
-          </h2>
-          <p data-reveal>{t.marketBody}</p>
+        <div className="market-visual-band">
+          <div className="section-shell market-heading">
+            <p className="eyebrow" data-reveal>{t.marketEyebrow}</p>
+            <h2 data-reveal>
+              <span>{t.marketTitleA}</span>
+              <span>{t.marketTitleB}</span>
+            </h2>
+            <p data-reveal>{t.marketBody}</p>
+          </div>
+          <div className="section-shell market-stats">
+            {t.marketStats.map(([metric, label, note], index) => (
+              <article data-reveal key={metric}>
+                <span>0{index + 1}</span>
+                <strong>{metric}</strong>
+                <h3>{label}</h3>
+                <p>{note}</p>
+              </article>
+            ))}
+          </div>
+          <p className="section-shell market-source">
+            {t.marketSource}
+            {" · "}
+            <a
+              href="https://th.mofcom.gov.cn/jmdt/art/2026/art_f014270c2db54d6b883ee9f96b0bafdc.html"
+              target="_blank"
+              rel="noreferrer"
+            >
+              SOURCE ↗
+            </a>
+          </p>
         </div>
-        <div className="section-shell market-stats">
-          {t.marketStats.map(([metric, label, note], index) => (
-            <article data-reveal key={metric}>
-              <span>0{index + 1}</span>
-              <strong>{metric}</strong>
-              <h3>{label}</h3>
-              <p>{note}</p>
-            </article>
-          ))}
+
+        <div className="section-shell">
+          <ThailandGrowthMap language={language} />
         </div>
-        <p className="section-shell market-source">
-          {t.marketSource}
-          {" · "}
-          <a
-            href="https://th.mofcom.gov.cn/jmdt/art/2026/art_f014270c2db54d6b883ee9f96b0bafdc.html"
-            target="_blank"
-            rel="noreferrer"
-          >
-            SOURCE ↗
-          </a>
-        </p>
 
         <div className="section-shell diagnostic-panel">
           <div className="diagnostic-heading">
@@ -1141,8 +1149,10 @@ export function Experience() {
       </section>
 
       <section id="contact" className="closing dark-section">
-        <div className="closing-sphere" aria-hidden="true">
-          <div>
+        <div className="closing-visual" aria-hidden="true">
+          <GrowthField variant="closing" />
+          <div className="closing-core">
+            <i className="core-surface" />
             <span>Prompt</span>
             <span>Rich</span>
             <small>THAILAND</small>
