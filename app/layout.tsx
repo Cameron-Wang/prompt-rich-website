@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description:
     "Thailand-based brand, commerce and growth partner for ambitious businesses.",
   icons: {
-    icon: `${process.env.NEXT_PUBLIC_SITE_BASE ?? ""}/favicon.svg`,
+    icon: "https://cameron-wang.github.io/prompt-rich-website/favicon.svg",
   },
 };
 
