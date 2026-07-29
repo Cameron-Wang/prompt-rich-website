@@ -1,42 +1,35 @@
 import type { Metadata } from "next";
-import { headers } from "next/headers";
 import { Experience } from "./Experience";
 
-export async function generateMetadata(): Promise<Metadata> {
-  const requestHeaders = await headers();
-  const host = requestHeaders.get("host") ?? "localhost";
-  const protocol =
-    requestHeaders.get("x-forwarded-proto") ??
-    (host.startsWith("localhost") ? "http" : "https");
-  const origin = `${protocol}://${host}`;
-  const title = "Prompt Rich — Thailand Brand, Commerce & Growth";
-  const description =
-    "Brand strategy, TikTok Shop operations, performance media, creators and Thailand market-entry support.";
+const title = "Prompt Rich — Thailand Brand, Commerce & Growth";
+const description =
+  "Brand strategy, TikTok Shop operations, performance media, creators and Thailand market-entry support.";
+const publicOrigin = "https://cameron-wang.github.io/prompt-rich-website";
 
-  return {
+export const metadata: Metadata = {
+  title,
+  description,
+  openGraph: {
     title,
     description,
-    openGraph: {
-      title,
-      description,
-      type: "website",
-      images: [
-        {
-          url: `${origin}/og-v3.png`,
-          width: 1200,
-          height: 630,
-          alt: "Prompt Rich — From attention to revenue.",
-        },
-      ],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title,
-      description,
-      images: [`${origin}/og-v3.png`],
-    },
-  };
-}
+    type: "website",
+    url: publicOrigin,
+    images: [
+      {
+        url: `${publicOrigin}/og-v3.png`,
+        width: 1200,
+        height: 630,
+        alt: "Prompt Rich — From attention to revenue.",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+    images: [`${publicOrigin}/og-v3.png`],
+  },
+};
 
 export default function Home() {
   return <Experience />;

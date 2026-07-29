@@ -19,7 +19,7 @@
   background:
     linear-gradient(90deg, rgba(247, 244, 237, 0.9), rgba(247, 244, 237, 0.64) 58%, rgba(247, 244, 237, 0.78)),
     linear-gradient(180deg, rgba(247, 244, 237, 0.1), #f4f1ea 88%),
-    url("/backgrounds/thai-materials-v1.jpg") center top / cover no-repeat;
+    url("../public/backgrounds/thai-materials-v1.jpg") center top / cover no-repeat;
 }
 
 .method {

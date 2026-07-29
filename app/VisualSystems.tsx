@@ -27,6 +27,9 @@ type GeoCollection = {
   features: GeoFeature[];
 };
 
+const publicAsset = (path: string) =>
+  `${process.env.NEXT_PUBLIC_SITE_BASE ?? ""}${path}`;
+
 const mapCopy = {
   en: {
     eyebrow: "THAILAND GROWTH TERRAIN",
@@ -427,7 +430,7 @@ export function ThailandGrowthMap({ language }: { language: MapLanguage }) {
     canvas.addEventListener("pointerleave", pointerLeave);
     resize();
 
-    fetch("/data/thailand-adm1.geojson")
+    fetch(publicAsset("/data/thailand-adm1.geojson"))
       .then((response) => response.json())
       .then((data: GeoCollection) => {
         collection = data;

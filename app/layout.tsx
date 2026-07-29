@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description:
     "Thailand-based brand, commerce and growth partner for ambitious businesses.",
   icons: {
-    icon: "/favicon.svg",
+    icon: `${process.env.NEXT_PUBLIC_SITE_BASE ?? ""}/favicon.svg`,
   },
 };
 

@@ -5,6 +5,9 @@ import { GrowthField, ThailandGrowthMap } from "./VisualSystems";
 
 type Language = "en" | "th" | "zh";
 
+const publicAsset = (path: string) =>
+  `${process.env.NEXT_PUBLIC_SITE_BASE ?? ""}${path}`;
+
 const content = {
   en: {
     nav: ["Solutions", "System", "Proof"],
@@ -428,7 +431,7 @@ const content = {
 const externalCases = [
   {
     name: "Y.O.U",
-    logo: "/clients/you.png",
+    logo: publicAsset("/clients/you.png"),
     metricA: "36M",
     metricB: "ROI 3.5",
     role: {
@@ -439,7 +442,7 @@ const externalCases = [
   },
   {
     name: "MAKUKU",
-    logo: "/clients/makuku.png",
+    logo: publicAsset("/clients/makuku.png"),
     metricA: "6.62M",
     metricB: "ROI 2.7",
     role: {
@@ -450,7 +453,7 @@ const externalCases = [
   },
   {
     name: "Barenbliss",
-    logo: "/clients/barenbliss.png",
+    logo: publicAsset("/clients/barenbliss.png"),
     metricA: "4.18M",
     metricB: "ROI 2.8",
     role: {
@@ -461,7 +464,7 @@ const externalCases = [
   },
   {
     name: "vivo",
-    logo: "/clients/vivo.png",
+    logo: publicAsset("/clients/vivo.png"),
     metricA: "5.2M",
     metricB: "32.1% COMPLETE",
     role: {
@@ -472,7 +475,7 @@ const externalCases = [
   },
   {
     name: "Kiehl’s",
-    logo: "/clients/kiehls.jpeg",
+    logo: publicAsset("/clients/kiehls.jpeg"),
     metricA: "480K",
     metricB: "29.3% COMPLETE",
     role: {
@@ -484,45 +487,45 @@ const externalCases = [
 ] as const;
 
 const clients = [
-  { name: "Estée Lauder", logo: "/clients/estee-lauder.jpeg" },
-  { name: "Kiehl’s", logo: "/clients/kiehls.jpeg" },
-  { name: "Eve Lom", logo: "/clients/eve-lom.jpeg" },
-  { name: "Y.O.U", logo: "/clients/you.png" },
-  { name: "by.t", logo: "/clients/byt.png" },
-  { name: "O.TWO.O", logo: "/clients/otwoo.png" },
-  { name: "Dazzle Me", logo: "/clients/dazzle-me.png" },
-  { name: "SKINTIFIC", logo: "/clients/skintific.png" },
-  { name: "SOMETHINC", logo: "/clients/somethinc.png" },
-  { name: "GrabMart", logo: "/clients/grabmart.png" },
-  { name: "Lavojoy", logo: "/clients/lavojoy.png" },
-  { name: "SK-II", logo: "/clients/skii.png" },
-  { name: "SEYVEN", logo: "/clients/seyven.png" },
-  { name: "La Mer", logo: "/clients/la-mer.png" },
-  { name: "Lancôme", logo: "/clients/lancome.jpeg" },
-  { name: "Studio Tropik", logo: "/clients/studio-tropik.png" },
-  { name: "Salsa", logo: "/clients/salsa.png" },
-  { name: "L’Oréal Paris", logo: "/clients/loreal-paris.png" },
-  { name: "Clé de Peau Beauté", logo: "/clients/cle-de-peau.jpeg" },
-  { name: "NPURE", logo: "/clients/npure.png" },
-  { name: "Scarlett", logo: "/clients/scarlett.png" },
-  { name: "BROS Fried Chicken", logo: "/clients/bros-fried-chicken.png" },
-  { name: "MAKUKU", logo: "/clients/makuku.png" },
-  { name: "Barenbliss", logo: "/clients/barenbliss.png" },
-  { name: "vivo", logo: "/clients/vivo.png" },
-  { name: "TeraBox", logo: "/clients/terabox.png" },
-  { name: "Made To Clothes", logo: "/clients/made-to-clothes.jpg" },
-  { name: "ลูกสาวคุณนาย", logo: "/clients/luksao-khunnai.png" },
-  { name: "PRIMAYA", logo: "/clients/primaya.jpg" },
-  { name: "YG", logo: "/clients/yg.jpg" },
-  { name: "OMOM", logo: "/clients/omom.jpg" },
-  { name: "BASICS BY SITA", logo: "/clients/basics-by-sita.jpg" },
-  { name: "mauv", logo: "/clients/mauv.jpg" },
-  { name: "The Karaked", logo: "/clients/the-karaked.jpg" },
-  { name: "Kloset Dress Secret", logo: "/clients/kloset.jpg" },
-  { name: "Bloom Boom", logo: "/clients/bloom-boom.jpg" },
-  { name: "Mogwany Closet", logo: "/clients/mogwany-closet.jpg" },
-  { name: "Wanna Accessories by Wheang", logo: "/clients/wanna-accessories.jpg" },
-  { name: "ORZENIC", logo: "/clients/orzenic.png" },
+  { name: "Estée Lauder", logo: publicAsset("/clients/estee-lauder.jpeg") },
+  { name: "Kiehl’s", logo: publicAsset("/clients/kiehls.jpeg") },
+  { name: "Eve Lom", logo: publicAsset("/clients/eve-lom.jpeg") },
+  { name: "Y.O.U", logo: publicAsset("/clients/you.png") },
+  { name: "by.t", logo: publicAsset("/clients/byt.png") },
+  { name: "O.TWO.O", logo: publicAsset("/clients/otwoo.png") },
+  { name: "Dazzle Me", logo: publicAsset("/clients/dazzle-me.png") },
+  { name: "SKINTIFIC", logo: publicAsset("/clients/skintific.png") },
+  { name: "SOMETHINC", logo: publicAsset("/clients/somethinc.png") },
+  { name: "GrabMart", logo: publicAsset("/clients/grabmart.png") },
+  { name: "Lavojoy", logo: publicAsset("/clients/lavojoy.png") },
+  { name: "SK-II", logo: publicAsset("/clients/skii.png") },
+  { name: "SEYVEN", logo: publicAsset("/clients/seyven.png") },
+  { name: "La Mer", logo: publicAsset("/clients/la-mer.png") },
+  { name: "Lancôme", logo: publicAsset("/clients/lancome.jpeg") },
+  { name: "Studio Tropik", logo: publicAsset("/clients/studio-tropik.png") },
+  { name: "Salsa", logo: publicAsset("/clients/salsa.png") },
+  { name: "L’Oréal Paris", logo: publicAsset("/clients/loreal-paris.png") },
+  { name: "Clé de Peau Beauté", logo: publicAsset("/clients/cle-de-peau.jpeg") },
+  { name: "NPURE", logo: publicAsset("/clients/npure.png") },
+  { name: "Scarlett", logo: publicAsset("/clients/scarlett.png") },
+  { name: "BROS Fried Chicken", logo: publicAsset("/clients/bros-fried-chicken.png") },
+  { name: "MAKUKU", logo: publicAsset("/clients/makuku.png") },
+  { name: "Barenbliss", logo: publicAsset("/clients/barenbliss.png") },
+  { name: "vivo", logo: publicAsset("/clients/vivo.png") },
+  { name: "TeraBox", logo: publicAsset("/clients/terabox.png") },
+  { name: "Made To Clothes", logo: publicAsset("/clients/made-to-clothes.jpg") },
+  { name: "ลูกสาวคุณนาย", logo: publicAsset("/clients/luksao-khunnai.png") },
+  { name: "PRIMAYA", logo: publicAsset("/clients/primaya.jpg") },
+  { name: "YG", logo: publicAsset("/clients/yg.jpg") },
+  { name: "OMOM", logo: publicAsset("/clients/omom.jpg") },
+  { name: "BASICS BY SITA", logo: publicAsset("/clients/basics-by-sita.jpg") },
+  { name: "mauv", logo: publicAsset("/clients/mauv.jpg") },
+  { name: "The Karaked", logo: publicAsset("/clients/the-karaked.jpg") },
+  { name: "Kloset Dress Secret", logo: publicAsset("/clients/kloset.jpg") },
+  { name: "Bloom Boom", logo: publicAsset("/clients/bloom-boom.jpg") },
+  { name: "Mogwany Closet", logo: publicAsset("/clients/mogwany-closet.jpg") },
+  { name: "Wanna Accessories by Wheang", logo: publicAsset("/clients/wanna-accessories.jpg") },
+  { name: "ORZENIC", logo: publicAsset("/clients/orzenic.png") },
 ] as const;
 
 const clientRows = [clients.slice(0, 20), clients.slice(20)];

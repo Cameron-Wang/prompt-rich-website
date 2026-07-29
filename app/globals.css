@@ -2389,7 +2389,7 @@ footer > span:last-child {
   background:
     linear-gradient(180deg, rgba(5, 7, 12, 0.2), rgba(5, 7, 12, 0.78) 76%, #0c1018 100%),
     linear-gradient(90deg, rgba(5, 7, 12, 0.64), transparent 68%),
-    url("/backgrounds/bangkok-commerce-v1.jpg") center top / cover no-repeat;
+    url("../public/backgrounds/bangkok-commerce-v1.jpg") center top / cover no-repeat;
 }
 
 .market-visual-band::after {
@@ -2606,7 +2606,7 @@ footer > span:last-child {
   background:
     linear-gradient(90deg, rgba(7, 8, 11, 0.78), rgba(7, 8, 11, 0.32) 48%, rgba(7, 8, 11, 0.75)),
     linear-gradient(180deg, rgba(7, 8, 11, 0.15), #090a0d 92%),
-    url("/backgrounds/commerce-studio-v1.jpg") center / cover no-repeat;
+    url("../public/backgrounds/commerce-studio-v1.jpg") center / cover no-repeat;
 }
 
 .services::after {
@@ -2644,7 +2644,7 @@ footer > span:last-child {
   background:
     linear-gradient(90deg, rgba(247, 244, 237, 0.9), rgba(247, 244, 237, 0.64) 58%, rgba(247, 244, 237, 0.78)),
     linear-gradient(180deg, rgba(247, 244, 237, 0.1), #f4f1ea 88%),
-    url("/backgrounds/thai-materials-v1.jpg") center top / cover no-repeat;
+    url("../public/backgrounds/thai-materials-v1.jpg") center top / cover no-repeat;
 }
 
 .client-case-grid article {

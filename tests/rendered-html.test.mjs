@@ -92,7 +92,7 @@ test("ships approved assets, spatial motion systems and responsive styling", asy
   assert.match(experience, /<GrowthField variant="closing"/);
   assert.match(experience, /key=\{`proof-\$\{index\}`\}/);
   assert.match(experience, /\}, \[language\]\);/);
-  assert.match(visualSystems, /fetch\("\/data\/thailand-adm1\.geojson"\)/);
+  assert.match(visualSystems, /fetch\(publicAsset\("\/data\/thailand-adm1\.geojson"\)\)/);
   assert.match(visualSystems, /requestAnimationFrame/);
   assert.deepEqual(backgroundFiles.sort(), [
     "bangkok-commerce-v1.jpg",
