@@ -5,10 +5,6 @@ export const metadata: Metadata = {
   title: "Prompt Rich",
   description:
     "Thailand-based brand, commerce and growth partner for ambitious businesses.",
-  icons: {
-    icon: "/favicon.svg",
-    shortcut: "/favicon.svg",
-  },
 };
 
 export default function RootLayout({

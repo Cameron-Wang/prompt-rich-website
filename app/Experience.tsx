@@ -6,91 +6,167 @@ type Language = "en" | "th" | "zh";
 
 const content = {
   en: {
-    nav: ["Services", "Method", "Proof"],
-    contact: "Book a consultation",
+    nav: ["Solutions", "System", "Proof"],
+    reviewBadge: "REVIEW BUILD · SELECT ROLES & SCALE SCENARIOS PENDING VERIFICATION",
+    contact: "Book a growth diagnostic",
     heroEyebrow: "Thailand · Brand · Commerce · Growth",
     heroTitleA: "From attention",
     heroTitleB: "to revenue.",
     heroIntro:
-      "Prompt Rich unites brand strategy, TikTok commerce, creators, content and paid media—so growth works as one connected system.",
-    explore: "Explore our work",
-    proof: "See the numbers",
+      "Prompt Rich connects brand strategy, TikTok commerce, creators, content and paid media into one accountable growth system.",
+    explore: "Explore the system",
+    proof: "See the evidence",
     heroNotes: ["Built in Thailand", "Thai · 中文 · English", "Operator-led"],
-    audienceEyebrow: "Where growth gets stuck",
-    audienceTitle: "Good products still lose momentum.",
-    audienceBody:
-      "We step in when strategy, content, commerce and execution stop working as one connected system.",
-    audiences: [
-      "Sales plateau despite more activity",
-      "Ad spend grows faster than profitable revenue",
-      "Content, LIVE and store teams work in silos",
-      "Local execution is missing or inconsistent",
+    marketEyebrow: "Thailand commerce · 2030",
+    marketTitleA: "The market is moving.",
+    marketTitleB: "Standing still is a decision.",
+    marketBody:
+      "Thailand’s e-commerce market is projected to nearly double from THB 970B in 2025 to THB 1.8T by 2030. The opportunity is expanding—and so is the cost of fragmented execution.",
+    marketStats: [
+      ["฿1.8T", "Projected Thailand e-commerce value", "2030 forecast"],
+      [">14%", "Expected compound annual growth", "2025–2030"],
+      ["1.3B", "Video-commerce transactions", "Thailand · regional #2"],
     ],
-    serviceEyebrow: "What we do",
-    serviceTitle: "Five capabilities. One commercial system.",
+    marketSource: "2026 forecast: CUBE Insights / Lazada Thailand. Video-commerce data: Google, Temasek & Bain, 2025.",
+    diagnosticEyebrow: "Growth readiness diagnostic",
+    diagnosticTitle: "Which signal feels closest to your business?",
+    diagnosticBody:
+      "Select one path. A good diagnosis begins with the business you have—not the channel somebody wants to sell you.",
+    diagnosticOptions: [
+      ["Offline → online", "Most revenue is still offline, with no repeatable online sales engine."],
+      ["Online growth", "Activity rises, but sales or profit no longer keep pace."],
+      ["Brand demand", "Reach grows, but content, creators and media do not convert into demand."],
+      ["Thailand entry", "The opportunity is clear, but localisation and local execution remain fragmented."],
+    ],
+    diagnosticSelect: "SELECT A SIGNAL",
+    diagnosticResult: "The market opportunity may not be the bottleneck. The operating system may be.",
+    serviceEyebrow: "What we operate",
+    serviceTitle: "Five growth levers. One accountable system.",
+    serviceLabels: ["Scope", "Client receives", "Measured by"],
     services: [
-      ["Brand & marketing agency", "Positioning, identity, campaigns and integrated market execution."],
-      ["TikTok Shop operations", "Store, content, LIVE, service and commercial rhythm—managed end to end."],
-      ["Performance media", "Paid growth designed around attributable revenue, not surface-level reach."],
-      ["KOL & creator marketing", "Creator strategy, selection, content collaborations and campaign coordination."],
-      ["Thailand market entry", "Research, localisation, route-to-market and operating support."],
+      {
+        name: "Brand & marketing agency",
+        outcome: "Turn positioning into market demand and coordinated commercial action.",
+        scope: ["Brand positioning", "Message architecture", "Campaign strategy", "Content systems", "Integrated market execution"],
+        output: "Brand platform, campaign direction, content system and 90-day commercial calendar.",
+        metrics: "Consideration, qualified reach, content response, traffic and revenue contribution.",
+      },
+      {
+        name: "TikTok Shop operations",
+        outcome: "Build a repeatable store, content and LIVE engine—not a collection of disconnected tasks.",
+        scope: ["Store and assortment", "Product-page conversion", "LIVE operations", "Content cadence", "Customer-service coordination"],
+        output: "Operating calendar, promotion plan, weekly business review and performance dashboard.",
+        metrics: "GMV, conversion, orders, customers, AOV, content mix and repeat purchase.",
+      },
+      {
+        name: "Performance media",
+        outcome: "Allocate budget around attributable commercial results and faster creative learning.",
+        scope: ["Account structure", "Tracking and attribution", "Budget allocation", "Creative testing", "GMV Max optimisation"],
+        output: "Media plan, testing backlog, budget rules and performance reporting.",
+        metrics: "Attributed revenue, ROI, cost per order, conversion and marginal efficiency.",
+      },
+      {
+        name: "KOL & creator marketing",
+        outcome: "Match the right creators, message and commercial objective for the Thailand market.",
+        scope: ["Creator strategy", "Selection and screening", "Brief development", "Content coordination", "Campaign reporting"],
+        output: "Creator shortlist, briefs, content plan, coordination and results review.",
+        metrics: "Qualified views, completion, engagement, traffic, attributed sales and content reuse.",
+      },
+      {
+        name: "Thailand market entry",
+        outcome: "Translate market opportunity into a local route to revenue.",
+        scope: ["Category research", "Competitive mapping", "Positioning and pricing", "Channel strategy", "Launch support"],
+        output: "Market-entry thesis, channel priorities, localisation plan and launch roadmap.",
+        metrics: "Speed to launch, channel readiness, early demand, conversion and commercial learning.",
+      },
+    ],
+    methodEyebrow: "Prompt Rich commerce growth system",
+    methodTitle: "Diagnosis is only useful when it changes execution.",
+    methodBody:
+      "Explore each stage to see the inputs, tools and decisions behind the work.",
+    methodLabels: ["Methods & tools", "Decision output", "Framework"],
+    methodSteps: [
+      {
+        step: "01",
+        name: "Discover",
+        detail: "Find the constraint that matters before adding more activity.",
+        tools: ["Business goals and constraints", "Channel P&L and unit economics", "Growth-driver tree", "Consumer journey and operating-data audit"],
+        output: "Prioritised growth diagnosis and a measurable baseline.",
+        framework: "Consumer Decision Journey · driver-tree analysis · unit economics",
+      },
+      {
+        step: "02",
+        name: "Design",
+        detail: "Make clear choices about where to play, how to win and what to measure.",
+        tools: ["Where-to-play choices", "Channel architecture", "KPI tree", "90-day roadmap and resource plan"],
+        output: "Growth strategy, channel priorities and execution roadmap.",
+        framework: "Playing to Win strategy choices · KPI architecture",
+      },
+      {
+        step: "03",
+        name: "Operate",
+        detail: "Run store, content, LIVE and media on one commercial cadence.",
+        tools: ["Commercial calendar", "Roles and decision rights", "Weekly business review", "Dashboard and issue escalation"],
+        output: "Coordinated execution with visible ownership and pace.",
+        framework: "Prompt Rich integrated operating cadence",
+      },
+      {
+        step: "04",
+        name: "Optimise & scale",
+        detail: "Turn performance data into the next decision and a repeatable advantage.",
+        tools: ["Experiment backlog", "Creative and offer testing", "Budget reallocation", "SOP and learning-loop updates"],
+        output: "Validated improvements, standardised learning and the next scale decision.",
+        framework: "PDCA · test–measure–learn",
+      },
     ],
     caseEyebrow: "Operator proof · GMG",
     caseTitleA: "Build a brand.",
-    caseTitleB: "Not a dependency.",
+    caseTitleB: "Then build the engine.",
     caseBody:
-      "GMG began with an early creator partnership. Prompt Rich is now building the independent brand system behind its next stage of growth—from identity and LIVE to content, store operations and paid media.",
+      "GMG evolved from an early creator-led launch into an independent brand system operated by Prompt Rich across brand, content, LIVE, store and paid growth.",
     caseWindow: "30 days ending 26 Jul 2026",
-    metricLabels: ["GMV", "vs previous 30 days", "orders", "customers"],
+    caseChapters: [
+      ["01", "Brand shift", "From personality-led launch to an independent brand asset."],
+      ["02", "Commercial engine", "LIVE, content, store and media connected to one operating rhythm."],
+      ["03", "Measurable growth", "Revenue, reach, visitors, orders and customers move together."],
+      ["04", "Paid scale", "Spend is tied to attributed revenue and operating economics."],
+    ],
+    caseSceneLabels: ["Connected operating system", "30-day conversion flow", "Commercial result", "Paid growth loop"],
+    actualLabel: "ACTUAL RESULT",
+    scaleLabel: "2× SCALE SCENARIO",
+    scaleNote: "ILLUSTRATIVE VISUAL MODEL · NOT AN ACTUAL GMG RESULT",
     liveLabel: "GMV from LIVE",
     adWindow: "GMV Max · 19–26 Jul 2026",
     adLabels: ["Ad spend", "Attributed revenue", "ROI", "Cost / SKU order"],
-    systemSteps: [
-      ["01", "Brand system", "A clearer identity built to outlast any single personality."],
-      ["02", "LIVE engine", "87.2% of GMV powered by a managed live-commerce operation."],
-      ["03", "Paid growth", "THB 162.9K spend generated THB 2.68M attributed revenue."],
-    ],
-    proofEyebrow: "More than one success story",
-    proofTitle: "Experience across brands, creators and commerce.",
+    clientEyebrow: "External client evidence",
+    clientTitle: "One operating standard. Five different briefs.",
+    clientBody:
+      "Selected Thailand projects demonstrate repeatability across conversion, reach and product education. Draft role descriptions remain subject to final verification.",
+    roleDraft: "ROLE DRAFT · PENDING VERIFICATION",
+    bridgeA: "Built through operator experience.",
+    bridgeB: "Proven across client campaigns.",
+    proofEyebrow: "Evidence at a glance",
+    proofTitle: "Scale is a pattern, not a single number.",
     proofCards: [
-      ["THB 10M+", "Verified monthly GMV", "MissyClassy · single TikTok Shop"],
+      ["52M+", "Documented campaign views", "Five selected Thailand client projects"],
       ["39", "Direct client brands", "Beauty · fashion · technology · consumer"],
       ["1,000+", "Creator resources", "Beauty · fashion · lifestyle · more"],
+      ["17.7M", "Product impressions", "GMG · documented 30-day period"],
+      ["15.7K", "Orders", "GMG · documented 30-day period"],
+      ["16.45", "Advertising ROI", "GMG Max · documented 8-day period"],
+      ["฿1B+", "Modelled five-year GMV capacity", "Illustrative: Jul daily average × 31 × 12 × 5 years × 2 brands"],
     ],
     workEyebrow: "Direct client experience",
     workNote:
       "A growing portfolio of direct client engagements across beauty, fashion, technology, food and consumer commerce.",
-    methodEyebrow: "How we work",
-    methodTitle: "A clear path from diagnosis to scale.",
-    methodBody:
-      "Every engagement moves through measurable decisions, coordinated execution and a repeatable learning loop.",
-    methodSteps: [
-      ["01", "Discover", "Business goals, constraints, economics and current operating data."],
-      ["02", "Design", "Strategy, channel priorities, KPI architecture and an execution roadmap."],
-      ["03", "Operate", "Store, content, LIVE and paid media run together on one commercial cadence."],
-      ["04", "Optimise & scale", "Performance data becomes the next decision—not just another report."],
-    ],
-    externalEyebrow: "External client proof · Y.O.U",
-    externalTitleA: "One conversion asset.",
-    externalTitleB: "36 million views.",
-    externalBody:
-      "A sales-conversion video executed for the Thailand market reached 36M views—evidence that local creative execution can turn product communication into scale.",
-    externalSteps: [
-      ["01", "Challenge", "Build product communication that could scale in the Thailand market."],
-      ["02", "Intervention", "A sales-conversion video created and executed for the local audience."],
-      ["03", "Result", "36M views on one sales-conversion video."],
-    ],
-    externalResult: "VIEWS",
-    midCtaText: "Facing a similar growth challenge?",
-    midCtaAction: "Book a growth consultation",
     platformEyebrow: "Omnichannel operating experience",
     platformTitle: "We work where commerce happens.",
     platformBody:
       "These are channels our team has operated. They demonstrate hands-on experience, not platform endorsement.",
     media: "Client projects and selected team members have received media coverage.",
     closeEyebrow: "Built in Thailand. Fluent in growth.",
-    closeTitleA: "Ready for your",
-    closeTitleB: "next commercial chapter?",
+    closeTitleA: "What could this system",
+    closeTitleB: "unlock for your brand?",
     closeBody:
       "Bring us the market question. We will connect strategy, creators, commerce and execution.",
     line: "Add LINE",
@@ -103,181 +179,240 @@ const content = {
     legal: "PROMRIT INTERTRADING CO., LTD.",
   },
   th: {
-    nav: ["บริการ", "วิธีการทำงาน", "ผลงาน"],
-    contact: "นัดหมายปรึกษา",
+    nav: ["โซลูชัน", "ระบบการทำงาน", "ผลงาน"],
+    reviewBadge: "เวอร์ชันตรวจงาน · บทบาทบางส่วนและโมเดลการขยายผลอยู่ระหว่างยืนยัน",
+    contact: "นัดวิเคราะห์การเติบโต",
     heroEyebrow: "ประเทศไทย · แบรนด์ · คอมเมิร์ซ · การเติบโต",
     heroTitleA: "เปลี่ยนความสนใจ",
     heroTitleB: "ให้เป็นรายได้",
     heroIntro:
-      "Prompt Rich เชื่อมกลยุทธ์แบรนด์ TikTok Commerce ครีเอเตอร์ คอนเทนต์ และสื่อโฆษณาให้ทำงานเป็นระบบเดียวกัน",
-    explore: "ดูผลงานของเรา",
-    proof: "ดูผลลัพธ์",
+      "Prompt Rich เชื่อมกลยุทธ์แบรนด์ TikTok Commerce ครีเอเตอร์ คอนเทนต์ และสื่อโฆษณาให้เป็นระบบการเติบโตที่รับผิดชอบผลลัพธ์ร่วมกัน",
+    explore: "ดูระบบการทำงาน",
+    proof: "ดูหลักฐาน",
     heroNotes: ["สร้างและดำเนินงานในประเทศไทย", "ไทย · 中文 · English", "บริหารโดยผู้ลงมือทำจริง"],
-    audienceEyebrow: "จุดที่การเติบโตมักติดขัด",
-    audienceTitle: "สินค้าที่ดีก็ยังเสียโมเมนตัมได้",
-    audienceBody:
-      "เราเข้ามาเมื่อกลยุทธ์ คอนเทนต์ คอมเมิร์ซ และการลงมือทำยังไม่เชื่อมเป็นระบบเดียวกัน",
-    audiences: [
-      "ยอดขายหยุดโต แม้กิจกรรมจะเพิ่มขึ้น",
-      "ค่าโฆษณาโตเร็วกว่ารายได้ที่ทำกำไร",
-      "คอนเทนต์ LIVE และร้านค้าทำงานแยกกัน",
-      "การดำเนินงานในตลาดไทยยังไม่ต่อเนื่อง",
+    marketEyebrow: "Thailand commerce · 2030",
+    marketTitleA: "ตลาดกำลังเคลื่อนตัว",
+    marketTitleB: "การอยู่นิ่งก็เป็นการตัดสินใจ",
+    marketBody:
+      "ตลาดอีคอมเมิร์ซไทยคาดว่าจะเพิ่มขึ้นเกือบ 2 เท่า จาก 970,000 ล้านบาทในปี 2025 เป็น 1.8 ล้านล้านบาทในปี 2030 โอกาสกำลังโต และต้นทุนของการทำงานแบบแยกส่วนก็เพิ่มขึ้นเช่นกัน",
+    marketStats: [
+      ["฿1.8T", "มูลค่าอีคอมเมิร์ซไทยที่คาดการณ์", "ปี 2030"],
+      [">14%", "อัตราเติบโตเฉลี่ยต่อปีที่คาดการณ์", "2025–2030"],
+      ["1.3B", "ธุรกรรมวิดีโอคอมเมิร์ซ", "ไทย · อันดับ 2 ของภูมิภาค"],
     ],
-    serviceEyebrow: "บริการของเรา",
-    serviceTitle: "5 ความสามารถ เชื่อมเป็นระบบการเติบโตเดียว",
+    marketSource: "คาดการณ์ปี 2026: CUBE Insights / Lazada Thailand · ข้อมูลวิดีโอคอมเมิร์ซ: Google, Temasek & Bain, 2025",
+    diagnosticEyebrow: "Growth readiness diagnostic",
+    diagnosticTitle: "สัญญาณใดใกล้เคียงกับธุรกิจของคุณที่สุด?",
+    diagnosticBody:
+      "เลือกหนึ่งเส้นทาง การวิเคราะห์ที่ดีต้องเริ่มจากธุรกิจที่คุณมี ไม่ใช่จากช่องทางที่ใครต้องการขายให้คุณ",
+    diagnosticOptions: [
+      ["Offline → Online", "รายได้ส่วนใหญ่ยังมาจากออฟไลน์ และยังไม่มีระบบขายออนไลน์ที่ทำซ้ำได้"],
+      ["Online Growth", "กิจกรรมเพิ่มขึ้น แต่ยอดขายหรือกำไรไม่เติบโตตาม"],
+      ["Brand Demand", "ยอดเข้าถึงเพิ่ม แต่คอนเทนต์ ครีเอเตอร์ และโฆษณายังไม่สร้างดีมานด์เชิงพาณิชย์"],
+      ["Thailand Entry", "เห็นโอกาสชัดเจน แต่การโลคัลไลซ์ ช่องทาง และการดำเนินงานยังแยกส่วน"],
+    ],
+    diagnosticSelect: "เลือกหนึ่งสัญญาณ",
+    diagnosticResult: "คอขวดอาจไม่ใช่โอกาสของตลาด แต่อาจเป็นระบบการทำงาน",
+    serviceEyebrow: "สิ่งที่เราดำเนินงาน",
+    serviceTitle: "5 กลไกการเติบโต เชื่อมเป็นระบบเดียวที่วัดผลได้",
+    serviceLabels: ["ขอบเขต", "สิ่งที่ลูกค้าได้รับ", "ตัวชี้วัด"],
     services: [
-      ["Brand & Marketing Agency", "วางตำแหน่งแบรนด์ อัตลักษณ์ แคมเปญ และการตลาดแบบบูรณาการ"],
-      ["TikTok Shop Operations", "ดูแลร้านค้า คอนเทนต์ LIVE บริการ และจังหวะการขายแบบครบวงจร"],
-      ["Performance Media", "วางระบบโฆษณาที่มุ่งรายได้ซึ่งตรวจสอบและวัดผลได้"],
-      ["KOL & Creator Marketing", "วางกลยุทธ์ครีเอเตอร์ คัดเลือก ประสานงานคอนเทนต์ และบริหารแคมเปญ"],
-      ["Thailand Market Entry", "วิจัยตลาด โลคัลไลซ์ ช่องทางเข้าสู่ตลาด และการสนับสนุนการดำเนินงาน"],
+      {
+        name: "Brand & Marketing Agency",
+        outcome: "เปลี่ยนตำแหน่งแบรนด์ให้เป็นดีมานด์และการลงมือทำเชิงพาณิชย์",
+        scope: ["วางตำแหน่งแบรนด์", "โครงสร้างข้อความ", "กลยุทธ์แคมเปญ", "ระบบคอนเทนต์", "การดำเนินงานการตลาดแบบบูรณาการ"],
+        output: "Brand platform ทิศทางแคมเปญ ระบบคอนเทนต์ และปฏิทินการค้า 90 วัน",
+        metrics: "Brand consideration, qualified reach, content response, traffic และรายได้ที่เกี่ยวข้อง",
+      },
+      {
+        name: "TikTok Shop Operations",
+        outcome: "สร้างเครื่องยนต์ร้านค้า คอนเทนต์ และ LIVE ที่ทำซ้ำได้",
+        scope: ["ร้านค้าและสินค้า", "การแปลงผลบนหน้าสินค้า", "LIVE operations", "จังหวะคอนเทนต์", "ประสานงานบริการลูกค้า"],
+        output: "ปฏิทินดำเนินงาน แผนโปรโมชัน Weekly Business Review และแดชบอร์ด",
+        metrics: "GMV, conversion, orders, customers, AOV, content mix และ repeat purchase",
+      },
+      {
+        name: "Performance Media",
+        outcome: "จัดสรรงบประมาณตามผลลัพธ์เชิงพาณิชย์ที่ตรวจสอบได้",
+        scope: ["โครงสร้างบัญชี", "Tracking และ attribution", "จัดสรรงบ", "ทดสอบครีเอทีฟ", "ปรับ GMV Max"],
+        output: "แผนสื่อ รายการทดสอบ กติกางบประมาณ และรายงานผล",
+        metrics: "Attributed revenue, ROI, cost per order, conversion และ marginal efficiency",
+      },
+      {
+        name: "KOL & Creator Marketing",
+        outcome: "เชื่อมครีเอเตอร์ ข้อความ และเป้าหมายการขายให้เหมาะกับตลาดไทย",
+        scope: ["กลยุทธ์ครีเอเตอร์", "คัดเลือกและตรวจสอบ", "จัดทำบรีฟ", "ประสานงานคอนเทนต์", "รายงานแคมเปญ"],
+        output: "รายชื่อครีเอเตอร์ บรีฟ แผนคอนเทนต์ การประสานงาน และผลลัพธ์",
+        metrics: "Qualified views, completion, engagement, traffic, attributed sales และ content reuse",
+      },
+      {
+        name: "Thailand Market Entry",
+        outcome: "เปลี่ยนโอกาสของตลาดให้เป็นเส้นทางสู่รายได้ในประเทศไทย",
+        scope: ["วิจัยหมวดหมู่", "วิเคราะห์คู่แข่ง", "ตำแหน่งและราคา", "กลยุทธ์ช่องทาง", "สนับสนุนการเปิดตลาด"],
+        output: "สมมติฐานตลาด ช่องทางหลัก แผนโลคัลไลซ์ และ roadmap การเปิดตัว",
+        metrics: "Speed to launch, channel readiness, early demand, conversion และ commercial learning",
+      },
+    ],
+    methodEyebrow: "Prompt Rich commerce growth system",
+    methodTitle: "การวิเคราะห์มีคุณค่าเมื่อเปลี่ยนวิธีลงมือทำ",
+    methodBody: "เปิดดูแต่ละขั้นเพื่อเห็นข้อมูล เครื่องมือ และการตัดสินใจเบื้องหลังงาน",
+    methodLabels: ["วิธีและเครื่องมือ", "ผลลัพธ์การตัดสินใจ", "กรอบแนวคิด"],
+    methodSteps: [
+      { step: "01", name: "Discover", detail: "หาคอขวดที่สำคัญก่อนเพิ่มกิจกรรม", tools: ["เป้าหมายและข้อจำกัด", "Channel P&L และ unit economics", "Growth-driver tree", "Consumer journey และ data audit"], output: "การวิเคราะห์ปัญหาที่จัดลำดับแล้วและ baseline ที่วัดผลได้", framework: "Consumer Decision Journey · driver tree · unit economics" },
+      { step: "02", name: "Design", detail: "เลือกว่าจะเล่นที่ไหน ชนะอย่างไร และวัดอะไร", tools: ["Where-to-play choices", "Channel architecture", "KPI tree", "Roadmap 90 วันและแผนทรัพยากร"], output: "กลยุทธ์การเติบโต ลำดับช่องทาง และ execution roadmap", framework: "Playing to Win · KPI architecture" },
+      { step: "03", name: "Operate", detail: "บริหารร้าน คอนเทนต์ LIVE และสื่อบนจังหวะเดียวกัน", tools: ["Commercial calendar", "บทบาทและสิทธิ์ตัดสินใจ", "Weekly business review", "Dashboard และ issue escalation"], output: "การดำเนินงานร่วมกันที่มีเจ้าของและความเร็วชัดเจน", framework: "Prompt Rich integrated operating cadence" },
+      { step: "04", name: "Optimise & scale", detail: "เปลี่ยนข้อมูลให้เป็นการตัดสินใจและความได้เปรียบที่ทำซ้ำได้", tools: ["Experiment backlog", "ทดสอบครีเอทีฟและข้อเสนอ", "จัดสรรงบใหม่", "อัปเดต SOP และ learning loop"], output: "การปรับปรุงที่พิสูจน์แล้วและการตัดสินใจขยายผล", framework: "PDCA · test–measure–learn" },
     ],
     caseEyebrow: "ผลงานจากการลงมือทำ · GMG",
-    caseTitleA: "สร้างให้เป็นแบรนด์",
-    caseTitleB: "ไม่ใช่การพึ่งพาบุคคล",
+    caseTitleA: "สร้างแบรนด์",
+    caseTitleB: "แล้วสร้างเครื่องยนต์การเติบโต",
     caseBody:
-      "GMG เริ่มต้นจากความร่วมมือกับครีเอเตอร์ในช่วงแรก ปัจจุบัน Prompt Rich กำลังสร้างระบบแบรนด์ที่เป็นอิสระ ตั้งแต่อัตลักษณ์ LIVE คอนเทนต์ ร้านค้า ไปจนถึงสื่อโฆษณา",
+      "GMG พัฒนาจากการเปิดตัวร่วมกับครีเอเตอร์ สู่ระบบแบรนด์อิสระที่ Prompt Rich ดูแลทั้งแบรนด์ คอนเทนต์ LIVE ร้านค้า และ paid growth",
     caseWindow: "30 วัน สิ้นสุดวันที่ 26 ก.ค. 2026",
-    metricLabels: ["GMV", "เทียบกับ 30 วันก่อนหน้า", "คำสั่งซื้อ", "ลูกค้า"],
+    caseChapters: [
+      ["01", "Brand shift", "จากการเริ่มต้นที่พึ่งพาบุคคล สู่ทรัพย์สินแบรนด์ที่เป็นอิสระ"],
+      ["02", "Commercial engine", "LIVE คอนเทนต์ ร้านค้า และสื่อทำงานในจังหวะเดียวกัน"],
+      ["03", "Measurable growth", "รายได้ การเข้าถึง ผู้ชม คำสั่งซื้อ และลูกค้าเติบโตไปด้วยกัน"],
+      ["04", "Paid scale", "เชื่อมค่าโฆษณากับรายได้และเศรษฐศาสตร์การดำเนินงาน"],
+    ],
+    caseSceneLabels: ["ระบบการทำงานที่เชื่อมกัน", "Conversion flow 30 วัน", "ผลลัพธ์เชิงพาณิชย์", "Paid growth loop"],
+    actualLabel: "ผลลัพธ์จริง",
+    scaleLabel: "โมเดลขยาย 2×",
+    scaleNote: "โมเดลภาพเพื่อการประเมินเท่านั้น · ไม่ใช่ผลลัพธ์จริงของ GMG",
     liveLabel: "GMV จาก LIVE",
     adWindow: "GMV Max · 19–26 ก.ค. 2026",
     adLabels: ["ค่าโฆษณา", "รายได้จากโฆษณา", "ROI", "ต้นทุน / คำสั่งซื้อ SKU"],
-    systemSteps: [
-      ["01", "ระบบแบรนด์", "สร้างอัตลักษณ์ที่แข็งแรงกว่าการพึ่งพาบุคคลใดบุคคลหนึ่ง"],
-      ["02", "เครื่องยนต์ LIVE", "87.2% ของ GMV มาจากระบบไลฟ์คอมเมิร์ซที่บริหารอย่างเป็นระบบ"],
-      ["03", "การเติบโตจากโฆษณา", "ค่าโฆษณา 162.9K บาท สร้างรายได้จากโฆษณา 2.68M บาท"],
-    ],
-    proofEyebrow: "มากกว่าหนึ่งเรื่องราวความสำเร็จ",
-    proofTitle: "ประสบการณ์ครอบคลุมแบรนด์ ครีเอเตอร์ และคอมเมิร์ซ",
+    clientEyebrow: "หลักฐานจากลูกค้าภายนอก",
+    clientTitle: "มาตรฐานการทำงานเดียว บนโจทย์ลูกค้า 5 แบบ",
+    clientBody: "โครงการในไทยแสดงความสามารถที่ทำซ้ำได้ทั้ง conversion, reach และ product education โดยคำอธิบายบทบาทยังรอการยืนยัน",
+    roleDraft: "บทบาทฉบับร่าง · รอยืนยัน",
+    bridgeA: "สร้างจากประสบการณ์ผู้ลงมือทำ",
+    bridgeB: "พิสูจน์ผ่านแคมเปญลูกค้า",
+    proofEyebrow: "หลักฐานโดยสรุป",
+    proofTitle: "Scale คือรูปแบบที่ทำซ้ำได้ ไม่ใช่ตัวเลขเดียว",
     proofCards: [
-      ["10M+ บาท", "GMV รายเดือนที่มีหลักฐานยืนยัน", "MissyClassy · TikTok Shop ร้านเดียว"],
+      ["52M+", "ยอดชมแคมเปญที่มีข้อมูล", "5 โครงการลูกค้าในประเทศไทย"],
       ["39", "แบรนด์ลูกค้าโดยตรง", "ความงาม · แฟชั่น · เทคโนโลยี · สินค้าอุปโภคบริโภค"],
       ["1,000+", "เครือข่ายครีเอเตอร์", "ความงาม · แฟชั่น · ไลฟ์สไตล์ · อื่น ๆ"],
+      ["17.7M", "Product impressions", "GMG · ช่วง 30 วันที่มีหลักฐาน"],
+      ["15.7K", "คำสั่งซื้อ", "GMG · ช่วง 30 วันที่มีหลักฐาน"],
+      ["16.45", "Advertising ROI", "GMG Max · ช่วง 8 วันที่มีหลักฐาน"],
+      ["฿1B+", "ศักยภาพ GMV 5 ปีตามโมเดล", "ตัวอย่าง: ค่าเฉลี่ยรายวันเดือน ก.ค. × 31 × 12 × 5 ปี × 2 แบรนด์"],
     ],
     workEyebrow: "ประสบการณ์ลูกค้าโดยตรง",
-    workNote:
-      "ผลงานจากการทำงานโดยตรงกับลูกค้าในกลุ่มความงาม แฟชั่น เทคโนโลยี อาหาร และสินค้าอุปโภคบริโภค",
-    methodEyebrow: "วิธีการทำงาน",
-    methodTitle: "เส้นทางที่ชัดเจน จากการวิเคราะห์สู่การขยายผล",
-    methodBody:
-      "ทุกโปรเจกต์ขับเคลื่อนด้วยการตัดสินใจที่วัดผลได้ การทำงานร่วมกัน และวงจรเรียนรู้ที่ทำซ้ำได้",
-    methodSteps: [
-      ["01", "ค้นหาโจทย์", "เป้าหมาย ข้อจำกัด เศรษฐศาสตร์ธุรกิจ และข้อมูลการดำเนินงานปัจจุบัน"],
-      ["02", "ออกแบบ", "กลยุทธ์ ลำดับความสำคัญของช่องทาง โครงสร้าง KPI และแผนปฏิบัติการ"],
-      ["03", "ลงมือทำ", "ร้านค้า คอนเทนต์ LIVE และสื่อโฆษณาทำงานบนจังหวะการขายเดียวกัน"],
-      ["04", "ปรับและขยาย", "เปลี่ยนข้อมูลผลลัพธ์ให้เป็นการตัดสินใจครั้งถัดไป ไม่ใช่แค่รายงาน"],
-    ],
-    externalEyebrow: "ผลงานลูกค้าภายนอก · Y.O.U",
-    externalTitleA: "วิดีโอเพื่อการขายหนึ่งชิ้น",
-    externalTitleB: "ยอดชม 36 ล้านครั้ง",
-    externalBody:
-      "วิดีโอเพื่อการขายสำหรับตลาดไทยทำยอดชมได้ 36M ครั้ง สะท้อนความสามารถในการเปลี่ยนการสื่อสารสินค้าให้เป็นการเข้าถึงในวงกว้าง",
-    externalSteps: [
-      ["01", "โจทย์", "สร้างการสื่อสารสินค้าที่สามารถขยายการเข้าถึงในตลาดไทย"],
-      ["02", "การดำเนินงาน", "สร้างและดำเนินงานวิดีโอเพื่อการขายสำหรับผู้ชมในประเทศไทย"],
-      ["03", "ผลลัพธ์", "วิดีโอเพื่อการขายหนึ่งชิ้นทำยอดชม 36M ครั้ง"],
-    ],
-    externalResult: "ยอดชม",
-    midCtaText: "กำลังเจอความท้าทายด้านการเติบโตแบบเดียวกันหรือไม่?",
-    midCtaAction: "นัดหมายวิเคราะห์การเติบโต",
+    workNote: "ผลงานโดยตรงกับลูกค้าในกลุ่มความงาม แฟชั่น เทคโนโลยี อาหาร และสินค้าอุปโภคบริโภค",
     platformEyebrow: "ประสบการณ์ดำเนินงานแบบ Omnichannel",
     platformTitle: "เราทำงานในทุกพื้นที่ที่การค้าเกิดขึ้น",
-    platformBody:
-      "แพลตฟอร์มเหล่านี้คือช่องทางที่ทีมเคยดำเนินงานจริง แสดงถึงประสบการณ์ในการปฏิบัติงาน ไม่ใช่การอ้างการรับรองจากแพลตฟอร์ม",
+    platformBody: "แพลตฟอร์มเหล่านี้คือช่องทางที่ทีมเคยดำเนินงานจริง ไม่ใช่การอ้างการรับรองจากแพลตฟอร์ม",
     media: "โครงการของลูกค้าและสมาชิกทีมบางส่วนเคยได้รับการนำเสนอผ่านสื่อ",
     closeEyebrow: "สร้างในประเทศไทย เข้าใจการเติบโต",
-    closeTitleA: "พร้อมสำหรับ",
-    closeTitleB: "บทต่อไปของธุรกิจหรือยัง?",
-    closeBody:
-      "ส่งคำถามทางการตลาดมาให้เรา แล้วเราจะเชื่อมกลยุทธ์ ครีเอเตอร์ คอมเมิร์ซ และการลงมือทำเข้าด้วยกัน",
+    closeTitleA: "ระบบนี้จะปลดล็อก",
+    closeTitleB: "อะไรให้แบรนด์ของคุณ?",
+    closeBody: "ส่งคำถามทางการตลาดมาให้เรา แล้วเราจะเชื่อมกลยุทธ์ ครีเอเตอร์ คอมเมิร์ซ และการลงมือทำ",
     line: "เพิ่ม LINE",
     proposal: "ขอรับข้อเสนอ",
     placeholder: "ข้อมูลติดต่อเป็นข้อความชั่วคราวสำหรับตรวจงานออกแบบ",
     modalTitle: "เริ่มต้นการสนทนาที่นี่",
-    modalBody:
-      "ช่องทางติดต่อนี้จะเชื่อมต่อก่อนเปิดเว็บไซต์จริง ขณะนี้หน้าต่างนี้ใช้เพื่อแสดงประสบการณ์การนัดหมายในเวอร์ชันสุดท้าย",
+    modalBody: "ช่องทางติดต่อนี้จะเชื่อมต่อก่อนเปิดเว็บไซต์จริง ขณะนี้ใช้เพื่อแสดงประสบการณ์การนัดหมาย",
     modalClose: "ปิด",
     legal: "พร้อมริช อินเตอร์เทรดดิ้ง",
   },
   zh: {
-    nav: ["服务", "方法", "案例"],
-    contact: "预约咨询",
+    nav: ["解决方案", "增长系统", "案例证据"],
+    reviewBadge: "审核版本 · 部分案例职责与规模情景待最终核实",
+    contact: "预约增长诊断",
     heroEyebrow: "泰国 · 品牌 · 电商 · 增长",
     heroTitleA: "从获得关注",
     heroTitleB: "到创造收入。",
-    heroIntro:
-      "Prompt Rich将品牌战略、TikTok电商、达人、内容与付费投放整合成一套协同运转的增长系统。",
-    explore: "了解我们的能力",
-    proof: "查看真实数据",
+    heroIntro: "Prompt Rich将品牌战略、TikTok电商、达人、内容与付费投放连接成一套对结果负责的增长系统。",
+    explore: "了解增长系统",
+    proof: "查看真实证据",
     heroNotes: ["扎根泰国", "泰语 · 中文 · English", "实战团队主导"],
-    audienceEyebrow: "增长通常卡在哪里",
-    audienceTitle: "好产品也会失去增长动能。",
-    audienceBody:
-      "当战略、内容、电商和执行无法作为一个系统协同工作时，我们介入解决问题。",
-    audiences: ["工作越来越多，销售却停止增长", "广告投入增长快于盈利收入", "内容、直播和店铺团队各自为战", "本地执行能力缺失或不稳定"],
-    serviceEyebrow: "我们的服务",
-    serviceTitle: "五项能力，一套商业增长系统。",
-    services: [
-      ["品牌与营销代理", "从定位、视觉识别到整合营销活动与市场执行。"],
-      ["TikTok Shop运营", "店铺、内容、直播、客服及销售节奏的一体化管理。"],
-      ["效果广告投放", "围绕可归因收入设计投放，而不是只追求表面曝光。"],
-      ["KOL与达人营销", "达人策略、筛选、内容合作及营销活动管理。"],
-      ["泰国市场进入咨询", "市场研究、本地化、渠道策略及实际运营支持。"],
+    marketEyebrow: "泰国电商 · 2030",
+    marketTitleA: "市场正在加速，",
+    marketTitleB: "原地不动也是一种决定。",
+    marketBody: "泰国电商市场预计将从2025年的约9700亿泰铢增长至2030年的1.8万亿泰铢，接近翻倍。机会正在扩大，割裂执行的代价也在上升。",
+    marketStats: [
+      ["฿1.8T", "泰国电商市场预计规模", "2030年"],
+      [">14%", "预计年复合增长率", "2025–2030"],
+      ["1.3B", "视频电商交易量", "泰国 · 东南亚第二"],
     ],
-    caseEyebrow: "实战案例 · GMG",
-    caseTitleA: "建立一个品牌，",
-    caseTitleB: "而不是一种依赖。",
-    caseBody:
-      "GMG早期通过达人合作完成起盘。现在，Prompt Rich正在搭建支撑下一阶段增长的独立品牌系统——覆盖品牌形象、直播、内容、店铺运营与付费投放。",
+    marketSource: "2026年预测：CUBE Insights / Lazada Thailand；视频电商数据：Google、Temasek与Bain，2025。",
+    diagnosticEyebrow: "增长准备度诊断",
+    diagnosticTitle: "哪一种信号最接近你的业务？",
+    diagnosticBody: "选择一条路径。好的诊断从你真实拥有的业务开始，而不是从别人想卖给你的渠道开始。",
+    diagnosticOptions: [
+      ["线下 → 线上", "大部分收入仍来自线下，尚未建立可重复的线上销售引擎。"],
+      ["线上增长", "工作量不断增加，但销售或利润已经无法同步增长。"],
+      ["品牌声量", "曝光在增长，但内容、达人和投放没有转化为商业需求。"],
+      ["进入泰国", "市场机会明确，但本地化、渠道与本地执行仍然割裂。"],
+    ],
+    diagnosticSelect: "请选择一种业务信号",
+    diagnosticResult: "真正的瓶颈可能不是市场机会，而是业务操作系统。",
+    serviceEyebrow: "我们实际运营什么",
+    serviceTitle: "五个增长杠杆，一套对结果负责的系统。",
+    serviceLabels: ["工作范围", "客户获得", "衡量指标"],
+    services: [
+      { name: "品牌与营销代理", outcome: "把品牌定位转化为市场需求与协同商业行动。", scope: ["品牌定位", "信息架构", "营销活动策略", "内容系统", "整合市场执行"], output: "品牌平台、活动方向、内容系统及90天商业日历。", metrics: "品牌考虑度、有效触达、内容反馈、流量及收入贡献。" },
+      { name: "TikTok Shop运营", outcome: "建立可重复的店铺、内容与直播引擎，而不是零散任务集合。", scope: ["店铺与商品结构", "商品页转化", "直播运营", "内容节奏", "客服协同"], output: "运营日历、促销方案、每周经营复盘及数据看板。", metrics: "GMV、转化率、订单、客户、客单价、内容结构及复购。" },
+      { name: "效果广告投放", outcome: "围绕可归因商业结果配置预算，并加快创意学习。", scope: ["账户结构", "追踪与归因", "预算配置", "创意测试", "GMV Max优化"], output: "媒体计划、测试清单、预算规则及绩效报告。", metrics: "归因收入、ROI、单均成本、转化率及边际效率。" },
+      { name: "KOL与达人营销", outcome: "让合适的达人、信息与商业目标匹配泰国市场。", scope: ["达人策略", "筛选与审核", "Brief制定", "内容协同", "活动复盘"], output: "达人名单、Brief、内容计划、执行协调及结果复盘。", metrics: "有效播放、完播、互动、流量、归因销售及内容复用。" },
+      { name: "泰国市场进入咨询", outcome: "把市场机会转化为本地收入路径。", scope: ["品类研究", "竞争分析", "定位与定价", "渠道策略", "上市支持"], output: "市场进入判断、渠道优先级、本地化方案及上市路线图。", metrics: "上市速度、渠道准备度、早期需求、转化及商业学习。" },
+    ],
+    methodEyebrow: "Prompt Rich电商增长系统",
+    methodTitle: "只有改变执行的诊断，才真正有价值。",
+    methodBody: "浏览每个阶段，查看工作背后的输入、工具、决策与交付。",
+    methodLabels: ["方法与工具", "决策产出", "参考框架"],
+    methodSteps: [
+      { step: "01", name: "Discover", detail: "在增加工作量之前，先找到真正限制增长的因素。", tools: ["业务目标与限制", "渠道P&L与单位经济模型", "增长驱动树", "消费者路径与运营数据审计"], output: "按照影响排序的增长诊断及可衡量基准线。", framework: "Consumer Decision Journey · 驱动树 · Unit economics" },
+      { step: "02", name: "Design", detail: "明确在哪里竞争、如何获胜，以及用什么衡量。", tools: ["Where-to-play选择", "渠道架构", "KPI树", "90天路线图与资源方案"], output: "增长战略、渠道优先级及执行路线图。", framework: "Playing to Win · KPI architecture" },
+      { step: "03", name: "Operate", detail: "让店铺、内容、直播和投放按照同一商业节奏运行。", tools: ["商业日历", "职责与决策权", "每周经营复盘", "数据看板与问题升级"], output: "责任明确、有节奏、可追踪的协同执行。", framework: "Prompt Rich一体化运营节奏" },
+      { step: "04", name: "Optimise & scale", detail: "把绩效数据转化为下一次决策与可重复优势。", tools: ["实验清单", "创意与Offer测试", "预算重新分配", "SOP及学习循环更新"], output: "经过验证的改进、标准化学习和下一步放大决定。", framework: "PDCA · test–measure–learn" },
+    ],
+    caseEyebrow: "经营实战 · GMG",
+    caseTitleA: "建立品牌，",
+    caseTitleB: "再建立增长引擎。",
+    caseBody: "GMG从早期达人合作起盘，逐步转向由Prompt Rich负责品牌、内容、直播、店铺与付费增长的独立品牌系统。",
     caseWindow: "截至2026年7月26日的30天",
-    metricLabels: ["GMV", "较前30天", "订单", "客户"],
+    caseChapters: [
+      ["01", "品牌转变", "从依赖个人影响力起盘，转向独立品牌资产。"],
+      ["02", "商业引擎", "直播、内容、店铺与投放按照统一节奏运转。"],
+      ["03", "可衡量增长", "收入、曝光、访客、订单与客户同步变化。"],
+      ["04", "付费放大", "将广告花费与归因收入及运营经济模型连接。"],
+    ],
+    caseSceneLabels: ["协同运营系统", "30天转化路径", "商业结果", "付费增长循环"],
+    actualLabel: "真实结果",
+    scaleLabel: "2×规模情景",
+    scaleNote: "仅用于视觉评审的推演模型 · 并非GMG真实业绩",
     liveLabel: "直播贡献GMV",
     adWindow: "GMV Max · 2026年7月19–26日",
     adLabels: ["广告花费", "广告归因收入", "ROI", "单个SKU订单成本"],
-    systemSteps: [
-      ["01", "品牌系统", "建立不依赖任何单一个人的独立品牌资产。"],
-      ["02", "直播引擎", "87.2%的GMV来自系统化管理的直播电商。"],
-      ["03", "付费增长", "THB 162.9K广告花费带来THB 2.68M广告归因收入。"],
-    ],
-    proofEyebrow: "不止一个成功案例",
-    proofTitle: "覆盖品牌、达人与电商的真实经验。",
+    clientEyebrow: "外部客户证据",
+    clientTitle: "一套执行标准，五种客户任务。",
+    clientBody: "泰国项目证明团队能够在转化、曝光和产品教育等不同任务中重复交付；案例职责描述目前仍待最终核实。",
+    roleDraft: "职责草稿 · 待最终核实",
+    bridgeA: "建立在亲自经营的经验上，",
+    bridgeB: "并在客户项目中得到验证。",
+    proofEyebrow: "跨项目证据",
+    proofTitle: "规模是一种可重复的模式，而不是一个孤立数字。",
     proofCards: [
-      ["THB 10M+", "有后台证据的单月GMV", "MissyClassy · 单个TikTok Shop店铺"],
+      ["52M+", "有记录的客户项目播放量", "5个泰国客户项目"],
       ["39", "直接客户品牌", "美妆 · 时尚 · 科技 · 消费品"],
       ["1,000+", "达人资源", "美妆 · 时尚 · 生活方式 · 更多"],
+      ["17.7M", "商品曝光", "GMG · 有后台证据的30天"],
+      ["15.7K", "订单", "GMG · 有后台证据的30天"],
+      ["16.45", "广告ROI", "GMG Max · 有后台证据的8天"],
+      ["฿1B+", "五年GMV模型容量", "示意模型：7月日均 × 31 × 12 × 5年 × 2个品牌"],
     ],
     workEyebrow: "直接客户经验",
     workNote: "覆盖美妆、时尚、科技、餐饮与消费电商的直接客户合作经验。",
-    methodEyebrow: "我们的工作方法",
-    methodTitle: "从诊断问题到规模增长的清晰路径。",
-    methodBody: "每个项目都围绕可衡量的决策、协同执行和可重复的学习循环推进。",
-    methodSteps: [
-      ["01", "发现问题", "明确业务目标、限制条件、商业模型及当前运营数据。"],
-      ["02", "设计方案", "制定战略、渠道优先级、KPI体系和执行路线图。"],
-      ["03", "协同执行", "让店铺、内容、直播和付费投放按照统一商业节奏运转。"],
-      ["04", "优化与放大", "让每一轮绩效数据成为下一次决策，而不只是另一份报告。"],
-    ],
-    externalEyebrow: "外部客户案例 · Y.O.U",
-    externalTitleA: "一条销售转化视频，",
-    externalTitleB: "获得3600万播放。",
-    externalBody:
-      "面向泰国市场执行的销售转化视频获得36M播放，证明本地化内容执行能够把产品沟通转化为规模化触达。",
-    externalSteps: [
-      ["01", "业务问题", "为产品建立能够在泰国市场规模传播的内容。"],
-      ["02", "Prompt Rich介入", "面向泰国受众制作并执行销售转化视频。"],
-      ["03", "结果", "单条销售转化视频获得36M播放。"],
-    ],
-    externalResult: "播放量",
-    midCtaText: "正在面对类似的增长问题？",
-    midCtaAction: "预约增长诊断",
     platformEyebrow: "全渠道运营经验",
     platformTitle: "在电商发生的地方工作。",
-    platformBody:
-      "这些是团队实际运营过的渠道，代表真实执行经验，并不表示相关平台对Prompt Rich提供官方背书。",
+    platformBody: "这些是团队实际运营过的渠道，代表执行经验，并不表示平台提供官方背书。",
     media: "团队执行的客户项目及部分团队成员曾获得媒体报道。",
     closeEyebrow: "扎根泰国，精通增长。",
-    closeTitleA: "准备开启下一段",
-    closeTitleB: "商业增长了吗？",
+    closeTitleA: "这套系统能为你的品牌",
+    closeTitleB: "释放什么增长潜力？",
     closeBody: "告诉我们你的市场问题，我们将战略、达人、电商与执行连接起来。",
     line: "添加LINE",
     proposal: "索取方案",
@@ -288,6 +423,64 @@ const content = {
     legal: "PROMRIT INTERTRADING CO., LTD.",
   },
 } as const;
+
+const externalCases = [
+  {
+    name: "Y.O.U",
+    logo: "/clients/you.png",
+    metricA: "36M",
+    metricB: "ROI 3.5",
+    role: {
+      en: "Conversion creative, creator coordination and performance amplification.",
+      th: "ครีเอทีฟเพื่อ Conversion การประสานงานครีเอเตอร์ และการขยายผลด้วยสื่อ",
+      zh: "销售转化创意、达人协同与效果放大。",
+    },
+  },
+  {
+    name: "MAKUKU",
+    logo: "/clients/makuku.png",
+    metricA: "6.62M",
+    metricB: "ROI 2.7",
+    role: {
+      en: "Creator-led product education, conversion content and media optimisation.",
+      th: "Product education ผ่านครีเอเตอร์ คอนเทนต์ Conversion และการปรับสื่อ",
+      zh: "达人产品教育、转化内容与媒体优化。",
+    },
+  },
+  {
+    name: "Barenbliss",
+    logo: "/clients/barenbliss.png",
+    metricA: "4.18M",
+    metricB: "ROI 2.8",
+    role: {
+      en: "Launch content, creator seeding and performance-media coordination.",
+      th: "คอนเทนต์เปิดตัว Creator seeding และการประสานงาน Performance media",
+      zh: "上市内容、达人种草与效果媒体协同。",
+    },
+  },
+  {
+    name: "vivo",
+    logo: "/clients/vivo.png",
+    metricA: "5.2M",
+    metricB: "32.1% COMPLETE",
+    role: {
+      en: "Reach creative and creator-content coordination for product visibility.",
+      th: "ครีเอทีฟเพื่อ Reach และการประสานงานคอนเทนต์ครีเอเตอร์",
+      zh: "曝光创意与达人内容协同。",
+    },
+  },
+  {
+    name: "Kiehl’s",
+    logo: "/clients/kiehls.jpeg",
+    metricA: "480K",
+    metricB: "29.3% COMPLETE",
+    role: {
+      en: "Product-education creative and creator-content coordination.",
+      th: "ครีเอทีฟ Product education และการประสานงานคอนเทนต์ครีเอเตอร์",
+      zh: "产品教育创意与达人内容协同。",
+    },
+  },
+] as const;
 
 const clients = [
   { name: "Estée Lauder", logo: "/clients/estee-lauder.jpeg" },
@@ -354,6 +547,10 @@ function Arrow() {
 export function Experience() {
   const [language, setLanguage] = useState<Language>("en");
   const [contactOpen, setContactOpen] = useState(false);
+  const [activeDiagnostic, setActiveDiagnostic] = useState<number | null>(null);
+  const [activeService, setActiveService] = useState(0);
+  const [activeMethod, setActiveMethod] = useState(0);
+  const [scalePreview, setScalePreview] = useState(true);
   const heroRef = useRef<HTMLElement>(null);
   const caseRef = useRef<HTMLElement>(null);
   const t = content[language];
@@ -405,6 +602,7 @@ export function Experience() {
           Math.max(0, -bounds.top / Math.max(travel, 1)),
         );
         section.style.setProperty("--case-progress", `${progress}`);
+        section.dataset.phase = `${Math.min(3, Math.floor(progress * 4))}`;
       }
       ticking = false;
     };
@@ -449,10 +647,10 @@ export function Experience() {
   return (
     <main className={`site language-${language}`}>
       <div className="page-progress" aria-hidden="true" />
+      <div className="review-banner">{t.reviewBadge}</div>
 
       <nav className="topbar" aria-label="Primary navigation">
         <a className="wordmark" href="#top" aria-label="Prompt Rich home">
-          <span className="wordmark-mark">PR</span>
           <span className="wordmark-name">Prompt Rich</span>
         </a>
         <div className="nav-links">
@@ -513,13 +711,14 @@ export function Experience() {
           <div className="growth-ring ring-two"><i /></div>
           <div className="growth-ring ring-three"><i /></div>
           <div className="growth-core">
-            <span>PR</span>
-            <small>THAILAND</small>
+            <span>Prompt</span>
+            <span>Rich</span>
+            <small>CONNECTED GROWTH</small>
           </div>
           <div className="data-float data-float-one">
-            <small>30D GMV</small>
-            <strong>฿7.48M</strong>
-            <span>+33.29%</span>
+            <small>2030 TH E-COMMERCE</small>
+            <strong>฿1.8T</strong>
+            <span>&gt;14% CAGR</span>
           </div>
           <div className="data-float data-float-two">
             <small>AD ROI</small>
@@ -542,24 +741,66 @@ export function Experience() {
         </a>
       </section>
 
-      <section id="audience" className="audience light-section">
-        <div className="section-shell audience-layout">
-          <div>
-            <p className="eyebrow dark-eyebrow" data-reveal>
-              {t.audienceEyebrow}
-            </p>
-            <h2 data-reveal>{t.audienceTitle}</h2>
+      <section id="audience" className="market-shift light-section">
+        <div className="section-shell market-heading">
+          <p className="eyebrow dark-eyebrow" data-reveal>{t.marketEyebrow}</p>
+          <h2 data-reveal>
+            <span>{t.marketTitleA}</span>
+            <span>{t.marketTitleB}</span>
+          </h2>
+          <p data-reveal>{t.marketBody}</p>
+        </div>
+        <div className="section-shell market-stats">
+          {t.marketStats.map(([metric, label, note], index) => (
+            <article data-reveal key={metric}>
+              <span>0{index + 1}</span>
+              <strong>{metric}</strong>
+              <h3>{label}</h3>
+              <p>{note}</p>
+            </article>
+          ))}
+        </div>
+        <p className="section-shell market-source">
+          {t.marketSource}
+          {" · "}
+          <a
+            href="https://th.mofcom.gov.cn/jmdt/art/2026/art_f014270c2db54d6b883ee9f96b0bafdc.html"
+            target="_blank"
+            rel="noreferrer"
+          >
+            SOURCE ↗
+          </a>
+        </p>
+
+        <div className="section-shell diagnostic-panel">
+          <div className="diagnostic-heading">
+            <p className="eyebrow dark-eyebrow">{t.diagnosticEyebrow}</p>
+            <h3>{t.diagnosticTitle}</h3>
+            <p>{t.diagnosticBody}</p>
           </div>
-          <div className="audience-side">
-            <p data-reveal>{t.audienceBody}</p>
-            <div className="audience-tags" data-reveal>
-              {t.audiences.map((audience, index) => (
-                <span key={audience}>
-                  <i>0{index + 1}</i>
-                  {audience}
-                </span>
-              ))}
-            </div>
+          <div className="diagnostic-options">
+            {t.diagnosticOptions.map(([name, detail], index) => (
+              <button
+                type="button"
+                className={activeDiagnostic === index ? "is-active" : ""}
+                aria-pressed={activeDiagnostic === index}
+                onClick={() => setActiveDiagnostic(index)}
+                key={name}
+              >
+                <span>0{index + 1}</span>
+                <strong>{name}</strong>
+                <small>{detail}</small>
+                <i aria-hidden="true">↗</i>
+              </button>
+            ))}
+          </div>
+          <div className={`diagnostic-result ${activeDiagnostic !== null ? "is-visible" : ""}`}>
+            <span>
+              {activeDiagnostic === null
+                ? t.diagnosticSelect
+                : t.diagnosticOptions[activeDiagnostic][0]}
+            </span>
+            <strong>{t.diagnosticResult}</strong>
           </div>
         </div>
       </section>
@@ -570,15 +811,45 @@ export function Experience() {
             <p className="eyebrow" data-reveal>{t.serviceEyebrow}</p>
             <h2 data-reveal>{t.serviceTitle}</h2>
           </div>
-          <div className="service-list">
-            {t.services.map(([name, description], index) => (
-              <article className="service-row" data-reveal key={`service-${index}`}>
-                <span className="service-index">0{index + 1}</span>
-                <h3>{name}</h3>
-                <p>{description}</p>
-                <span className="service-arrow" aria-hidden="true">↗</span>
-              </article>
-            ))}
+          <div className="service-system" data-reveal>
+            <div className="service-tabs" role="tablist" aria-label={t.serviceEyebrow}>
+              {t.services.map((service, index) => (
+                <button
+                  type="button"
+                  role="tab"
+                  aria-selected={activeService === index}
+                  className={activeService === index ? "is-active" : ""}
+                  onClick={() => setActiveService(index)}
+                  onPointerEnter={() => setActiveService(index)}
+                  key={service.name}
+                >
+                  <span>0{index + 1}</span>
+                  <strong>{service.name}</strong>
+                  <i aria-hidden="true">↗</i>
+                </button>
+              ))}
+            </div>
+            <article className="service-detail" role="tabpanel">
+              <span className="service-detail-index">0{activeService + 1} / 05</span>
+              <h3>{t.services[activeService].name}</h3>
+              <p className="service-outcome">{t.services[activeService].outcome}</p>
+              <div className="service-detail-grid">
+                <div>
+                  <small>{t.serviceLabels[0]}</small>
+                  <ul>
+                    {t.services[activeService].scope.map((item) => <li key={item}>{item}</li>)}
+                  </ul>
+                </div>
+                <div>
+                  <small>{t.serviceLabels[1]}</small>
+                  <p>{t.services[activeService].output}</p>
+                </div>
+                <div>
+                  <small>{t.serviceLabels[2]}</small>
+                  <p>{t.services[activeService].metrics}</p>
+                </div>
+              </div>
+            </article>
           </div>
         </div>
       </section>
@@ -593,21 +864,56 @@ export function Experience() {
             <p data-reveal>{t.methodBody}</p>
           </div>
           <div className="method-grid">
-            {t.methodSteps.map(([step, name, detail]) => (
-              <article data-reveal key={step}>
-                <span>{step}</span>
+            {t.methodSteps.map((method, index) => (
+              <button
+                type="button"
+                className={activeMethod === index ? "is-active" : ""}
+                aria-pressed={activeMethod === index}
+                onClick={() => setActiveMethod(index)}
+                onPointerEnter={() => setActiveMethod(index)}
+                data-reveal
+                key={method.step}
+              >
+                <span>{method.step}</span>
                 <div>
-                  <h3>{name}</h3>
-                  <p>{detail}</p>
+                  <h3>{method.name}</h3>
+                  <p>{method.detail}</p>
                 </div>
                 <i aria-hidden="true">↗</i>
-              </article>
+              </button>
             ))}
           </div>
+          <article className="method-detail" data-reveal>
+            <div>
+              <small>{t.methodLabels[0]}</small>
+              <ul>
+                {t.methodSteps[activeMethod].tools.map((tool) => <li key={tool}>{tool}</li>)}
+              </ul>
+            </div>
+            <div>
+              <small>{t.methodLabels[1]}</small>
+              <p>{t.methodSteps[activeMethod].output}</p>
+            </div>
+            <div>
+              <small>{t.methodLabels[2]}</small>
+              <p>{t.methodSteps[activeMethod].framework}</p>
+              <span className="framework-links">
+                {activeMethod === 0 && (
+                  <a href="https://www.mckinsey.com/~/media/McKinsey/Business%20Functions/Marketing%20and%20Sales/Our%20Insights/The%20consumer%20decision%20journey/The%20consumer%20decision%20journey.ashx" target="_blank" rel="noreferrer">McKinsey source ↗</a>
+                )}
+                {activeMethod === 1 && (
+                  <a href="https://hbr.org/webinar/2014/12/playing-to-win-how-strategy-really-works" target="_blank" rel="noreferrer">HBR source ↗</a>
+                )}
+                {activeMethod === 3 && (
+                  <a href="https://www.lean.org/lexicon-terms/pdca/" target="_blank" rel="noreferrer">Lean source ↗</a>
+                )}
+              </span>
+            </div>
+          </article>
         </div>
       </section>
 
-      <section id="proof" ref={caseRef} className="case-story">
+      <section id="proof" ref={caseRef} className="case-story" data-phase="0">
         <div className="case-sticky">
           <div className="case-copy">
             <p className="eyebrow" data-reveal>{t.caseEyebrow}</p>
@@ -616,10 +922,10 @@ export function Experience() {
               <span>{t.caseTitleB}</span>
             </h2>
             <p>{t.caseBody}</p>
-            <div className="case-system">
-              {t.systemSteps.map(([index, name, detail]) => (
-                <article key={index}>
-                  <span>{index}</span>
+            <div className="case-chapters">
+              {t.caseChapters.map(([step, name, detail]) => (
+                <article key={step}>
+                  <span>{step}</span>
                   <div>
                     <strong>{name}</strong>
                     <small>{detail}</small>
@@ -629,93 +935,137 @@ export function Experience() {
             </div>
           </div>
 
-          <div className="data-cockpit">
-            <div className="cockpit-aura" aria-hidden="true">
-              <i /><i /><i />
+          <div className="case-visual">
+            <div className="case-mode-switch">
+              <button
+                type="button"
+                className={!scalePreview ? "is-active" : ""}
+                onClick={() => setScalePreview(false)}
+              >
+                {t.actualLabel}
+              </button>
+              <button
+                type="button"
+                className={scalePreview ? "is-active" : ""}
+                onClick={() => setScalePreview(true)}
+              >
+                {t.scaleLabel}
+              </button>
             </div>
-            <div className="gmv-card">
-              <span>{t.caseWindow}</span>
-              <strong>฿7.48M</strong>
-              <small>{t.metricLabels[0]}</small>
-              <b>+33.29%</b>
-            </div>
-            <div className="case-mini case-mini-one">
-              <span>{t.metricLabels[2]}</span>
-              <strong>15,739</strong>
-              <small>+42.13%</small>
-            </div>
-            <div className="case-mini case-mini-two">
-              <span>{t.metricLabels[3]}</span>
-              <strong>14,255</strong>
-              <small>+42.38%</small>
-            </div>
-            <div className="live-share">
-              <div className="live-dial">
-                <span>87.2%</span>
-              </div>
-              <p>{t.liveLabel}</p>
-            </div>
-            <div className="ad-card">
-              <span>{t.adWindow}</span>
-              <div className="ad-flow">
-                <div><small>{t.adLabels[0]}</small><strong>฿162.9K</strong></div>
-                <i>→</i>
-                <div><small>{t.adLabels[1]}</small><strong>฿2.68M</strong></div>
-              </div>
-              <div className="ad-bottom">
-                <span><small>{t.adLabels[2]}</small><strong>16.45</strong></span>
-                <span><small>{t.adLabels[3]}</small><strong>฿30.55</strong></span>
-              </div>
+            {scalePreview && <p className="scale-note">{t.scaleNote}</p>}
+
+            <div className="case-scenes">
+              <article className="case-scene scene-system">
+                <small>01 / {t.caseSceneLabels[0]}</small>
+                <div className="system-orbit">
+                  {["BRAND", "CONTENT", "LIVE", "STORE", "MEDIA"].map((node) => (
+                    <span key={node}>{node}</span>
+                  ))}
+                  <strong>GMG</strong>
+                </div>
+              </article>
+
+              <article className="case-scene scene-funnel">
+                <small>02 / {t.caseSceneLabels[1]}</small>
+                <div className="funnel-flow">
+                  <span>
+                    <strong>{scalePreview ? "35.4M" : "17.7M"}</strong>
+                    <small>IMPRESSIONS</small>
+                  </span>
+                  <i>→</i>
+                  <span>
+                    <strong>{scalePreview ? "592K" : "296K"}</strong>
+                    <small>VISITORS</small>
+                  </span>
+                  <i>→</i>
+                  <span>
+                    <strong>{scalePreview ? "31.4K" : "15.7K"}</strong>
+                    <small>ORDERS</small>
+                  </span>
+                </div>
+                <div className="funnel-bars" aria-hidden="true"><i /><i /><i /></div>
+              </article>
+
+              <article className="case-scene scene-growth">
+                <small>03 / {t.caseSceneLabels[2]} · {t.caseWindow}</small>
+                <div className="growth-number">
+                  <strong>{scalePreview ? "฿14.96M" : "฿7.48M"}</strong>
+                  <span>GMV</span>
+                  <b>+33.29%</b>
+                </div>
+                <div className="growth-support">
+                  <span><small>ORDERS</small><strong>{scalePreview ? "31,478" : "15,739"}</strong></span>
+                  <span><small>CUSTOMERS</small><strong>{scalePreview ? "28,510" : "14,255"}</strong></span>
+                  <span><small>{t.liveLabel}</small><strong>87.2%</strong></span>
+                </div>
+                <div className="growth-chart" aria-hidden="true">
+                  {[18, 27, 35, 34, 51, 62, 78, 92].map((height, index) => (
+                    <i style={{ "--bar": `${height}%`, "--i": index } as React.CSSProperties} key={index} />
+                  ))}
+                </div>
+              </article>
+
+              <article className="case-scene scene-paid">
+                <small>04 / {t.caseSceneLabels[3]} · {t.adWindow}</small>
+                <div className="paid-flow">
+                  <span>
+                    <small>{t.adLabels[0]}</small>
+                    <strong>{scalePreview ? "฿325.8K" : "฿162.9K"}</strong>
+                  </span>
+                  <i>→</i>
+                  <span>
+                    <small>{t.adLabels[1]}</small>
+                    <strong>{scalePreview ? "฿5.36M" : "฿2.68M"}</strong>
+                  </span>
+                </div>
+                <div className="paid-economics">
+                  <span><small>{t.adLabels[2]}</small><strong>16.45</strong></span>
+                  <span><small>{t.adLabels[3]}</small><strong>฿30.55</strong></span>
+                </div>
+                <div className="paid-pulse" aria-hidden="true"><i /><i /><i /></div>
+              </article>
             </div>
           </div>
 
           <div className="case-progress" aria-hidden="true">
-            <span>01</span><i /><span>03</span>
+            <span>01</span><i /><span>04</span>
           </div>
         </div>
       </section>
 
-      {/* This client-case module is intentionally reusable when a new approved case is ready. */}
-      <section className="external-case light-section">
-        <div className="section-shell external-case-layout">
-          <div className="external-case-copy">
-            <p className="eyebrow dark-eyebrow" data-reveal>{t.externalEyebrow}</p>
-            <h2 data-reveal>
-              <span>{t.externalTitleA}</span>
-              <span>{t.externalTitleB}</span>
-            </h2>
-            <p data-reveal>{t.externalBody}</p>
+      <section className="external-cases light-section">
+        <div className="section-shell client-case-heading">
+          <div>
+            <p className="eyebrow dark-eyebrow" data-reveal>{t.clientEyebrow}</p>
+            <h2 data-reveal>{t.clientTitle}</h2>
           </div>
-          <div className="external-case-board" data-reveal>
-            {t.externalSteps.map(([step, name, detail]) => (
-              <article key={step}>
-                <span>{step}</span>
-                <div>
-                  <h3>{name}</h3>
-                  <p>{detail}</p>
+          <p data-reveal>{t.clientBody}</p>
+        </div>
+        <div className="section-shell client-case-grid">
+          {externalCases.map((project, index) => (
+            <article className={index === 0 ? "is-featured" : ""} data-reveal key={project.name}>
+              <div className="client-case-top">
+                <div className="client-case-logo">
+                  <img src={project.logo} alt={`${project.name} logo`} loading="lazy" />
                 </div>
-              </article>
-            ))}
-            <div className="external-result">
-              <small>Y.O.U · THAILAND</small>
-              <strong>36M</strong>
-              <span>{t.externalResult}</span>
-            </div>
-          </div>
+                <span>0{index + 1}</span>
+              </div>
+              <h3>{project.name}</h3>
+              <div className="client-case-metrics">
+                <strong>{project.metricA}</strong>
+                <span>{project.metricB}</span>
+              </div>
+              <p>{project.role[language]}</p>
+              <small>{t.roleDraft}</small>
+            </article>
+          ))}
         </div>
       </section>
 
-      <section className="mid-cta dark-section">
-        <div className="section-shell mid-cta-inner">
-          <p data-reveal>{t.midCtaText}</p>
-          <button
-            type="button"
-            className="primary-button"
-            data-reveal
-            onClick={() => setContactOpen(true)}
-          >
-            {t.midCtaAction} <Arrow />
-          </button>
+      <section className="proof-bridge dark-section">
+        <div className="section-shell">
+          <span data-reveal>{t.bridgeA}</span>
+          <strong data-reveal>{t.bridgeB}</strong>
         </div>
       </section>
 
@@ -727,7 +1077,7 @@ export function Experience() {
           </div>
           <div className="proof-cards">
             {t.proofCards.map(([metric, label, detail], index) => (
-              <article data-reveal key={`proof-${index}`}>
+              <article className={index === t.proofCards.length - 1 ? "is-modelled" : ""} data-reveal key={`proof-${index}`}>
                 <span>0{index + 1}</span>
                 <strong>{metric}</strong>
                 <h3>{label}</h3>
@@ -792,7 +1142,11 @@ export function Experience() {
 
       <section id="contact" className="closing dark-section">
         <div className="closing-sphere" aria-hidden="true">
-          <div><span>PR</span></div>
+          <div>
+            <span>Prompt</span>
+            <span>Rich</span>
+            <small>THAILAND</small>
+          </div>
         </div>
         <div className="closing-copy">
           <p className="eyebrow" data-reveal>{t.closeEyebrow}</p>
@@ -818,7 +1172,6 @@ export function Experience() {
 
       <footer>
         <div className="wordmark footer-wordmark">
-          <span className="wordmark-mark">PR</span>
           <span className="wordmark-name">Prompt Rich</span>
         </div>
         <span>{t.legal}</span>
