@@ -81,3 +81,610 @@
     opacity: 0.52;
   }
 }
+
+/* Cinematic opening — editorial desire → digital demand → commercial growth */
+
+.cinematic-hero {
+  --hero-bone: #f3eee5;
+  --hero-ink: #100d0f;
+  --hero-wine: #6f2038;
+  --hero-rose: #d2a0ad;
+  --hero-cobalt: #3159ff;
+  min-height: max(900px, 100svh);
+  padding:
+    clamp(168px, 17vh, 210px)
+    max(32px, calc((100vw - 1320px) / 2))
+    168px;
+  display: grid;
+  grid-template-columns: minmax(520px, 0.94fr) minmax(560px, 1.06fr);
+  align-items: center;
+  overflow: hidden;
+  background: var(--hero-ink);
+}
+
+.cinematic-hero::after {
+  background: rgba(243, 238, 229, 0.16);
+}
+
+.film-prologue {
+  position: absolute;
+  z-index: 30;
+  inset: 82px 0 0;
+  display: grid;
+  place-content: center;
+  gap: 16px;
+  overflow: hidden;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 52% 44%, rgba(111, 32, 56, 0.2), transparent 35%),
+    #0d0b0c;
+  color: var(--hero-bone);
+  text-align: center;
+  animation: prologue-exit 1.25s 1.65s cubic-bezier(0.77, 0, 0.18, 1) both;
+}
+
+.film-prologue span {
+  color: rgba(243, 238, 229, 0.56);
+  font-family: "SFMono-Regular", Consolas, monospace;
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  animation: prologue-kicker 1s 0.15s ease both;
+}
+
+.film-prologue strong {
+  font-family: "Iowan Old Style", "Bodoni 72", Didot, Georgia, serif;
+  font-size: clamp(58px, 8vw, 118px);
+  font-weight: 400;
+  line-height: 0.85;
+  letter-spacing: -0.075em;
+  animation: prologue-title 1.25s 0.25s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.film-prologue i {
+  width: min(420px, 66vw);
+  height: 1px;
+  margin: 10px auto 0;
+  overflow: hidden;
+  background: rgba(243, 238, 229, 0.16);
+}
+
+.film-prologue i::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, var(--hero-wine), var(--hero-rose), var(--hero-cobalt));
+  transform-origin: left;
+  animation: prologue-line 1.3s 0.35s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.cinema-media {
+  position: absolute;
+  z-index: 0;
+  inset: 84px 0 0 38%;
+  padding: 12px 12px 122px 0;
+  display: grid;
+  grid-template-columns: 1.1fr 0.84fr 0.72fr;
+  gap: 7px;
+  transform:
+    translate3d(
+      calc(var(--pointer-x, 0) * -8px),
+      calc(var(--pointer-y, 0) * -5px),
+      0
+    );
+  transition: transform 260ms ease-out;
+}
+
+.cinema-panel {
+  position: relative;
+  min-width: 0;
+  overflow: hidden;
+  background: #171214;
+  clip-path: inset(0 100% 0 0);
+  box-shadow: 0 22px 70px rgba(0, 0, 0, 0.36);
+  animation: cinema-panel-reveal 1.25s cubic-bezier(0.77, 0, 0.18, 1) forwards;
+}
+
+.cinema-panel-desire {
+  animation-delay: 1.45s;
+}
+
+.cinema-panel-demand {
+  animation-delay: 1.72s;
+}
+
+.cinema-panel-growth {
+  animation-delay: 1.98s;
+}
+
+.cinema-panel::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(180deg, rgba(7, 6, 7, 0.1), transparent 38%, rgba(8, 6, 7, 0.76)),
+    linear-gradient(90deg, rgba(10, 8, 9, 0.22), transparent 65%);
+}
+
+.cinema-panel img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  filter: saturate(0.88) contrast(1.04);
+  transform: scale(1.09);
+  animation: cinema-image-settle 2.3s 1.55s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.cinema-panel-desire img {
+  object-position: 47% 50%;
+}
+
+.cinema-panel-demand img {
+  object-position: 49% 51%;
+  animation-delay: 1.82s;
+}
+
+.cinema-panel-growth img {
+  object-position: 54% 50%;
+  animation-delay: 2.08s;
+}
+
+.cinema-frame-index {
+  position: absolute;
+  z-index: 3;
+  top: 18px;
+  left: 18px;
+  color: rgba(255, 255, 255, 0.72);
+  font-family: "SFMono-Regular", Consolas, monospace;
+  font-size: 8px;
+  letter-spacing: 0.12em;
+}
+
+.cinema-panel-caption {
+  position: absolute;
+  z-index: 3;
+  inset: auto 18px 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  color: #fff;
+}
+
+.cinema-panel-caption strong {
+  font-family: "Iowan Old Style", "Bodoni 72", Didot, Georgia, serif;
+  font-size: clamp(25px, 2.2vw, 38px);
+  font-weight: 400;
+  letter-spacing: -0.045em;
+}
+
+.cinema-panel-caption small {
+  color: rgba(255, 255, 255, 0.62);
+  font-family: "SFMono-Regular", Consolas, monospace;
+  font-size: 7px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.cinema-vignette {
+  position: absolute;
+  z-index: 1;
+  inset: 82px 0 0;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, var(--hero-ink) 0 26%, rgba(16, 13, 15, 0.94) 34%, rgba(16, 13, 15, 0.38) 55%, transparent 78%),
+    linear-gradient(180deg, rgba(16, 13, 15, 0.22), transparent 42%, rgba(16, 13, 15, 0.38));
+}
+
+.cinema-grain {
+  position: absolute;
+  z-index: 2;
+  inset: 82px 0 0;
+  pointer-events: none;
+  opacity: 0.16;
+  mix-blend-mode: soft-light;
+  background-image:
+    repeating-radial-gradient(circle at 31% 47%, transparent 0 1px, rgba(255, 255, 255, 0.18) 1px 2px, transparent 2px 4px),
+    repeating-linear-gradient(92deg, transparent 0 47px, rgba(255, 255, 255, 0.08) 48px, transparent 49px 131px);
+  background-size: 7px 9px, 100% 100%;
+  animation: cinema-grain-shift 0.42s steps(2) infinite;
+}
+
+.cinematic-hero .hero-copy {
+  z-index: 6;
+  width: min(760px, 58vw);
+  padding-right: 24px;
+  animation: cinema-copy-arrival 1.15s 2.55s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.cinematic-hero .eyebrow {
+  margin-bottom: 26px;
+  color: var(--hero-rose);
+  letter-spacing: 0.17em;
+}
+
+.cinematic-hero h1 {
+  max-width: 780px;
+  display: block;
+  color: var(--hero-bone);
+  font-family: "Iowan Old Style", "Bodoni 72", Didot, Georgia, serif;
+  font-size: clamp(68px, 6.7vw, 106px);
+  font-weight: 400;
+  line-height: 0.88;
+  letter-spacing: -0.065em;
+  text-wrap: balance;
+}
+
+.cinematic-hero h1 > span {
+  display: block;
+}
+
+.cinematic-hero .hero-accent {
+  width: auto;
+  margin-top: 7px;
+  color: #ecd9dd;
+  background: none;
+  font-style: italic;
+}
+
+.cinematic-hero .hero-intro {
+  max-width: 610px;
+  margin-top: 30px;
+  color: rgba(243, 238, 229, 0.66);
+  font-size: clamp(17px, 1.3vw, 21px);
+  line-height: 1.5;
+}
+
+.cinematic-hero .hero-actions {
+  margin-top: 28px;
+}
+
+.cinematic-hero .primary-button {
+  background: var(--hero-bone);
+}
+
+.cinematic-hero .primary-button:hover {
+  background: #e8cbd2;
+}
+
+.cinematic-hero .quiet-button {
+  border-color: rgba(243, 238, 229, 0.24);
+  color: rgba(243, 238, 229, 0.76);
+  backdrop-filter: blur(8px);
+}
+
+.hero-stats {
+  position: absolute;
+  z-index: 8;
+  right: max(24px, calc((100vw - 1320px) / 2));
+  bottom: 22px;
+  left: max(24px, calc((100vw - 1320px) / 2));
+  min-height: 96px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  color: #171214;
+  background: rgba(243, 238, 229, 0.94);
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.26);
+  backdrop-filter: blur(18px) saturate(115%);
+  animation: cinema-stats-arrival 1s 3.05s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.hero-stats article {
+  min-width: 0;
+  padding: 18px 24px 16px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto auto;
+  column-gap: 15px;
+  align-content: center;
+}
+
+.hero-stats article + article {
+  border-left: 1px solid rgba(23, 18, 20, 0.14);
+}
+
+.hero-stats strong {
+  grid-row: 1 / 3;
+  align-self: center;
+  color: var(--hero-wine);
+  font-family: "Iowan Old Style", "Bodoni 72", Didot, Georgia, serif;
+  font-size: clamp(26px, 2.3vw, 36px);
+  font-weight: 500;
+  letter-spacing: -0.055em;
+  white-space: nowrap;
+}
+
+.hero-stats span {
+  align-self: end;
+  font-size: 11px;
+  font-weight: 720;
+  letter-spacing: -0.015em;
+}
+
+.hero-stats small {
+  align-self: start;
+  margin-top: 4px;
+  overflow-wrap: anywhere;
+  color: rgba(23, 18, 20, 0.54);
+  font-size: 8px;
+  line-height: 1.35;
+}
+
+.cinematic-hero .scroll-cue {
+  right: max(28px, calc((100vw - 1320px) / 2));
+  bottom: 133px;
+  color: rgba(243, 238, 229, 0.5);
+}
+
+.cinematic-hero .scroll-cue i {
+  background: rgba(243, 238, 229, 0.2);
+}
+
+.cinematic-hero .scroll-cue i::after {
+  background: var(--hero-rose);
+}
+
+.language-th .cinematic-hero h1 {
+  max-width: 720px;
+  font-family: "Noto Serif Thai", "Th Sarabun New", "Noto Sans Thai", serif;
+  font-size: clamp(56px, 5.2vw, 82px);
+  line-height: 1.04;
+  letter-spacing: -0.045em;
+}
+
+.language-zh .cinematic-hero h1 {
+  max-width: 680px;
+  font-family: "Songti SC", "Noto Serif CJK SC", "STSong", serif;
+  font-size: clamp(62px, 5.4vw, 88px);
+  line-height: 1.02;
+  letter-spacing: -0.055em;
+}
+
+@keyframes prologue-kicker {
+  from {
+    opacity: 0;
+    letter-spacing: 0.32em;
+  }
+  to {
+    opacity: 1;
+    letter-spacing: 0.22em;
+  }
+}
+
+@keyframes prologue-title {
+  from {
+    opacity: 0;
+    transform: translateY(26px) scale(0.96);
+    letter-spacing: -0.02em;
+  }
+  to {
+    opacity: 1;
+    transform: none;
+    letter-spacing: -0.075em;
+  }
+}
+
+@keyframes prologue-line {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes prologue-exit {
+  0% {
+    opacity: 1;
+    clip-path: inset(0);
+  }
+  68% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    clip-path: inset(0 0 0 100%);
+    visibility: hidden;
+  }
+}
+
+@keyframes cinema-panel-reveal {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0);
+  }
+}
+
+@keyframes cinema-image-settle {
+  from {
+    transform: scale(1.16) translateX(3%);
+    filter: saturate(0.7) contrast(1.14);
+  }
+  to {
+    transform: scale(1.04);
+    filter: saturate(0.88) contrast(1.04);
+  }
+}
+
+@keyframes cinema-copy-arrival {
+  from {
+    opacity: 0;
+    transform: translateY(36px);
+    filter: blur(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+}
+
+@keyframes cinema-stats-arrival {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes cinema-grain-shift {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(-0.5%, 0.7%);
+  }
+  50% {
+    transform: translate(0.7%, -0.4%);
+  }
+  75% {
+    transform: translate(-0.4%, -0.6%);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@media (max-width: 1080px) {
+  .cinematic-hero {
+    grid-template-columns: minmax(460px, 0.92fr) minmax(430px, 1.08fr);
+  }
+
+  .cinema-media {
+    left: 34%;
+    grid-template-columns: 1.08fr 0.76fr 0.66fr;
+  }
+
+  .cinematic-hero h1 {
+    font-size: clamp(62px, 7vw, 84px);
+  }
+
+  .hero-stats article {
+    padding-inline: 16px;
+  }
+}
+
+@media (max-width: 760px) {
+  .cinematic-hero {
+    min-height: 1260px;
+    padding: 565px 20px 38px;
+    display: block;
+    background:
+      linear-gradient(180deg, #100d0f 0 72%, #171113 100%);
+  }
+
+  .film-prologue {
+    inset: 86px 0 0;
+  }
+
+  .cinema-media {
+    inset: 92px 0 auto;
+    height: 445px;
+    padding: 8px 14px 0;
+    grid-template-columns: 1.24fr 0.9fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 5px;
+  }
+
+  .cinema-panel-desire {
+    grid-row: 1 / 3;
+  }
+
+  .cinema-panel-caption {
+    inset: auto 11px 14px;
+  }
+
+  .cinema-panel-caption strong {
+    font-size: 21px;
+  }
+
+  .cinema-panel-caption small {
+    display: none;
+  }
+
+  .cinema-frame-index {
+    top: 11px;
+    left: 11px;
+  }
+
+  .cinema-vignette {
+    inset: 92px 0 auto;
+    height: 510px;
+    background:
+      linear-gradient(180deg, transparent 0 58%, rgba(16, 13, 15, 0.65) 80%, var(--hero-ink) 100%);
+  }
+
+  .cinema-grain {
+    inset: 92px 0 auto;
+    height: 445px;
+  }
+
+  .cinematic-hero .hero-copy {
+    width: 100%;
+    padding: 0;
+  }
+
+  .cinematic-hero .eyebrow {
+    margin-bottom: 18px;
+    font-size: 8px;
+  }
+
+  .cinematic-hero h1 {
+    max-width: 100%;
+    font-size: clamp(48px, 13.2vw, 58px);
+    line-height: 0.94;
+    letter-spacing: -0.055em;
+  }
+
+  .language-th .cinematic-hero h1,
+  .language-zh .cinematic-hero h1 {
+    max-width: 100%;
+    font-size: clamp(42px, 11vw, 50px);
+    line-height: 1.08;
+  }
+
+  .cinematic-hero .hero-intro {
+    margin-top: 24px;
+    font-size: 17px;
+  }
+
+  .cinematic-hero .hero-actions {
+    margin-top: 25px;
+  }
+
+  .hero-stats {
+    position: relative;
+    inset: auto;
+    margin-top: 46px;
+    display: grid;
+    grid-template-columns: 1fr;
+    background: rgba(243, 238, 229, 0.98);
+  }
+
+  .hero-stats article {
+    min-height: 88px;
+    padding: 16px 18px;
+  }
+
+  .hero-stats article + article {
+    border-top: 1px solid rgba(23, 18, 20, 0.14);
+    border-left: 0;
+  }
+
+  .hero-stats strong {
+    min-width: 100px;
+    font-size: 30px;
+  }
+
+  .cinematic-hero .scroll-cue {
+    display: none;
+  }
+}

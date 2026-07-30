@@ -13,14 +13,23 @@ const content = {
     nav: ["Solutions", "System", "Proof"],
     reviewBadge: "REVIEW BUILD · SELECT ROLES & SCALE SCENARIOS PENDING VERIFICATION",
     contact: "Book a growth diagnostic",
-    heroEyebrow: "Thailand · Brand · Commerce · Growth",
-    heroTitleA: "From attention",
-    heroTitleB: "to revenue.",
+    heroEyebrow: "A Thailand brand & commerce company",
+    heroTitleA: "Built to be desired.",
+    heroTitleB: "Operated to grow.",
     heroIntro:
-      "Prompt Rich connects brand strategy, TikTok commerce, creators, content and paid media into one accountable growth system.",
+      "Prompt Rich turns brand direction, content, commerce and media into one operating system for growth in Thailand.",
     explore: "Explore the system",
     proof: "See the evidence",
-    heroNotes: ["Built in Thailand", "Thai · 中文 · English", "Operator-led"],
+    heroChapters: [
+      ["01", "DESIRE", "Brand direction"],
+      ["02", "DEMAND", "Content & commerce"],
+      ["03", "GROWTH", "Operating discipline"],
+    ],
+    heroStats: [
+      ["฿12.5M", "Peak monthly GMV", "Single store · internal operating record"],
+      ["1,000+", "Creator network", "Thailand"],
+      ["TH / CN / EN", "Thailand-native execution", "Strategy → operation"],
+    ],
     marketEyebrow: "Thailand commerce · 2030",
     marketTitleA: "The market is moving.",
     marketTitleB: "Standing still is a decision.",
@@ -186,14 +195,23 @@ const content = {
     nav: ["โซลูชัน", "ระบบการทำงาน", "ผลงาน"],
     reviewBadge: "เวอร์ชันตรวจงาน · บทบาทบางส่วนและโมเดลการขยายผลอยู่ระหว่างยืนยัน",
     contact: "นัดวิเคราะห์การเติบโต",
-    heroEyebrow: "ประเทศไทย · แบรนด์ · คอมเมิร์ซ · การเติบโต",
-    heroTitleA: "เปลี่ยนความสนใจ",
-    heroTitleB: "ให้เป็นรายได้",
+    heroEyebrow: "บริษัทด้านแบรนด์และคอมเมิร์ซในประเทศไทย",
+    heroTitleA: "สร้างแบรนด์ให้น่าปรารถนา",
+    heroTitleB: "ขับเคลื่อนธุรกิจให้เติบโต",
     heroIntro:
-      "Prompt Rich เชื่อมกลยุทธ์แบรนด์ TikTok Commerce ครีเอเตอร์ คอนเทนต์ และสื่อโฆษณาให้เป็นระบบการเติบโตที่รับผิดชอบผลลัพธ์ร่วมกัน",
+      "Prompt Rich เปลี่ยนทิศทางแบรนด์ คอนเทนต์ คอมเมิร์ซ และสื่อ ให้เป็นระบบการเติบโตเดียวสำหรับตลาดไทย",
     explore: "ดูระบบการทำงาน",
     proof: "ดูหลักฐาน",
-    heroNotes: ["สร้างและดำเนินงานในประเทศไทย", "ไทย · 中文 · English", "บริหารโดยผู้ลงมือทำจริง"],
+    heroChapters: [
+      ["01", "DESIRE", "ทิศทางแบรนด์"],
+      ["02", "DEMAND", "คอนเทนต์และคอมเมิร์ซ"],
+      ["03", "GROWTH", "ระบบปฏิบัติการเพื่อการเติบโต"],
+    ],
+    heroStats: [
+      ["฿12.5M", "GMV สูงสุดต่อเดือน", "ร้านเดียว · บันทึกผลการดำเนินงานภายใน"],
+      ["1,000+", "เครือข่ายครีเอเตอร์", "ประเทศไทย"],
+      ["TH / CN / EN", "ทีมปฏิบัติการในประเทศไทย", "กลยุทธ์ → การลงมือทำ"],
+    ],
     marketEyebrow: "Thailand commerce · 2030",
     marketTitleA: "ตลาดกำลังเคลื่อนตัว",
     marketTitleB: "การอยู่นิ่งก็เป็นการตัดสินใจ",
@@ -325,13 +343,22 @@ const content = {
     nav: ["解决方案", "增长系统", "案例证据"],
     reviewBadge: "审核版本 · 部分案例职责与规模情景待最终核实",
     contact: "预约增长诊断",
-    heroEyebrow: "泰国 · 品牌 · 电商 · 增长",
-    heroTitleA: "从获得关注",
-    heroTitleB: "到创造收入。",
-    heroIntro: "Prompt Rich将品牌战略、TikTok电商、达人、内容与付费投放连接成一套对结果负责的增长系统。",
+    heroEyebrow: "扎根泰国的品牌与商业增长公司",
+    heroTitleA: "让品牌值得被渴望。",
+    heroTitleB: "让增长真正被经营。",
+    heroIntro: "Prompt Rich把品牌方向、内容、电商与投放，连接成一套面向泰国市场的增长经营系统。",
     explore: "了解增长系统",
     proof: "查看真实证据",
-    heroNotes: ["扎根泰国", "泰语 · 中文 · English", "实战团队主导"],
+    heroChapters: [
+      ["01", "DESIRE", "品牌方向"],
+      ["02", "DEMAND", "内容与电商"],
+      ["03", "GROWTH", "经营与增长"],
+    ],
+    heroStats: [
+      ["฿12.5M", "单店最高月度GMV", "内部运营记录"],
+      ["1,000+", "泰国达人网络", "覆盖多品类"],
+      ["TH / CN / EN", "泰国本地执行", "战略 → 运营"],
+    ],
     marketEyebrow: "泰国电商 · 2030",
     marketTitleA: "市场正在加速，",
     marketTitleB: "原地不动也是一种决定。",
@@ -686,9 +713,32 @@ export function Experience() {
         </div>
       </nav>
 
-      <section id="top" ref={heroRef} className="hero dark-section">
-        <div className="hero-glow" aria-hidden="true" />
-        <div className="hero-grid" aria-hidden="true" />
+      <section id="top" ref={heroRef} className="hero cinematic-hero dark-section">
+        <div className="film-prologue" aria-hidden="true">
+          <span>A Thailand growth company</span>
+          <strong>Prompt Rich</strong>
+          <i />
+        </div>
+
+        <div className="cinema-media" aria-hidden="true">
+          {[
+            ["desire", "/hero/desire-v1.jpg"],
+            ["demand", "/hero/demand-v1.jpg"],
+            ["growth", "/hero/growth-v1.jpg"],
+          ].map(([name, src], index) => (
+            <div className={`cinema-panel cinema-panel-${name}`} key={name}>
+              <img src={publicAsset(src)} alt="" />
+              <span className="cinema-frame-index">{t.heroChapters[index][0]}</span>
+              <div className="cinema-panel-caption">
+                <strong>{t.heroChapters[index][1]}</strong>
+                <small>{t.heroChapters[index][2]}</small>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className="cinema-vignette" aria-hidden="true" />
+        <div className="cinema-grain" aria-hidden="true" />
+
         <div className="hero-copy">
           <p className="eyebrow" data-reveal>
             {t.heroEyebrow}
@@ -710,35 +760,14 @@ export function Experience() {
           </div>
         </div>
 
-        <div className="growth-stage growth-stage-advanced" aria-hidden="true">
-          <GrowthField variant="hero" />
-          <div className="field-depth depth-one" />
-          <div className="field-depth depth-two" />
-          <div className="growth-core">
-            <i className="core-surface" />
-            <span>Prompt</span>
-            <span>Rich</span>
-            <small>CONNECTED GROWTH</small>
-          </div>
-          <div className="data-float data-float-one">
-            <small>2030 TH E-COMMERCE</small>
-            <strong>฿1.8T</strong>
-            <span>&gt;14% CAGR</span>
-          </div>
-          <div className="data-float data-float-two">
-            <small>AD ROI</small>
-            <strong>16.45</strong>
-            <span>GMV MAX</span>
-          </div>
-          <div className="data-float data-float-three">
-            <small>CREATORS</small>
-            <strong>1,000+</strong>
-            <span>TH NETWORK</span>
-          </div>
-        </div>
-
-        <div className="hero-notes">
-          {t.heroNotes.map((note) => <span key={note}>{note}</span>)}
+        <div className="hero-stats">
+          {t.heroStats.map(([value, label, note]) => (
+            <article key={value}>
+              <strong>{value}</strong>
+              <span>{label}</span>
+              <small>{note}</small>
+            </article>
+          ))}
         </div>
         <a className="scroll-cue" href="#audience" aria-label="Scroll to next section">
           <i />

@@ -16,10 +16,10 @@ export const metadata: Metadata = {
     url: publicOrigin,
     images: [
       {
-        url: `${publicOrigin}/og-v3.png`,
+        url: `${publicOrigin}/og-cinematic-v1.png`,
         width: 1200,
         height: 630,
-        alt: "Prompt Rich — From attention to revenue.",
+        alt: "Prompt Rich — Built to be desired. Operated to grow.",
       },
     ],
   },
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title,
     description,
-    images: [`${publicOrigin}/og-v3.png`],
+    images: [`${publicOrigin}/og-cinematic-v1.png`],
   },
 };
 
