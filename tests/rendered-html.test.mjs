@@ -92,7 +92,7 @@ test("ships approved assets, spatial motion systems and responsive styling", asy
   assert.match(experience, /className="section-shell client-case-grid"/);
   assert.match(experience, /setScalePreview/);
   assert.match(experience, /className="cinema-media"/);
-  assert.match(experience, /\/hero\/desire-v1\.jpg/);
+  assert.match(experience, /\/hero\/desire-actual-v1\.jpg/);
   assert.match(experience, /<ThailandGrowthMap language=\{language\}/);
   assert.match(experience, /<GrowthField variant="closing"/);
   assert.match(experience, /key=\{`proof-\$\{index\}`\}/);
@@ -105,9 +105,9 @@ test("ships approved assets, spatial motion systems and responsive styling", asy
     "thai-materials-v1.jpg",
   ]);
   assert.deepEqual(heroFiles.sort(), [
-    "demand-v1.jpg",
-    "desire-v1.jpg",
-    "growth-v1.jpg",
+    "demand-actual-v1.jpg",
+    "desire-actual-v1.jpg",
+    "growth-actual-v1.jpg",
   ]);
   assert.match(css, /\.client-logo-frame img/);
   assert.match(css, /bangkok-commerce-v1\.jpg/);
@@ -120,5 +120,8 @@ test("ships approved assets, spatial motion systems and responsive styling", asy
   assert.equal(JSON.parse(thailandGeoJson).features.length, 77);
 
   await assert.rejects(access(new URL("../app/_sites-preview/", import.meta.url)));
-  await access(new URL("../public/og-cinematic-v1.png", import.meta.url));
+  await access(new URL("../public/og-documentary-v1.png", import.meta.url));
+  await access(new URL("../public/hero/desire-actual-v1.jpg", import.meta.url));
+  await access(new URL("../public/hero/demand-actual-v1.jpg", import.meta.url));
+  await access(new URL("../public/hero/growth-actual-v1.jpg", import.meta.url));
 });

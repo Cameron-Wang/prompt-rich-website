@@ -21,9 +21,9 @@ const content = {
     explore: "Explore the system",
     proof: "See the evidence",
     heroChapters: [
-      ["01", "DESIRE", "Brand direction"],
-      ["02", "DEMAND", "Content & commerce"],
-      ["03", "GROWTH", "Operating discipline"],
+      ["01", "DESIRE", "Real brand content"],
+      ["02", "DEMAND", "Live commerce execution"],
+      ["03", "GROWTH", "Performance control room"],
     ],
     heroStats: [
       ["฿12.5M", "Peak monthly GMV", "Single store · internal operating record"],
@@ -203,9 +203,9 @@ const content = {
     explore: "ดูระบบการทำงาน",
     proof: "ดูหลักฐาน",
     heroChapters: [
-      ["01", "DESIRE", "ทิศทางแบรนด์"],
-      ["02", "DEMAND", "คอนเทนต์และคอมเมิร์ซ"],
-      ["03", "GROWTH", "ระบบปฏิบัติการเพื่อการเติบโต"],
+      ["01", "DESIRE", "คอนเทนต์แบรนด์จากงานจริง"],
+      ["02", "DEMAND", "การปฏิบัติงาน Live Commerce"],
+      ["03", "GROWTH", "ศูนย์ควบคุมผลลัพธ์"],
     ],
     heroStats: [
       ["฿12.5M", "GMV สูงสุดต่อเดือน", "ร้านเดียว · บันทึกผลการดำเนินงานภายใน"],
@@ -350,9 +350,9 @@ const content = {
     explore: "了解增长系统",
     proof: "查看真实证据",
     heroChapters: [
-      ["01", "DESIRE", "品牌方向"],
-      ["02", "DEMAND", "内容与电商"],
-      ["03", "GROWTH", "经营与增长"],
+      ["01", "DESIRE", "真实品牌内容"],
+      ["02", "DEMAND", "直播电商现场"],
+      ["03", "GROWTH", "经营数据控制台"],
     ],
     heroStats: [
       ["฿12.5M", "单店最高月度GMV", "内部运营记录"],
@@ -722,9 +722,9 @@ export function Experience() {
 
         <div className="cinema-media" aria-hidden="true">
           {[
-            ["desire", "/hero/desire-v1.jpg"],
-            ["demand", "/hero/demand-v1.jpg"],
-            ["growth", "/hero/growth-v1.jpg"],
+            ["desire", "/hero/desire-actual-v1.jpg"],
+            ["demand", "/hero/demand-actual-v1.jpg"],
+            ["growth", "/hero/growth-actual-v1.jpg"],
           ].map(([name, src], index) => (
             <div className={`cinema-panel cinema-panel-${name}`} key={name}>
               <img src={publicAsset(src)} alt="" />
