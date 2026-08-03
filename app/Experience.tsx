@@ -21,8 +21,8 @@ const content = {
     explore: "Explore the system",
     proof: "See the evidence",
     heroChapters: [
-      ["01", "DESIRE", "Real brand content"],
-      ["02", "DEMAND", "Live commerce execution"],
+      ["01", "DESIRE", "Fashion content production"],
+      ["02", "EXECUTION", "Commerce operations"],
       ["03", "GROWTH", "Performance control room"],
     ],
     heroStats: [
@@ -203,8 +203,8 @@ const content = {
     explore: "ดูระบบการทำงาน",
     proof: "ดูหลักฐาน",
     heroChapters: [
-      ["01", "DESIRE", "คอนเทนต์แบรนด์จากงานจริง"],
-      ["02", "DEMAND", "การปฏิบัติงาน Live Commerce"],
+      ["01", "DESIRE", "การผลิตคอนเทนต์แฟชั่น"],
+      ["02", "EXECUTION", "การดำเนินงานคอมเมิร์ซ"],
       ["03", "GROWTH", "ศูนย์ควบคุมผลลัพธ์"],
     ],
     heroStats: [
@@ -350,8 +350,8 @@ const content = {
     explore: "了解增长系统",
     proof: "查看真实证据",
     heroChapters: [
-      ["01", "DESIRE", "真实品牌内容"],
-      ["02", "DEMAND", "直播电商现场"],
+      ["01", "DESIRE", "时尚内容拍摄制作"],
+      ["02", "EXECUTION", "电商运营执行"],
       ["03", "GROWTH", "经营数据控制台"],
     ],
     heroStats: [
@@ -720,21 +720,26 @@ export function Experience() {
           <i />
         </div>
 
-        <div className="cinema-media" aria-hidden="true">
-          {[
-            ["desire", "/hero/desire-actual-v1.jpg"],
-            ["demand", "/hero/demand-actual-v1.jpg"],
-            ["growth", "/hero/growth-actual-v1.jpg"],
-          ].map(([name, src], index) => (
-            <div className={`cinema-panel cinema-panel-${name}`} key={name}>
-              <img src={publicAsset(src)} alt="" />
-              <span className="cinema-frame-index">{t.heroChapters[index][0]}</span>
-              <div className="cinema-panel-caption">
-                <strong>{t.heroChapters[index][1]}</strong>
-                <small>{t.heroChapters[index][2]}</small>
+        <div className="cinema-media cinema-documentary" aria-hidden="true">
+          <picture className="documentary-frame">
+            <source
+              srcSet={publicAsset("/hero/prompt-rich-documentary-b11.webp")}
+              type="image/webp"
+            />
+            <img
+              src={publicAsset("/hero/prompt-rich-documentary-b11.png")}
+              alt=""
+            />
+          </picture>
+          <div className="documentary-chapters">
+            {t.heroChapters.map(([number, title, detail], index) => (
+              <div className={`documentary-chapter chapter-${index + 1}`} key={number}>
+                <span>{number}</span>
+                <strong>{title}</strong>
+                <small>{detail}</small>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
         <div className="cinema-vignette" aria-hidden="true" />
         <div className="cinema-grain" aria-hidden="true" />

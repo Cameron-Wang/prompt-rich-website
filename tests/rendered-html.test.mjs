@@ -34,8 +34,9 @@ test("server-renders the Prompt Rich experience and direct-client wall", async (
   assert.match(html, /Operated to grow/);
   assert.match(html, /฿12\.5M/);
   assert.match(html, /The market is moving/);
-  assert.match(html, /THAILAND GROWTH TERRAIN/);
-  assert.match(html, /Local demand moves through connected markets/);
+  assert.match(html, /THAILAND ORDER FLOW/);
+  assert.match(html, /One market\. Millions of movements/);
+  assert.match(html, /300M\+/);
   assert.match(html, /฿1\.8T/);
   assert.match(html, /Offline → online/);
   assert.match(html, /Five growth levers/);
@@ -91,8 +92,8 @@ test("ships approved assets, spatial motion systems and responsive styling", asy
   assert.match(experience, /className="service-system"/);
   assert.match(experience, /className="section-shell client-case-grid"/);
   assert.match(experience, /setScalePreview/);
-  assert.match(experience, /className="cinema-media"/);
-  assert.match(experience, /\/hero\/desire-actual-v1\.jpg/);
+  assert.match(experience, /className="cinema-media cinema-documentary"/);
+  assert.match(experience, /\/hero\/prompt-rich-documentary-b11\.webp/);
   assert.match(experience, /<ThailandGrowthMap language=\{language\}/);
   assert.match(experience, /<GrowthField variant="closing"/);
   assert.match(experience, /key=\{`proof-\$\{index\}`\}/);
@@ -108,6 +109,8 @@ test("ships approved assets, spatial motion systems and responsive styling", asy
     "demand-actual-v1.jpg",
     "desire-actual-v1.jpg",
     "growth-actual-v1.jpg",
+    "prompt-rich-documentary-b11.png",
+    "prompt-rich-documentary-b11.webp",
   ]);
   assert.match(css, /\.client-logo-frame img/);
   assert.match(css, /bangkok-commerce-v1\.jpg/);
@@ -116,6 +119,7 @@ test("ships approved assets, spatial motion systems and responsive styling", asy
   assert.match(css, /animation-direction:\s*reverse/);
   assert.match(css, /@media \(prefers-reduced-motion: reduce\)/);
   assert.match(polish, /@keyframes cinema-panel-reveal/);
+  assert.match(polish, /@keyframes documentary-image-settle/);
   assert.match(polish, /\.hero-stats/);
   assert.equal(JSON.parse(thailandGeoJson).features.length, 77);
 
@@ -124,4 +128,5 @@ test("ships approved assets, spatial motion systems and responsive styling", asy
   await access(new URL("../public/hero/desire-actual-v1.jpg", import.meta.url));
   await access(new URL("../public/hero/demand-actual-v1.jpg", import.meta.url));
   await access(new URL("../public/hero/growth-actual-v1.jpg", import.meta.url));
+  await access(new URL("../public/hero/prompt-rich-documentary-b11.webp", import.meta.url));
 });

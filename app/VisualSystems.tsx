@@ -21,6 +21,7 @@ type GeoGeometry = {
 
 type GeoFeature = {
   geometry: GeoGeometry;
+  properties?: Record<string, unknown>;
 };
 
 type GeoCollection = {
@@ -32,46 +33,52 @@ const publicAsset = (path: string) =>
 
 const mapCopy = {
   en: {
-    eyebrow: "THAILAND GROWTH TERRAIN",
-    title: "Local demand moves through connected markets.",
+    eyebrow: "THAILAND ORDER FLOW",
+    title: "One market. Millions of movements.",
     body:
-      "Bangkok is the commercial core, but growth is distributed across creator communities, retail corridors, tourism economies and emerging online demand.",
+      "Every moving streak represents an order. Bangkok leads the flow while Thailand’s other commercial centres send demand across all 77 provinces.",
     nodes: [
-      ["Bangkok", "Commerce core"],
-      ["Chiang Mai", "Creator demand"],
-      ["Eastern Seaboard", "Retail · logistics"],
+      ["Bangkok", "Primary commerce engine"],
+      ["Eastern Seaboard", "Industry · retail · logistics"],
+      ["Chiang Mai", "Northern demand hub"],
+      ["Northeast", "Korat · Khon Kaen"],
       ["Phuket", "Tourism · lifestyle"],
-      ["Northeast", "Emerging online demand"],
+      ["Songkhla", "Southern trade hub"],
     ],
-    note: "Illustrative market signals · geographic boundaries are accurate",
+    scale: "300M+ order-scale simulation",
+    note: "Illustrative order-flow model · origin intensity weighted by 2024 provincial GPP",
   },
   th: {
-    eyebrow: "ภูมิทัศน์การเติบโตของประเทศไทย",
-    title: "ดีมานด์ท้องถิ่นเติบโตผ่านตลาดที่เชื่อมโยงกัน",
+    eyebrow: "การไหลของออเดอร์ทั่วประเทศไทย",
+    title: "หนึ่งตลาด หลายล้านการเคลื่อนไหว",
     body:
-      "กรุงเทพฯ คือศูนย์กลางการค้า แต่การเติบโตกระจายอยู่ในคอมมูนิตี้ครีเอเตอร์ เส้นทางค้าปลีก เมืองท่องเที่ยว และดีมานด์ออนไลน์ในภูมิภาค",
+      "ทุกเส้นแสงที่เคลื่อนไหวแทนหนึ่งออเดอร์ กรุงเทพฯ เป็นศูนย์กลางหลัก ขณะที่หัวเมืองเศรษฐกิจส่งดีมานด์ไปยังทั้ง 77 จังหวัด",
     nodes: [
-      ["กรุงเทพฯ", "ศูนย์กลางคอมเมิร์ซ"],
-      ["เชียงใหม่", "ดีมานด์จากครีเอเตอร์"],
-      ["ภาคตะวันออก", "ค้าปลีก · โลจิสติกส์"],
+      ["กรุงเทพฯ", "เครื่องยนต์คอมเมิร์ซหลัก"],
+      ["ภาคตะวันออก", "อุตสาหกรรม · ค้าปลีก · โลจิสติกส์"],
+      ["เชียงใหม่", "ศูนย์กลางดีมานด์ภาคเหนือ"],
+      ["ภาคอีสาน", "โคราช · ขอนแก่น"],
       ["ภูเก็ต", "ท่องเที่ยว · ไลฟ์สไตล์"],
-      ["ภาคอีสาน", "ดีมานด์ออนไลน์เกิดใหม่"],
+      ["สงขลา", "ศูนย์กลางการค้าภาคใต้"],
     ],
-    note: "สัญญาณตลาดเพื่อการอธิบาย · ใช้ขอบเขตภูมิศาสตร์จริง",
+    scale: "ภาพจำลองออเดอร์ระดับ 300M+",
+    note: "แบบจำลองเพื่อการสื่อสาร · ความถี่ต้นทางถ่วงน้ำหนักด้วย GPP จังหวัดปี 2024",
   },
   zh: {
-    eyebrow: "泰国增长版图",
-    title: "本地需求，正在多个互联市场中同时生长。",
+    eyebrow: "泰国订单流动版图",
+    title: "一个市场，亿级流动。",
     body:
-      "曼谷是商业核心，但增长同时来自达人社区、零售与物流走廊、旅游经济以及快速形成的区域线上需求。",
+      "每一道移动轨迹代表一笔订单。曼谷是最大核心，其他主要经济城市同时向泰国77府释放并承接需求。",
     nodes: [
-      ["曼谷", "商业核心"],
-      ["清迈", "达人驱动需求"],
-      ["东部经济走廊", "零售 · 物流"],
+      ["曼谷", "核心商业引擎"],
+      ["东部经济走廊", "工业 · 零售 · 物流"],
+      ["清迈", "北部需求中心"],
+      ["东北部", "呵叻 · 孔敬"],
       ["普吉", "旅游 · 生活方式"],
-      ["东北部", "新兴线上需求"],
+      ["宋卡", "南部贸易中心"],
     ],
-    note: "市场信号为示意表达 · 地理边界采用真实数据",
+    scale: "3亿+订单动势模拟",
+    note: "订单流为视觉模拟 · 发射强度按2024年府级GPP加权",
   },
 } as const;
 
@@ -111,7 +118,7 @@ export function GrowthField({ variant }: { variant: FieldVariant }) {
 
     const resize = () => {
       const bounds = canvas.getBoundingClientRect();
-      const ratio = Math.min(window.devicePixelRatio || 1, 2);
+      const ratio = Math.min(window.devicePixelRatio || 1, 1.5);
       width = Math.max(1, bounds.width);
       height = Math.max(1, bounds.height);
       canvas.width = Math.round(width * ratio);
@@ -243,13 +250,68 @@ export function GrowthField({ variant }: { variant: FieldVariant }) {
   return <canvas ref={canvasRef} className={`growth-field growth-field-${variant}`} />;
 }
 
-const marketNodes = [
-  { lon: 100.5018, lat: 13.7563, strength: 1 },
-  { lon: 98.9853, lat: 18.7883, strength: 0.66 },
-  { lon: 101.15, lat: 13.15, strength: 0.74 },
-  { lon: 98.3923, lat: 7.8804, strength: 0.6 },
-  { lon: 102.835, lat: 16.4419, strength: 0.7 },
+type GeoPoint = { lon: number; lat: number };
+
+type OrderStream = {
+  origin: number;
+  destination: number;
+  phase: number;
+  speed: number;
+  bend: number;
+  lift: number;
+  size: number;
+};
+
+// Relative source weights approximate the latest available provincial economic
+// structure. The visual discloses this as a GPP-weighted simulation, not order data.
+const commerceOrigins = [
+  { name: "Bangkok", lon: 100.5018, lat: 13.7563, weight: 5.98 },
+  { name: "Chon Buri", lon: 100.9847, lat: 13.3611, weight: 1.25 },
+  { name: "Rayong", lon: 101.2816, lat: 12.6814, weight: 1.05 },
+  { name: "Samut Prakan", lon: 100.5998, lat: 13.5991, weight: 0.78 },
+  { name: "Nakhon Ratchasima", lon: 102.0977, lat: 14.9799, weight: 0.34 },
+  { name: "Chiang Mai", lon: 98.9853, lat: 18.7883, weight: 0.3 },
+  { name: "Songkhla", lon: 100.5954, lat: 7.1898, weight: 0.28 },
+  { name: "Khon Kaen", lon: 102.835, lat: 16.4419, weight: 0.26 },
+  { name: "Surat Thani", lon: 99.3331, lat: 9.1382, weight: 0.23 },
+  { name: "Phuket", lon: 98.3923, lat: 7.8804, weight: 0.22 },
 ] as const;
+
+const orderColors = [
+  [238, 205, 145],
+  [151, 197, 220],
+  [207, 126, 145],
+] as const;
+
+function featureCentre(feature: GeoFeature): GeoPoint | null {
+  const geometry = feature.geometry;
+  const rings = geometry.type === "Polygon"
+    ? [(geometry.coordinates as number[][][])[0]]
+    : (geometry.coordinates as number[][][][]).map((polygon) => polygon[0]);
+  const points = rings.flat().filter((point) => point.length >= 2);
+  if (!points.length) return null;
+  let minLon = Infinity;
+  let maxLon = -Infinity;
+  let minLat = Infinity;
+  let maxLat = -Infinity;
+  points.forEach(([lon, lat]) => {
+    minLon = Math.min(minLon, lon);
+    maxLon = Math.max(maxLon, lon);
+    minLat = Math.min(minLat, lat);
+    maxLat = Math.max(maxLat, lat);
+  });
+  return { lon: (minLon + maxLon) / 2, lat: (minLat + maxLat) / 2 };
+}
+
+function weightedOrigin(seed: number) {
+  const total = commerceOrigins.reduce((sum, origin) => sum + origin.weight, 0);
+  let cursor = seed * total;
+  for (let index = 0; index < commerceOrigins.length; index += 1) {
+    cursor -= commerceOrigins[index].weight;
+    if (cursor <= 0) return index;
+  }
+  return 0;
+}
 
 export function ThailandGrowthMap({ language }: { language: MapLanguage }) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -262,6 +324,8 @@ export function ThailandGrowthMap({ language }: { language: MapLanguage }) {
     if (!context) return;
 
     let collection: GeoCollection | null = null;
+    let destinations: GeoPoint[] = [];
+    let streams: OrderStream[] = [];
     let width = 0;
     let height = 0;
     let frame = 0;
@@ -272,7 +336,7 @@ export function ThailandGrowthMap({ language }: { language: MapLanguage }) {
 
     const resize = () => {
       const bounds = canvas.getBoundingClientRect();
-      const ratio = Math.min(window.devicePixelRatio || 1, 2);
+      const ratio = Math.min(window.devicePixelRatio || 1, 1.5);
       width = Math.max(1, bounds.width);
       height = Math.max(1, bounds.height);
       canvas.width = Math.round(width * ratio);
@@ -340,81 +404,123 @@ export function ThailandGrowthMap({ language }: { language: MapLanguage }) {
         height * 0.45,
         Math.max(width, height) * 0.55,
       );
-      ambient.addColorStop(0, "rgba(84,242,204,.12)");
-      ambient.addColorStop(0.38, "rgba(124,108,255,.09)");
+      ambient.addColorStop(0, "rgba(151,197,220,.15)");
+      ambient.addColorStop(0.38, "rgba(111,32,56,.13)");
       ambient.addColorStop(1, "rgba(0,0,0,0)");
       context.fillStyle = ambient;
       context.fillRect(0, 0, width, height);
 
-      for (let layer = 12; layer >= 1; layer -= 1) {
+      for (let layer = 3; layer >= 1; layer -= 1) {
         collection.features.forEach((feature) => {
           traceFeature(feature, layer);
-          context.fillStyle = `rgba(${18 + layer},${19 + layer},${28 + layer * 2},.78)`;
+          context.fillStyle = `rgba(${25 + layer},${23 + layer},${25 + layer},.82)`;
           context.fill("evenodd");
-          context.strokeStyle = "rgba(124,108,255,.045)";
+          context.strokeStyle = "rgba(232,205,169,.055)";
           context.lineWidth = 0.45;
           context.stroke();
         });
       }
 
       const topGradient = context.createLinearGradient(0, height * 0.12, width, height * 0.86);
-      topGradient.addColorStop(0, "rgba(193,188,255,.86)");
-      topGradient.addColorStop(0.48, "rgba(92,82,158,.9)");
-      topGradient.addColorStop(1, "rgba(39,46,64,.96)");
+      topGradient.addColorStop(0, "rgba(214,205,190,.94)");
+      topGradient.addColorStop(0.48, "rgba(119,119,127,.96)");
+      topGradient.addColorStop(1, "rgba(47,43,47,.98)");
       collection.features.forEach((feature) => {
         traceFeature(feature);
         context.fillStyle = topGradient;
         context.fill("evenodd");
-        context.strokeStyle = "rgba(226,224,255,.23)";
+        context.strokeStyle = "rgba(247,232,211,.28)";
         context.lineWidth = 0.65;
         context.stroke();
       });
 
-      const bangkok = project(marketNodes[0].lon, marketNodes[0].lat);
-      marketNodes.slice(1).forEach((node, index) => {
-        const destination = project(node.lon, node.lat);
-        const controlX = (bangkok.x + destination.x) / 2 + (index % 2 ? -34 : 30);
-        const controlY = Math.min(bangkok.y, destination.y) - 58 - index * 5;
+      destinations.forEach((node, index) => {
+        const point = project(node.lon, node.lat);
+        const pulse = 0.5 + Math.sin(seconds * 1.7 + index * 0.71) * 0.2;
         context.beginPath();
-        context.moveTo(bangkok.x, bangkok.y);
-        context.quadraticCurveTo(controlX, controlY, destination.x, destination.y);
-        context.strokeStyle = index % 2 ? "rgba(84,242,204,.42)" : "rgba(187,178,255,.45)";
-        context.lineWidth = 1;
-        context.stroke();
-
-        const progress = (seconds * (0.13 + index * 0.016) + index * 0.22) % 1;
-        const oneMinus = 1 - progress;
-        const movingX =
-          oneMinus * oneMinus * bangkok.x +
-          2 * oneMinus * progress * controlX +
-          progress * progress * destination.x;
-        const movingY =
-          oneMinus * oneMinus * bangkok.y +
-          2 * oneMinus * progress * controlY +
-          progress * progress * destination.y;
-        context.beginPath();
-        context.fillStyle = index % 2 ? "#54f2cc" : "#b7aeff";
-        context.shadowColor = context.fillStyle;
-        context.shadowBlur = 12;
-        context.arc(movingX, movingY, 2.2, 0, Math.PI * 2);
+        context.fillStyle = `rgba(246,230,206,${0.24 + pulse * 0.22})`;
+        context.arc(point.x, point.y, width < 700 ? 0.65 : 0.85, 0, Math.PI * 2);
         context.fill();
       });
 
-      marketNodes.forEach((node, index) => {
-        const point = project(node.lon, node.lat);
-        const pulse = 0.78 + Math.sin(seconds * 2 + index) * 0.22;
-        const heightScale = (42 + node.strength * 76) * pulse;
-        const gradient = context.createLinearGradient(point.x, point.y, point.x, point.y - heightScale);
-        gradient.addColorStop(0, "rgba(84,242,204,.08)");
-        gradient.addColorStop(1, index === 0 ? "rgba(84,242,204,.95)" : "rgba(183,174,255,.82)");
-        context.fillStyle = gradient;
-        context.fillRect(point.x - 1.25, point.y - heightScale, 2.5, heightScale);
+      const originPoints = commerceOrigins.map((origin) => project(origin.lon, origin.lat));
+      const maxWeight = commerceOrigins[0].weight;
+      const streamLimit = reduceMotion ? 150 : width < 700 ? 190 : width < 1080 ? 320 : 480;
+
+      context.save();
+      context.globalCompositeOperation = "lighter";
+      streams.slice(0, streamLimit).forEach((stream, index) => {
+        const origin = originPoints[stream.origin];
+        const destinationNode = destinations[stream.destination];
+        if (!origin || !destinationNode) return;
+        const destination = project(destinationNode.lon, destinationNode.lat);
+        const dx = destination.x - origin.x;
+        const dy = destination.y - origin.y;
+        const distance = Math.hypot(dx, dy);
+        const control = {
+          x: (origin.x + destination.x) / 2 + stream.bend * Math.max(18, distance * 0.18),
+          y: Math.min(origin.y, destination.y) - stream.lift * (46 + distance * 0.2),
+        };
+        const pointAt = (progress: number) => {
+          const t = Math.max(0, Math.min(1, progress));
+          const inverse = 1 - t;
+          return {
+            x: inverse * inverse * origin.x + 2 * inverse * t * control.x + t * t * destination.x,
+            y: inverse * inverse * origin.y + 2 * inverse * t * control.y + t * t * destination.y,
+          };
+        };
+
+        if (index % 19 === 0) {
+          context.beginPath();
+          context.moveTo(origin.x, origin.y);
+          context.quadraticCurveTo(control.x, control.y, destination.x, destination.y);
+          context.strokeStyle = "rgba(232,205,169,.055)";
+          context.lineWidth = 0.45;
+          context.stroke();
+        }
+
+        const progress = reduceMotion ? stream.phase : (seconds * stream.speed + stream.phase) % 1;
+        const tail = Math.max(0, progress - (0.045 + stream.size * 0.045));
+        const color = orderColors[stream.origin % orderColors.length];
+        const energy = Math.sin(progress * Math.PI);
+        const head = pointAt(progress);
         context.beginPath();
-        context.fillStyle = index === 0 ? "#54f2cc" : "#b7aeff";
-        context.shadowColor = context.fillStyle;
-        context.shadowBlur = index === 0 ? 22 : 14;
-        context.arc(point.x, point.y - heightScale, index === 0 ? 4.2 : 2.8, 0, Math.PI * 2);
+        for (let segment = 0; segment <= 3; segment += 1) {
+          const point = pointAt(tail + (progress - tail) * (segment / 3));
+          if (segment === 0) context.moveTo(point.x, point.y);
+          else context.lineTo(point.x, point.y);
+        }
+        context.strokeStyle = `rgba(${color[0]},${color[1]},${color[2]},${0.25 + energy * 0.58})`;
+        context.lineWidth = 0.45 + stream.size * 0.9;
+        context.stroke();
+        context.beginPath();
+        context.fillStyle = `rgba(${color[0]},${color[1]},${color[2]},${0.62 + energy * 0.35})`;
+        context.arc(head.x, head.y, 0.65 + stream.size * 0.8, 0, Math.PI * 2);
         context.fill();
+      });
+      context.restore();
+
+      commerceOrigins.forEach((node, index) => {
+        const point = originPoints[index];
+        const weightScale = Math.sqrt(node.weight / maxWeight);
+        const pulse = 0.82 + Math.sin(seconds * 2.2 + index) * 0.18;
+        const heightScale = (32 + weightScale * 104) * pulse;
+        const gradient = context.createLinearGradient(point.x, point.y, point.x, point.y - heightScale);
+        gradient.addColorStop(0, "rgba(232,205,169,.04)");
+        gradient.addColorStop(1, index === 0 ? "rgba(238,205,145,.98)" : "rgba(151,197,220,.86)");
+        context.fillStyle = gradient;
+        context.fillRect(point.x - 1, point.y - heightScale, 2, heightScale);
+        context.beginPath();
+        context.fillStyle = index === 0 ? "#eecd91" : "#97c5dc";
+        context.shadowColor = context.fillStyle;
+        context.shadowBlur = index === 0 ? 26 : 15;
+        context.arc(point.x, point.y - heightScale, index === 0 ? 4.6 : 2.4 + weightScale, 0, Math.PI * 2);
+        context.fill();
+        context.beginPath();
+        context.strokeStyle = index === 0 ? "rgba(238,205,145,.62)" : "rgba(151,197,220,.42)";
+        context.lineWidth = 0.8;
+        context.arc(point.x, point.y, (8 + weightScale * 13) * pulse, 0, Math.PI * 2);
+        context.stroke();
       });
       context.shadowBlur = 0;
 
@@ -434,6 +540,21 @@ export function ThailandGrowthMap({ language }: { language: MapLanguage }) {
       .then((response) => response.json())
       .then((data: GeoCollection) => {
         collection = data;
+        destinations = data.features
+          .map(featureCentre)
+          .filter((point): point is GeoPoint => Boolean(point));
+        streams = Array.from({ length: 1100 }, (_, index) => ({
+          origin: weightedOrigin(seeded(index, 31)),
+          destination:
+            destinations.length > 0
+              ? (index * 29 + Math.floor(seeded(index, 32) * destinations.length)) % destinations.length
+              : 0,
+          phase: seeded(index, 33),
+          speed: 0.08 + seeded(index, 34) * 0.22,
+          bend: (seeded(index, 35) - 0.5) * 2,
+          lift: 0.55 + seeded(index, 36) * 0.9,
+          size: 0.35 + seeded(index, 37) * 0.9,
+        }));
         draw(0);
       })
       .catch(() => {
@@ -468,7 +589,11 @@ export function ThailandGrowthMap({ language }: { language: MapLanguage }) {
       </div>
       <div className="thailand-map-stage">
         <canvas ref={canvasRef} className="thailand-map-canvas" />
-        <div className="map-axis" aria-hidden="true"><span>LOCAL SIGNAL</span><i /></div>
+        <div className="map-order-scale" aria-hidden="true">
+          <strong>300M+</strong>
+          <span>{copy.scale}</span>
+        </div>
+        <div className="map-axis" aria-hidden="true"><span>ORDER VELOCITY</span><i /></div>
       </div>
     </section>
   );
