@@ -45,7 +45,7 @@ const mapCopy = {
       ["Phuket", "Tourism · lifestyle"],
       ["Songkhla", "Southern trade hub"],
     ],
-    scale: "Billion-scale order-flow simulation",
+    scale: "Hundreds-of-millions-scale order-flow simulation",
     note: "Illustrative order-flow model · origin intensity weighted by 2024 provincial GPP",
   },
   th: {
