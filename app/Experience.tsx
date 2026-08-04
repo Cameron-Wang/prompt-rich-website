@@ -14,10 +14,10 @@ const content = {
     reviewBadge: "REVIEW BUILD · SELECT ROLES & SCALE SCENARIOS PENDING VERIFICATION",
     contact: "Book a growth diagnostic",
     heroEyebrow: "A Thailand brand & commerce company",
-    heroTitleA: "Built to be desired.",
-    heroTitleB: "Operated to grow.",
+    heroTitleA: "Turn brand desire",
+    heroTitleB: "into daily sales.",
     heroIntro:
-      "Prompt Rich turns brand direction, content, commerce and media into one operating system for growth in Thailand.",
+      "Brand strategy, content production, TikTok Shop operations and performance media—one accountable growth system for Thailand.",
     explore: "Explore the system",
     proof: "See the evidence",
     heroChapters: [
@@ -26,21 +26,28 @@ const content = {
       ["03", "GROWTH", "Performance control room"],
     ],
     heroStats: [
-      ["฿12.5M", "Peak monthly GMV", "Single store · internal operating record"],
-      ["1,000+", "Creator network", "Thailand"],
-      ["TH / CN / EN", "Thailand-native execution", "Strategy → operation"],
+      ["฿25.5M", "Peak monthly GMV", "Single store · internal operating record"],
+      ["52M+", "Documented campaign views", "Five selected Thailand client projects"],
+      ["39", "Direct client brands", "Beauty · fashion · technology · consumer"],
+      ["1,000+", "Creator resources", "Thailand · multi-category"],
     ],
-    marketEyebrow: "Thailand commerce · 2030",
-    marketTitleA: "The market is moving.",
-    marketTitleB: "Standing still is a decision.",
+    marketEyebrow: "THE COST OF WAITING · THAILAND 2030",
+    marketTitleA: "The market will not wait",
+    marketTitleB: "for your transformation.",
     marketBody:
-      "Thailand’s e-commerce market is projected to nearly double from THB 970B in 2025 to THB 1.8T by 2030. The opportunity is expanding—and so is the cost of fragmented execution.",
+      "Thailand is moving toward a ฿1.8T e-commerce economy. Brands building their content, commerce and media systems now are accumulating customer data, platform learning and execution advantage every day.",
     marketStats: [
-      ["฿1.8T", "Projected Thailand e-commerce value", "2030 forecast"],
-      [">14%", "Expected compound annual growth", "2025–2030"],
+      ["฿1.8T", "Projected e-commerce market", "Thailand · 2030"],
+      [">14%", "Projected annual growth", "2025–2030 CAGR"],
+      ["$33B", "E-commerce GMV", "2025 · +22% YoY"],
+      ["$56B", "Digital economy GMV", "2025 · SEA #2"],
       ["1.3B", "Video-commerce transactions", "Thailand · regional #2"],
+      ["850K", "Video-commerce sellers", "+175% YoY"],
+      ["56.6M", "Active social identities", "79.1% of population"],
+      ["21%", "Fashion & accessories", "Share of video-commerce GMV"],
     ],
-    marketSource: "2026 forecast: CUBE Insights / Lazada Thailand. Video-commerce data: Google, Temasek & Bain, 2025.",
+    marketConclusion: "The opportunity is growing. So is the cost of being late.",
+    marketSource: "Sources: CUBE Insights / Lazada Thailand forecast; Google, Temasek & Bain e-Conomy SEA 2025; DataReportal Digital 2026 Thailand.",
     diagnosticEyebrow: "Growth readiness diagnostic",
     diagnosticTitle: "Which signal feels closest to your business?",
     diagnosticBody:
@@ -196,10 +203,10 @@ const content = {
     reviewBadge: "เวอร์ชันตรวจงาน · บทบาทบางส่วนและโมเดลการขยายผลอยู่ระหว่างยืนยัน",
     contact: "นัดวิเคราะห์การเติบโต",
     heroEyebrow: "บริษัทด้านแบรนด์และคอมเมิร์ซในประเทศไทย",
-    heroTitleA: "สร้างแบรนด์ให้น่าปรารถนา",
-    heroTitleB: "ขับเคลื่อนธุรกิจให้เติบโต",
+    heroTitleA: "เปลี่ยนความน่าดึงดูดของแบรนด์",
+    heroTitleB: "ให้เป็นยอดขายที่เกิดขึ้นทุกวัน",
     heroIntro:
-      "Prompt Rich เปลี่ยนทิศทางแบรนด์ คอนเทนต์ คอมเมิร์ซ และสื่อ ให้เป็นระบบการเติบโตเดียวสำหรับตลาดไทย",
+      "กลยุทธ์แบรนด์ การผลิตคอนเทนต์ การดำเนินงาน TikTok Shop และ Performance Media เชื่อมเป็นระบบการเติบโตเดียวที่รับผิดชอบผลลัพธ์ในประเทศไทย",
     explore: "ดูระบบการทำงาน",
     proof: "ดูหลักฐาน",
     heroChapters: [
@@ -208,21 +215,28 @@ const content = {
       ["03", "GROWTH", "ศูนย์ควบคุมผลลัพธ์"],
     ],
     heroStats: [
-      ["฿12.5M", "GMV สูงสุดต่อเดือน", "ร้านเดียว · บันทึกผลการดำเนินงานภายใน"],
-      ["1,000+", "เครือข่ายครีเอเตอร์", "ประเทศไทย"],
-      ["TH / CN / EN", "ทีมปฏิบัติการในประเทศไทย", "กลยุทธ์ → การลงมือทำ"],
+      ["฿25.5M", "GMV สูงสุดต่อเดือน", "ร้านเดียว · บันทึกผลการดำเนินงานภายใน"],
+      ["52M+", "ยอดชมแคมเปญที่มีข้อมูล", "5 โครงการลูกค้าในประเทศไทย"],
+      ["39", "แบรนด์ลูกค้าโดยตรง", "ความงาม · แฟชั่น · เทคโนโลยี · สินค้าอุปโภคบริโภค"],
+      ["1,000+", "เครือข่ายครีเอเตอร์", "ประเทศไทย · หลากหลายหมวดหมู่"],
     ],
-    marketEyebrow: "Thailand commerce · 2030",
-    marketTitleA: "ตลาดกำลังเคลื่อนตัว",
-    marketTitleB: "การอยู่นิ่งก็เป็นการตัดสินใจ",
+    marketEyebrow: "ต้นทุนของการรอ · ประเทศไทย 2030",
+    marketTitleA: "ตลาดจะไม่รอ",
+    marketTitleB: "ให้ธุรกิจของคุณพร้อม",
     marketBody:
-      "ตลาดอีคอมเมิร์ซไทยคาดว่าจะเพิ่มขึ้นเกือบ 2 เท่า จาก 970,000 ล้านบาทในปี 2025 เป็น 1.8 ล้านล้านบาทในปี 2030 โอกาสกำลังโต และต้นทุนของการทำงานแบบแยกส่วนก็เพิ่มขึ้นเช่นกัน",
+      "อีคอมเมิร์ซไทยกำลังมุ่งสู่มูลค่า 1.8 ล้านล้านบาท แบรนด์ที่สร้างระบบคอนเทนต์ คอมเมิร์ซ และสื่อในวันนี้ กำลังสะสมข้อมูลลูกค้า การเรียนรู้จากแพลตฟอร์ม และความได้เปรียบในการลงมือทำทุกวัน",
     marketStats: [
-      ["฿1.8T", "มูลค่าอีคอมเมิร์ซไทยที่คาดการณ์", "ปี 2030"],
-      [">14%", "อัตราเติบโตเฉลี่ยต่อปีที่คาดการณ์", "2025–2030"],
+      ["฿1.8T", "มูลค่าตลาดอีคอมเมิร์ซคาดการณ์", "ประเทศไทย · ปี 2030"],
+      [">14%", "อัตราเติบโตต่อปีคาดการณ์", "CAGR ปี 2025–2030"],
+      ["$33B", "GMV อีคอมเมิร์ซ", "ปี 2025 · +22% YoY"],
+      ["$56B", "GMV เศรษฐกิจดิจิทัล", "ปี 2025 · อันดับ 2 ใน SEA"],
       ["1.3B", "ธุรกรรมวิดีโอคอมเมิร์ซ", "ไทย · อันดับ 2 ของภูมิภาค"],
+      ["850K", "ผู้ขายวิดีโอคอมเมิร์ซ", "+175% YoY"],
+      ["56.6M", "ตัวตนผู้ใช้โซเชียลที่ใช้งาน", "79.1% ของประชากร"],
+      ["21%", "แฟชั่นและแอ็กเซสซอรี", "สัดส่วน GMV วิดีโอคอมเมิร์ซ"],
     ],
-    marketSource: "คาดการณ์ปี 2026: CUBE Insights / Lazada Thailand · ข้อมูลวิดีโอคอมเมิร์ซ: Google, Temasek & Bain, 2025",
+    marketConclusion: "โอกาสกำลังเติบโต และต้นทุนของการเริ่มช้าก็กำลังสูงขึ้นเช่นกัน",
+    marketSource: "แหล่งข้อมูล: CUBE Insights / Lazada Thailand; Google, Temasek & Bain e-Conomy SEA 2025; DataReportal Digital 2026 Thailand",
     diagnosticEyebrow: "Growth readiness diagnostic",
     diagnosticTitle: "สัญญาณใดใกล้เคียงกับธุรกิจของคุณที่สุด?",
     diagnosticBody:
@@ -344,9 +358,9 @@ const content = {
     reviewBadge: "审核版本 · 部分案例职责与规模情景待最终核实",
     contact: "预约增长诊断",
     heroEyebrow: "扎根泰国的品牌与商业增长公司",
-    heroTitleA: "让品牌值得被渴望。",
-    heroTitleB: "让增长真正被经营。",
-    heroIntro: "Prompt Rich把品牌方向、内容、电商与投放，连接成一套面向泰国市场的增长经营系统。",
+    heroTitleA: "把品牌吸引力，",
+    heroTitleB: "变成每天发生的销售。",
+    heroIntro: "品牌策略、内容拍摄、TikTok Shop运营与效果投放，由一套增长系统统一负责。",
     explore: "了解增长系统",
     proof: "查看真实证据",
     heroChapters: [
@@ -355,20 +369,27 @@ const content = {
       ["03", "GROWTH", "经营数据控制台"],
     ],
     heroStats: [
-      ["฿12.5M", "单店最高月度GMV", "内部运营记录"],
-      ["1,000+", "泰国达人网络", "覆盖多品类"],
-      ["TH / CN / EN", "泰国本地执行", "战略 → 运营"],
+      ["฿25.5M", "单店最高月度GMV", "内部运营记录"],
+      ["52M+", "有据可查的活动播放", "五个泰国客户项目"],
+      ["39", "直接服务品牌", "美妆 · 时尚 · 科技 · 消费品"],
+      ["1,000+", "泰国达人资源", "覆盖多品类"],
     ],
-    marketEyebrow: "泰国电商 · 2030",
-    marketTitleA: "市场正在加速，",
-    marketTitleB: "原地不动也是一种决定。",
-    marketBody: "泰国电商市场预计将从2025年的约9700亿泰铢增长至2030年的1.8万亿泰铢，接近翻倍。机会正在扩大，割裂执行的代价也在上升。",
+    marketEyebrow: "等待的代价 · 泰国2030",
+    marketTitleA: "市场不会等待，",
+    marketTitleB: "你的转型完成。",
+    marketBody: "泰国电商正在向1.8万亿泰铢迈进。现在开始建立内容、电商与投放系统的品牌，每一天都在积累客户数据、平台经验和执行优势。",
     marketStats: [
-      ["฿1.8T", "泰国电商市场预计规模", "2030年"],
+      ["฿1.8T", "电商市场预计规模", "泰国 · 2030年"],
       [">14%", "预计年复合增长率", "2025–2030"],
+      ["$33B", "电商GMV", "2025年 · 同比+22%"],
+      ["$56B", "数字经济GMV", "2025年 · 东南亚第二"],
       ["1.3B", "视频电商交易量", "泰国 · 东南亚第二"],
+      ["850K", "视频电商卖家", "同比+175%"],
+      ["56.6M", "活跃社交媒体用户身份", "占总人口79.1%"],
+      ["21%", "时尚与配饰", "视频电商GMV占比"],
     ],
-    marketSource: "2026年预测：CUBE Insights / Lazada Thailand；视频电商数据：Google、Temasek与Bain，2025。",
+    marketConclusion: "机会在增长，入场过晚的成本也在增长。",
+    marketSource: "来源：CUBE Insights / Lazada Thailand；Google、Temasek与Bain《e-Conomy SEA 2025》；DataReportal《Digital 2026: Thailand》。",
     diagnosticEyebrow: "增长准备度诊断",
     diagnosticTitle: "哪一种信号最接近你的业务？",
     diagnosticBody: "选择一条路径。好的诊断从你真实拥有的业务开始，而不是从别人想卖给你的渠道开始。",
@@ -792,7 +813,7 @@ export function Experience() {
           </div>
           <div className="section-shell market-stats">
             {t.marketStats.map(([metric, label, note], index) => (
-              <article data-reveal key={metric}>
+              <article data-reveal key={metric} style={{ transitionDelay: `${120 + index * 95}ms` }}>
                 <span>0{index + 1}</span>
                 <strong>{metric}</strong>
                 <h3>{label}</h3>
@@ -800,6 +821,7 @@ export function Experience() {
               </article>
             ))}
           </div>
+          <p className="section-shell market-conclusion" data-reveal>{t.marketConclusion}</p>
           <p className="section-shell market-source">
             {t.marketSource}
             {" · "}
@@ -808,14 +830,28 @@ export function Experience() {
               target="_blank"
               rel="noreferrer"
             >
-              SOURCE ↗
+              FORECAST ↗
+            </a>
+            {" · "}
+            <a
+              href="https://blog.google/intl/th-th/company-news/inside-google/e-conomy-sea-2025/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              GOOGLE 2025 ↗
+            </a>
+            {" · "}
+            <a
+              href="https://datareportal.com/reports/digital-2026-thailand"
+              target="_blank"
+              rel="noreferrer"
+            >
+              DIGITAL 2026 ↗
             </a>
           </p>
         </div>
 
-        <div className="section-shell">
-          <ThailandGrowthMap language={language} />
-        </div>
+        <ThailandGrowthMap language={language} />
 
         <div className="section-shell diagnostic-panel">
           <div className="diagnostic-heading">

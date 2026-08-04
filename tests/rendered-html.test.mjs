@@ -30,14 +30,16 @@ test("server-renders the Prompt Rich experience and direct-client wall", async (
 
   const html = await response.text();
   assert.match(html, /<title>Prompt Rich — Thailand Brand, Commerce &amp; Growth<\/title>/i);
-  assert.match(html, /Built to be desired/);
-  assert.match(html, /Operated to grow/);
-  assert.match(html, /฿12\.5M/);
-  assert.match(html, /The market is moving/);
+  assert.match(html, /Turn brand desire/);
+  assert.match(html, /into daily sales/);
+  assert.match(html, /฿25\.5M/);
+  assert.match(html, /The market will not wait/);
   assert.match(html, /THAILAND ORDER FLOW/);
   assert.match(html, /One market\. Millions of movements/);
   assert.match(html, /300M\+/);
   assert.match(html, /฿1\.8T/);
+  assert.match(html, /850K/);
+  assert.match(html, /56\.6M/);
   assert.match(html, /Offline → online/);
   assert.match(html, /Five growth levers/);
   assert.match(html, /Prompt Rich commerce growth system/);
@@ -58,7 +60,7 @@ test("server-renders the Prompt Rich experience and direct-client wall", async (
   assert.doesNotMatch(html, /Facing a similar growth challenge/);
   assert.doesNotMatch(html, /Your site is taking shape|Building your site/);
 
-  const marketPosition = html.indexOf("The market is moving");
+  const marketPosition = html.indexOf("The market will not wait");
   const servicePosition = html.indexOf("Five growth levers");
   const methodPosition = html.indexOf("Prompt Rich commerce growth system");
   const operatorCasePosition = html.indexOf("Operator proof");

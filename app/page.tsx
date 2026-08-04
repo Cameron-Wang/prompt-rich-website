@@ -19,7 +19,7 @@ export const metadata: Metadata = {
         url: `${publicOrigin}/og-documentary-v1.png`,
         width: 1200,
         height: 630,
-        alt: "Prompt Rich — Built to be desired. Operated to grow.",
+        alt: "Prompt Rich — Turn brand desire into daily sales.",
       },
     ],
   },

@@ -45,7 +45,7 @@ const mapCopy = {
       ["Phuket", "Tourism · lifestyle"],
       ["Songkhla", "Southern trade hub"],
     ],
-    scale: "300M+ order-scale simulation",
+    scale: "Billion-scale order-flow simulation",
     note: "Illustrative order-flow model · origin intensity weighted by 2024 provincial GPP",
   },
   th: {
@@ -61,7 +61,7 @@ const mapCopy = {
       ["ภูเก็ต", "ท่องเที่ยว · ไลฟ์สไตล์"],
       ["สงขลา", "ศูนย์กลางการค้าภาคใต้"],
     ],
-    scale: "ภาพจำลองออเดอร์ระดับ 300M+",
+    scale: "ภาพจำลองการไหลของออเดอร์ระดับหลายร้อยล้าน",
     note: "แบบจำลองเพื่อการสื่อสาร · ความถี่ต้นทางถ่วงน้ำหนักด้วย GPP จังหวัดปี 2024",
   },
   zh: {
@@ -77,7 +77,7 @@ const mapCopy = {
       ["普吉", "旅游 · 生活方式"],
       ["宋卡", "南部贸易中心"],
     ],
-    scale: "3亿+订单动势模拟",
+    scale: "亿级订单流动模拟",
     note: "订单流为视觉模拟 · 发射强度按2024年府级GPP加权",
   },
 } as const;
@@ -330,8 +330,6 @@ export function ThailandGrowthMap({ language }: { language: MapLanguage }) {
     let height = 0;
     let frame = 0;
     let visible = true;
-    let targetTilt = 0;
-    let tilt = 0;
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     const resize = () => {
@@ -344,47 +342,42 @@ export function ThailandGrowthMap({ language }: { language: MapLanguage }) {
       context.setTransform(ratio, 0, 0, ratio, 0, 0);
     };
 
-    const project = (lon: number, lat: number, depth = 0) => {
-      const nx = (lon - 97.25) / (105.75 - 97.25);
-      const ny = (20.75 - lat) / (20.75 - 5.5);
-      const mapWidth = Math.min(width * 0.72, height * 0.55);
-      const mapHeight = Math.min(height * 0.76, width * 1.12);
-      const baseX = width * 0.5 + (nx - 0.5) * mapWidth;
-      const baseY = height * 0.4 + (ny - 0.5) * mapHeight;
-      const skewX = (baseY - height * 0.5) * (0.17 + tilt * 0.025);
+    const project = (lon: number, lat: number) => {
+      const minLon = 97.25;
+      const maxLon = 105.75;
+      const minLat = 5.5;
+      const maxLat = 20.75;
+      const centreLon = (minLon + maxLon) / 2;
+      const centreLat = (minLat + maxLat) / 2;
+      const longitudeScale = Math.cos((centreLat * Math.PI) / 180);
+      const geographicWidth = (maxLon - minLon) * longitudeScale;
+      const geographicHeight = maxLat - minLat;
+      const scale = Math.min((width * 0.84) / geographicWidth, (height * 0.84) / geographicHeight);
       return {
-        x: baseX + skewX + depth * 0.9,
-        y: height * 0.44 + (baseY - height * 0.44) * 0.76 - depth * 1.35,
+        x: width * 0.52 + (lon - centreLon) * longitudeScale * scale,
+        y: height * 0.5 + (centreLat - lat) * scale,
       };
     };
 
-    const traceRing = (ring: number[][], depth = 0) => {
+    const traceRing = (ring: number[][]) => {
       ring.forEach(([lon, lat], index) => {
-        const point = project(lon, lat, depth);
+        const point = project(lon, lat);
         if (index === 0) context.moveTo(point.x, point.y);
         else context.lineTo(point.x, point.y);
       });
       context.closePath();
     };
 
-    const traceFeature = (feature: GeoFeature, depth = 0) => {
+    const traceFeature = (feature: GeoFeature) => {
       const geometry = feature.geometry;
       context.beginPath();
       if (geometry.type === "Polygon") {
-        (geometry.coordinates as number[][][]).forEach((ring) => traceRing(ring, depth));
+        (geometry.coordinates as number[][][]).forEach((ring) => traceRing(ring));
       } else {
         (geometry.coordinates as number[][][][]).forEach((polygon) => {
-          polygon.forEach((ring) => traceRing(ring, depth));
+          polygon.forEach((ring) => traceRing(ring));
         });
       }
-    };
-
-    const pointerMove = (event: PointerEvent) => {
-      const bounds = canvas.getBoundingClientRect();
-      targetTilt = ((event.clientX - bounds.left) / bounds.width - 0.5) * 2;
-    };
-    const pointerLeave = () => {
-      targetTilt = 0;
     };
 
     const draw = (time: number) => {
@@ -393,7 +386,6 @@ export function ThailandGrowthMap({ language }: { language: MapLanguage }) {
         return;
       }
       const seconds = reduceMotion ? 0 : time / 1000;
-      tilt += (targetTilt - tilt) * 0.035;
       context.clearRect(0, 0, width, height);
 
       const ambient = context.createRadialGradient(
@@ -410,21 +402,10 @@ export function ThailandGrowthMap({ language }: { language: MapLanguage }) {
       context.fillStyle = ambient;
       context.fillRect(0, 0, width, height);
 
-      for (let layer = 3; layer >= 1; layer -= 1) {
-        collection.features.forEach((feature) => {
-          traceFeature(feature, layer);
-          context.fillStyle = `rgba(${25 + layer},${23 + layer},${25 + layer},.82)`;
-          context.fill("evenodd");
-          context.strokeStyle = "rgba(232,205,169,.055)";
-          context.lineWidth = 0.45;
-          context.stroke();
-        });
-      }
-
       const topGradient = context.createLinearGradient(0, height * 0.12, width, height * 0.86);
-      topGradient.addColorStop(0, "rgba(214,205,190,.94)");
-      topGradient.addColorStop(0.48, "rgba(119,119,127,.96)");
-      topGradient.addColorStop(1, "rgba(47,43,47,.98)");
+      topGradient.addColorStop(0, "rgba(228,216,199,.9)");
+      topGradient.addColorStop(0.48, "rgba(132,128,132,.92)");
+      topGradient.addColorStop(1, "rgba(49,44,48,.96)");
       collection.features.forEach((feature) => {
         traceFeature(feature);
         context.fillStyle = topGradient;
@@ -445,7 +426,7 @@ export function ThailandGrowthMap({ language }: { language: MapLanguage }) {
 
       const originPoints = commerceOrigins.map((origin) => project(origin.lon, origin.lat));
       const maxWeight = commerceOrigins[0].weight;
-      const streamLimit = reduceMotion ? 150 : width < 700 ? 190 : width < 1080 ? 320 : 480;
+      const streamLimit = reduceMotion ? 48 : width < 700 ? 82 : width < 1080 ? 142 : 218;
 
       context.save();
       context.globalCompositeOperation = "lighter";
@@ -470,35 +451,29 @@ export function ThailandGrowthMap({ language }: { language: MapLanguage }) {
           };
         };
 
-        if (index % 19 === 0) {
-          context.beginPath();
-          context.moveTo(origin.x, origin.y);
-          context.quadraticCurveTo(control.x, control.y, destination.x, destination.y);
-          context.strokeStyle = "rgba(232,205,169,.055)";
-          context.lineWidth = 0.45;
-          context.stroke();
-        }
-
-        const progress = reduceMotion ? stream.phase : (seconds * stream.speed + stream.phase) % 1;
-        const tail = Math.max(0, progress - (0.045 + stream.size * 0.045));
+        const cycle = reduceMotion ? 0.72 : (seconds * stream.speed * 2.2 + stream.phase) % 1;
+        const growth = Math.min(1, cycle / 0.68);
+        const fade = cycle < 0.72 ? 1 : Math.max(0, (1 - cycle) / 0.28);
         const color = orderColors[stream.origin % orderColors.length];
-        const energy = Math.sin(progress * Math.PI);
-        const head = pointAt(progress);
+        const head = pointAt(growth);
         context.beginPath();
-        for (let segment = 0; segment <= 3; segment += 1) {
-          const point = pointAt(tail + (progress - tail) * (segment / 3));
+        for (let segment = 0; segment <= 18; segment += 1) {
+          const point = pointAt(growth * (segment / 18));
           if (segment === 0) context.moveTo(point.x, point.y);
           else context.lineTo(point.x, point.y);
         }
-        context.strokeStyle = `rgba(${color[0]},${color[1]},${color[2]},${0.25 + energy * 0.58})`;
-        context.lineWidth = 0.45 + stream.size * 0.9;
+        context.strokeStyle = `rgba(${color[0]},${color[1]},${color[2]},${(0.12 + stream.size * 0.22) * fade})`;
+        context.lineWidth = 0.45 + stream.size * 0.62;
         context.stroke();
         context.beginPath();
-        context.fillStyle = `rgba(${color[0]},${color[1]},${color[2]},${0.62 + energy * 0.35})`;
-        context.arc(head.x, head.y, 0.65 + stream.size * 0.8, 0, Math.PI * 2);
+        context.fillStyle = `rgba(${color[0]},${color[1]},${color[2]},${0.72 * fade})`;
+        context.shadowColor = `rgba(${color[0]},${color[1]},${color[2]},${0.72 * fade})`;
+        context.shadowBlur = 5 + stream.size * 5;
+        context.arc(head.x, head.y, 0.5 + stream.size * 0.55, 0, Math.PI * 2);
         context.fill();
       });
       context.restore();
+      context.shadowBlur = 0;
 
       commerceOrigins.forEach((node, index) => {
         const point = originPoints[index];
@@ -532,8 +507,6 @@ export function ThailandGrowthMap({ language }: { language: MapLanguage }) {
     });
     visibilityObserver.observe(canvas);
     window.addEventListener("resize", resize, { passive: true });
-    canvas.addEventListener("pointermove", pointerMove);
-    canvas.addEventListener("pointerleave", pointerLeave);
     resize();
 
     fetch(publicAsset("/data/thailand-adm1.geojson"))
@@ -543,14 +516,14 @@ export function ThailandGrowthMap({ language }: { language: MapLanguage }) {
         destinations = data.features
           .map(featureCentre)
           .filter((point): point is GeoPoint => Boolean(point));
-        streams = Array.from({ length: 1100 }, (_, index) => ({
+        streams = Array.from({ length: 420 }, (_, index) => ({
           origin: weightedOrigin(seeded(index, 31)),
           destination:
             destinations.length > 0
               ? (index * 29 + Math.floor(seeded(index, 32) * destinations.length)) % destinations.length
               : 0,
           phase: seeded(index, 33),
-          speed: 0.08 + seeded(index, 34) * 0.22,
+          speed: 0.11 + seeded(index, 34) * 0.2,
           bend: (seeded(index, 35) - 0.5) * 2,
           lift: 0.55 + seeded(index, 36) * 0.9,
           size: 0.35 + seeded(index, 37) * 0.9,
@@ -565,8 +538,6 @@ export function ThailandGrowthMap({ language }: { language: MapLanguage }) {
       window.cancelAnimationFrame(frame);
       visibilityObserver.disconnect();
       window.removeEventListener("resize", resize);
-      canvas.removeEventListener("pointermove", pointerMove);
-      canvas.removeEventListener("pointerleave", pointerLeave);
     };
   }, []);
 
@@ -589,11 +560,10 @@ export function ThailandGrowthMap({ language }: { language: MapLanguage }) {
       </div>
       <div className="thailand-map-stage">
         <canvas ref={canvasRef} className="thailand-map-canvas" />
-        <div className="map-order-scale" aria-hidden="true">
+        <div className="map-flow-legend" aria-hidden="true">
           <strong>300M+</strong>
           <span>{copy.scale}</span>
         </div>
-        <div className="map-axis" aria-hidden="true"><span>ORDER VELOCITY</span><i /></div>
       </div>
     </section>
   );
